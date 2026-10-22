@@ -37,7 +37,8 @@ def test_metadata_preserves_unknown_host() -> None:
     value.features[0].qualifiers["lab_host"] = ["human cell line"]
     row = metadata(value, "SHAV", ["taxon"])
     assert row["host"] == ""
-    assert row["passage"] == "human cell line"
+    assert row["lab_host"] == "human cell line"
+    assert row["passage"] == ""
     assert row["date"] == ""
 
 
@@ -245,3 +246,15 @@ def test_identifier_search_false_positive_is_audited_and_excluded() -> None:
     assert excluded[0]["run"] == "ERR17611905"
     assert "lacks matching" in excluded[0]["reason"]
     assert excluded[1]["run"] == "SRR2"
+
+
+def test_specimen_lab_host_and_passage_remain_separate() -> None:
+    value = record()
+    value.features[0].qualifiers.update(isolation_source=['blood', 'serum'], lab_host=['Vero', 'BHK-21'], passage_history=['P1', 'P2'])
+    row = metadata(value, 'SHAV', [])
+    assert row['isolation_source'] == 'blood; serum'
+    assert row['lab_host'] == 'Vero; BHK-21'
+    assert row['passage'] == 'P1; P2'
+    assert row['host'] == ''
+    blank = metadata(record(), 'SHAV', [])
+    assert all(blank[key] == '' for key in ['isolation_source', 'lab_host', 'passage', 'host'])

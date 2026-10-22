@@ -13,7 +13,7 @@ from Bio.Phylo.BaseTree import Tree
 from Bio.Seq import Seq
 
 from shav.common import ROOT, SEGMENTS, Row, read_fasta, read_json, read_tsv, write_json, write_tsv
-from shav.phylogeny import is_strong, root_tree, split_set, support, tree_plot
+from shav.phylogeny import is_strong, prune_with_support, root_tree, split_set, support, tree_plot
 
 EUROPE = {"France", "Germany", "Switzerland", "Austria", "Belgium", "Netherlands", "Ireland", "Italy", "Spain", "Portugal", "Luxembourg", "Liechtenstein", "Jersey"}
 
@@ -128,6 +128,30 @@ def variants(segment: str) -> list[Row]:
     return rows
 
 
+def support_conclusion(summaries: list[dict[str, Any]]) -> str:
+    weak: list[str] = []
+    for item in summaries:
+        for key, label in [("other_European_tip_set", "earlier European group"), ("EU2_German_project", "EU2")]:
+            group = item["europe"]["project_labels"].get(key, {})
+            if "mrca_sh_alrt" not in group:
+                weak.append(f"{item['segment']} {label} (insufficient labelled tips)")
+            elif group["mrca_sh_alrt"] < 80 or group["mrca_ufboot"] < 95:
+                weak.append(f"{item['segment']} {label}")
+    return ("Groups below the prespecified joint strong-support thresholds or without enough labelled tips: " +
+            (", ".join(weak) if weak else "none") + ". Grouping is not a transmission inference.")
+
+
+def human_conclusion(summary: dict[str, Any], manifest: dict[str, Any]) -> str:
+    accessions = summary["explicit_human_records"]
+    observed = ("Explicitly human-labelled SHAV records in this snapshot: " + ", ".join(accessions) + ".") if accessions else "No explicitly human-labelled SHAV nucleotide sequence was identified in this snapshot."
+    checks = "; ".join(f"{label}: {len(check['uids'])} results (checked {check['checked_at']})"
+                       for label, check in sorted(manifest["human_checks"].items()))
+    return (f"{observed} Recorded NCBI keyword sensitivity checks: {checks}. "
+            f"{summary['focal_missing_host']} focal records lack a host qualifier, so global absence cannot be established. "
+            "Source inspection on 2026-10-22 identified no case accession in the ECDC or Inserm announcements checked that day. "
+            "That dated inspection is not a claim about later announcements. IHUMI_Shav000001 (PZ860852–PZ860854) was deposited as cattle in the reviewed snapshot.")
+
+
 def main() -> None:
     output = ROOT / "reports"; output.mkdir(exist_ok=True)
     metadata = read_tsv(ROOT / "data/public/metadata.tsv")
@@ -149,11 +173,8 @@ def main() -> None:
                                  "sh_alrt": str(clade["sh_alrt"]), "ufboot": str(clade["ufboot"]),
                                  "accessions": ";".join(clade["accessions"]), "countries": ";".join(clade["countries"])})
         # Focus figure uses the same inferred topology with context tips pruned.
-        focused = copy.deepcopy(tree)
-        for tip in list(focused.get_terminals()):
-            if rows[str(tip.name)]["group"] != "SHAV":
-                focused.prune(tip)
-        focused.root.branch_length = 0.0
+        focused, provenance = prune_with_support(tree, {a for a, row in rows.items() if row["group"] == "SHAV"})
+        write_tsv(work / "focused_support_provenance.tsv", provenance)
         tree_plot(focused, rows, segment, ROOT / "figures" / f"tree_{segment}_SHAV")
         variation.extend(variants(segment))
     concord = concordance()
@@ -180,14 +201,14 @@ def main() -> None:
     for item in summaries:
         euro = item["europe"]
         lines.append(f"| {item['segment']} | {item['focal_backbone_tips']} / {item['backbone_tips']} | {item['primary_alignment_nt']} | {'Yes' if euro['europe_exclusive_monophyly'] else 'No'} | {len(euro['maximal_supported_europe_only_groups'])} | {item['best_fit_model']} |")
-    lines += ["", "Groups use SH-aLRT ≥80 and UFBoot ≥95. Separate Europe-only groups do not establish separate transmission chains. Sparse sampling and unresolved branches limit interpretation.", ""]
-    lines += ["The earlier France/Germany/Switzerland tip set is distinct from the second German project (EU2), which falls nearer Japanese references. European sampling therefore spans separate genetic backgrounds. Support is segment-dependent:", "",
+    lines += ["", "Groups use SH-aLRT ≥80 and UFBoot ≥95. Full-tree support is restored by unrooted split after rooting. Focused figures use the componentwise minimum across full-tree edges collapsed into each focal split, including zero for missing support; these are conservative annotations, not reestimated focal-tree supports. Each segment has focused_support_provenance.tsv. Separate Europe-only groups do not establish separate transmission chains. Sparse sampling and unresolved branches limit interpretation.", ""]
+    lines += ["Project labels and the earlier European tip set are compared using measured MRCA support. Labels do not establish separate transmission chains:", "",
               "| Segment | Earlier European group, SH-aLRT / UFBoot | EU2, SH-aLRT / UFBoot |", "|---|---:|---:|"]
     for item in summaries:
         labels = item["europe"]["project_labels"]
         earlier, second = labels["other_European_tip_set"], labels["EU2_German_project"]
         lines.append(f"| {item['segment']} | {earlier['mrca_sh_alrt']:g} / {earlier['mrca_ufboot']:g} | {second['mrca_sh_alrt']:g} / {second['mrca_ufboot']:g} |")
-    lines += ["", "The M branch for EU2 and the S branch for the earlier European group fall below the prespecified joint strong-support thresholds. Their displayed grouping should not be described as equally well resolved as the other branches.", ""]
+    lines += ["", support_conclusion(summaries), ""]
     for item in summaries:
         seg, euro, sensitive = item["segment"], item["europe"], item["sensitivity"]
         lines += [f"### {seg} segment", "", f"![{seg} SHAV tree](../figures/tree_{seg}_SHAV.png)", "",
@@ -197,7 +218,7 @@ def main() -> None:
     conflicts = sum(len(item["incompatible_splits"]) for item in concord["comparisons"])
     lines += ["## Segment histories and evolutionary timing", "", f"The concordance analysis matches {concord['units']} explicit SHAV source-identity units across all three backbones and detects {conflicts} supported incompatible split pairs that survive complete-case masking. This conservative screen does not establish absence of historical reassortment. [The complete comparison](segment_concordance.json) retains exact accession mappings. Historical context viruses are not counted as new SHAV reassortment candidates. Discordance does not identify a donor, timing, direction or phenotypic change.", "",
               "Root-to-tip collection-date diagnostics include 100 seeded date permutations and an alternative midpoint root. These diagnostics are phylogenetically non-independent and sensitive to repeated isolates, missing dates and uneven sampling. No calibrated evolutionary rate, dated origin or migration route is reported. See each segment's analysis.json.", "",
-              "## Is a human-case sequence publicly available?", "", f"No explicitly human-labelled SHAV nucleotide sequence was identified in this snapshot. Both recorded NCBI human-keyword sensitivity queries returned zero results. However, {summary['focal_missing_host']} focal records lack a host qualifier, so global absence cannot be established. No case accession was identified in the inspected October 22 ECDC or Inserm announcements. IHUMI_Shav000001 (PZ860852–PZ860854) is explicitly cattle and must not be relabelled as the human case.", "",
+              "## Is a human-case sequence publicly available?", "", human_conclusion(summary, manifest), "",
               "## Disease, transmission and countermeasures", "", "The [canonical evidence table](../docs/evidence.tsv) separates direct SHAV observations, related-virus evidence and hypotheses. It records the newly reported human infection, animal disease associations, gene functions and current countermeasure evidence. WOAH reports no commercially available SHAV vaccine. Evidence does not establish that an observed mutation predicts virulence, human susceptibility, transmissibility or countermeasure failure. [Observed coding differences](observed_coding_variants.tsv) are descriptive and carry no phenotype score.", "",
               "## Methods and reproducibility", "", "Independent protein-guided MAFFT alignments were backtranslated to nucleotides. The near-complete threshold is 90% of the upper-half median focal CDS length; up to 5% ambiguous nucleotides are allowed. Unannotated focal records use explicitly flagged reference-guided ORF recovery with ≥70% aligned amino-acid identity and ≥50 matched residues. Invalid translations are excluded with reasons. The primary mask retains codons with at most 50% missing sequence; the complete-case sensitivity excludes every incomplete codon. IQ-TREE ModelFinder selects the model with 1,000 ultrafast bootstrap and 1,000 SH-aLRT replicates, seed 159150. Main trees use the Bunyamwera outgroup; midpoint rooting is a sensitivity comparison. Neither root establishes the geographic origin of SHAV.", "",
               "Run `make ingest`, `make build`, `make report` and `make validate`. View locally with `make view`. New cases use `make place SEQUENCES=case.fasta METADATA=case.tsv`; see [placement](../docs/placement.md). Private inputs and reports remain ignored by Git.", ""]

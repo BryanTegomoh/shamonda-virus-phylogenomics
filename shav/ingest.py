@@ -22,7 +22,7 @@ from Bio.SeqRecord import SeqRecord
 from shav.common import ROOT, sha256, write_fasta, write_json, write_tsv
 
 BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
-FIELDS = "accession segment isolate country host date date_raw date_precision group taxid canonical_accession inclusion reason biosample bioproject sra passage publication length organism orientation provenance geo_loc_raw location assignment_provenance".split()
+FIELDS = "accession segment isolate country host date date_raw date_precision group taxid canonical_accession inclusion reason biosample bioproject sra isolation_source lab_host passage publication length organism orientation provenance geo_loc_raw location assignment_provenance".split()
 
 
 class Client:
@@ -267,7 +267,7 @@ def metadata(record: SeqRecord, group: str, provenance: list[str]) -> dict[str, 
     refs = cast(list[Any], record.annotations.get("references", []))  # Biopython heterogeneous annotations boundary.
     publications = ["PMID:" + ref.pubmed_id if getattr(ref, "pubmed_id", "") else ref.title for ref in refs]
     row = dict.fromkeys(FIELDS, "")
-    row.update(accession=record.id, segment=segment(record), isolate=q("isolate") or q("strain"), country=q("geo_loc_name") or q("country"), host=q("host"), date=date, date_raw=raw_date, date_precision=precision, group=group, taxid=link("taxon"), canonical_accession=record.id, inclusion="include", reason="canonical public nucleotide record", biosample=link("BioSample"), bioproject=link("BioProject") or link("Project"), sra=link("SRA"), passage=q("lab_host") or q("passage_history"), publication="; ".join(publications), length=str(len(record.seq)), organism=str(record.annotations.get("organism", "")), orientation="as deposited", provenance=";".join(sorted(provenance)))
+    row.update(accession=record.id, segment=segment(record), isolate=q("isolate") or q("strain"), country=q("geo_loc_name") or q("country"), host=q("host"), date=date, date_raw=raw_date, date_precision=precision, group=group, taxid=link("taxon"), canonical_accession=record.id, inclusion="include", reason="canonical public nucleotide record", biosample=link("BioSample"), bioproject=link("BioProject") or link("Project"), sra=link("SRA"), isolation_source=q("isolation_source"), lab_host=q("lab_host"), passage=q("passage_history"), publication="; ".join(publications), length=str(len(record.seq)), organism=str(record.annotations.get("organism", "")), orientation="as deposited", provenance=";".join(sorted(provenance)))
     geo = row["country"]
     row["geo_loc_raw"] = geo
     row["country"] = geo.partition(":")[0].strip()

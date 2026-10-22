@@ -1,0 +1,146 @@
+{
+  "L": {
+    "focused_provenance_rows": 23,
+    "interactive_maximum_inferred_nucleotide_events": 5102,
+    "split_support_invariant_outgroup_and_midpoint": true,
+    "training_maximum_inferred_nucleotide_events": 5100,
+    "training_mutation_replay_and_divergence": "passed",
+    "unrooted_supported_or_unestimated_edges": 28
+  },
+  "M": {
+    "focused_provenance_rows": 27,
+    "interactive_maximum_inferred_nucleotide_events": 4307,
+    "split_support_invariant_outgroup_and_midpoint": true,
+    "training_maximum_inferred_nucleotide_events": 4163,
+    "training_mutation_replay_and_divergence": "passed",
+    "unrooted_supported_or_unestimated_edges": 34
+  },
+  "S": {
+    "focused_provenance_rows": 34,
+    "interactive_maximum_inferred_nucleotide_events": 634,
+    "split_support_invariant_outgroup_and_midpoint": true,
+    "training_maximum_inferred_nucleotide_events": 634,
+    "training_mutation_replay_and_divergence": "passed",
+    "unrooted_supported_or_unestimated_edges": 41
+  },
+  "heldout_outcomes": [
+    {
+      "full_tip_count": 44,
+      "heldout_accession": "PZ860854.1",
+      "metrics": "S/metrics.json",
+      "placement_full_nearest_overlap": false,
+      "placement_status": "rebuilt_ambiguous",
+      "segment": "S",
+      "tie_compatible_broad_relationship": true,
+      "training_tip_count": 43
+    },
+    {
+      "full_tip_count": 37,
+      "heldout_accession": "PZ860853.1",
+      "metrics": "M/metrics.json",
+      "placement_full_nearest_overlap": true,
+      "placement_status": "compared",
+      "segment": "M",
+      "tie_compatible_broad_relationship": true,
+      "training_tip_count": 36
+    },
+    {
+      "full_tip_count": 31,
+      "heldout_accession": "PZ860852.1",
+      "metrics": "L/metrics.json",
+      "placement_full_nearest_overlap": false,
+      "placement_status": "rebuilt_ambiguous",
+      "segment": "L",
+      "tie_compatible_broad_relationship": true,
+      "training_tip_count": 30
+    }
+  ],
+  "pinned_metadata": {
+    "nonempty_isolation_source": 37,
+    "nonempty_lab_host": 0,
+    "nonempty_passage": 0,
+    "records": 184
+  },
+  "unchanged_inferred_trees": [
+    {
+      "path": "results/L/partial_1.treefile",
+      "sha256": "13b2148b88d22dd80f56efaf9bb2e386565507db2277e8615405a79f16b2cbfc"
+    },
+    {
+      "path": "results/L/partial_2.treefile",
+      "sha256": "ea04f6562a19d31a87907f4f6c464891638213beed7f4e46f5be8f902162c9b0"
+    },
+    {
+      "path": "results/L/partial_3.treefile",
+      "sha256": "a86527ef522a337a7962252b1f8aa5712cd94849d0de50d9a8e61d42da3f136c"
+    },
+    {
+      "path": "results/L/primary.treefile",
+      "sha256": "97cae7084711be0729d8f0d1b29a401bdcd454be2594199684d17681dfe1da71"
+    },
+    {
+      "path": "results/L/strict.treefile",
+      "sha256": "47abe054e637f518b3c13bb26115ceb16513e590490f7f513b6a41232a2295f0"
+    },
+    {
+      "path": "results/M/partial_1.treefile",
+      "sha256": "522f03c9e653aa82a6b2bf95dc37ea50ce94900ee8946a971e0b248732d15cf1"
+    },
+    {
+      "path": "results/M/partial_2.treefile",
+      "sha256": "f545b0dbddca741905526f481aeed07dc733742abf5749fb821c709a0f6eb5b4"
+    },
+    {
+      "path": "results/M/partial_3.treefile",
+      "sha256": "7530775293c0c98b25bd57d004de2c810d9a300dd9e5358b86ea4ecc833c0133"
+    },
+    {
+      "path": "results/M/primary.treefile",
+      "sha256": "5b1192602c0fd592f0b601b81c0beb2ffd8dd192bc6c259d95173269550223d0"
+    },
+    {
+      "path": "results/M/strict.treefile",
+      "sha256": "4946b42aacc6302d30dd7541420e0b628b885d40662091dc33cd73a8bb98bace"
+    },
+    {
+      "path": "results/S/primary.treefile",
+      "sha256": "dd5a7e5c53e70b1b0d770a4c9872b0393ccb74d6dc767df85bdb90956da1e225"
+    },
+    {
+      "path": "results/S/strict.treefile",
+      "sha256": "3396ee21cc16693cd736df3cfa59982e21e9e59792dd1871b7fb806130076666"
+    },
+    {
+      "path": "results/placement-validation/L/full.treefile",
+      "sha256": "3bce6b72aa87b62c4b585eda10772317c4ea82846f0b99bcec3a876fe69e874d"
+    },
+    {
+      "path": "results/placement-validation/L/query/rebuild.treefile",
+      "sha256": "46a6c01006142c01c5dde0a4fa62c978faf5c0e00e160e03e48c6af5c905a22e"
+    },
+    {
+      "path": "results/placement-validation/L/training.treefile",
+      "sha256": "a0aefb4e8f78f4b64f1a1d9ca2e9aa122006f6542e2881a75486178a3e36ec24"
+    },
+    {
+      "path": "results/placement-validation/M/full.treefile",
+      "sha256": "ecda3adc534e1b1849152261352557582daeabb4b6cb5abb8520fbdab6289848"
+    },
+    {
+      "path": "results/placement-validation/M/training.treefile",
+      "sha256": "ae7549064a40086be430d1d329edb9af62600a3abc9e6b04d1839d1c556ead40"
+    },
+    {
+      "path": "results/placement-validation/S/full.treefile",
+      "sha256": "64795e024d6979abc45bdddcf47953dd2bc704d9c7bdb1aaf0f23a72c43a09cc"
+    },
+    {
+      "path": "results/placement-validation/S/query/rebuild.treefile",
+      "sha256": "a818e9d852b99a3f7cdb0bff08c4bae3135c934608a0163267010b2dd96b34f6"
+    },
+    {
+      "path": "results/placement-validation/S/training.treefile",
+      "sha256": "74018afe54c1f73d0601dc7316ff9e18d1d8c2c2f111e7844b5754b390ca1526"
+    }
+  ]
+}

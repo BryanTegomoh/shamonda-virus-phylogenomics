@@ -1,18 +1,24 @@
 {
   "L": {
+    "interactive_divergence": "inferred nucleotide event counts verified",
     "mutation_replay": "passed",
+    "placement_tree": "byte-identical and schema-validated",
     "schema": "passed",
     "snapshot": "matched",
     "tips": 31
   },
   "M": {
+    "interactive_divergence": "inferred nucleotide event counts verified",
     "mutation_replay": "passed",
+    "placement_tree": "byte-identical and schema-validated",
     "schema": "passed",
     "snapshot": "matched",
     "tips": 37
   },
   "S": {
+    "interactive_divergence": "inferred nucleotide event counts verified",
     "mutation_replay": "passed",
+    "placement_tree": "byte-identical and schema-validated",
     "schema": "passed",
     "snapshot": "matched",
     "tips": 44

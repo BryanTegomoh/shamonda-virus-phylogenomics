@@ -91,3 +91,48 @@ def test_unannotated_public_reference_recovery_on_both_strands():
         assert observed.strand == strand
     with pytest.raises(ValueError, match="No credible"):
         infer_unannotated_cds(SeqRecord(Seq("N" * 300), id="bad"), template)
+
+
+@pytest.mark.parametrize('midpoint', [False, True])
+def test_rooting_preserves_support_by_split(midpoint):
+    from shav.phylogeny import edge_supports, root_tree
+    tree = read_tree(StringIO("(((a:1,b:1)'84/79':1,c:1)'100/95':2,(d:1,e:1)'99/100':1,o:8);"), 'newick')
+    rows = {str(t.name): {'group': 'Bunyamwera' if t.name == 'o' else 'SHAV'} for t in tree.get_terminals()}
+    assert edge_supports(root_tree(tree, rows, midpoint=midpoint)) == edge_supports(tree)
+    assert tree.get_nonterminals()[1].name == '100/95'
+
+
+def test_duplicate_root_edge_and_conflict():
+    from shav.phylogeny import edge_supports, root_tree
+    tree = read_tree(StringIO("((a:1,b:1)'84/79':1,(c:1,d:1)'84/79':1);"), 'newick')
+    rows = {str(t.name): {'group': 'SHAV'} for t in tree.get_terminals()}
+    assert len(edge_supports(tree)) == 1
+    assert edge_supports(root_tree(tree, rows)) == edge_supports(tree)
+    tree.get_nonterminals()[2].name = '100/100'
+    with pytest.raises(ValueError, match='Conflicting support'):
+        root_tree(tree, rows)
+
+
+def test_pruning_collapsed_path_preserves_all_support_provenance():
+    from shav.phylogeny import prune_with_support
+    tree = read_tree(StringIO("(((a:1,b:1)'70/100':1,x:1)'100/100':1,c:1,d:1);"), 'newick')
+    focused, provenance = prune_with_support(tree, {'a', 'b', 'c', 'd'})
+    assert support(focused.common_ancestor(['a', 'b'])) == (70, 100)
+    assert {r['source_sh_alrt'] for r in provenance} == {'70', '100'}
+    assert len(provenance) == 2
+    with pytest.raises(ValueError, match='four existing'):
+        prune_with_support(tree, {'a', 'b', 'c', 'absent'})
+    tree.common_ancestor(['a', 'b']).name = None
+    focused, _ = prune_with_support(tree, {'a', 'b', 'c', 'd'})
+    assert support(focused.common_ancestor(['a', 'b'])) == (0, 0)
+
+
+def test_interactive_counts_events_including_reversions_not_root_differences():
+    from shav.phylogeny import mutation_count_divergence
+    from shav.validate import mutation_consistency
+    leaf = {'name': 'tip', 'branch_attrs': {'mutations': {'nuc': ['C1A', 'A2N']}}}
+    dataset = {'meta': {}, 'tree': {'name': 'root', 'branch_attrs': {'mutations': {'nuc': ['A1C']}}, 'children': [leaf]}}
+    mutation_count_divergence(dataset)
+    assert dataset['tree']['node_attrs']['div'] == 0
+    assert leaf['node_attrs']['div'] == 2
+    mutation_consistency(dataset, 'AAA', {'tip': 'ANA'})

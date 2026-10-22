@@ -188,15 +188,111 @@ def split_set(tree: Tree, universe: set[str] | None = None, strong_only: bool = 
     return result
 
 
-def root_tree(tree: Tree, metadata: dict[str, Row]) -> Tree:
+def canonical_split(members: set[str], tips: set[str]) -> frozenset[str]:
+    other = tips - members
+    chosen = members if (len(members), sorted(members)) <= (len(other), sorted(other)) else other
+    return frozenset(chosen)
+
+
+def edge_supports(tree: Tree) -> dict[frozenset[str], tuple[float, float]]:
+    """Capture unrooted edge support, coalescing the two root-edge representations.
+
+    A missing duplicate label contributes no competing estimate. Conflicting
+    nonempty labels for one edge are rejected rather than selected arbitrarily.
+    """
+    tips = {str(t.name) for t in tree.get_terminals()}
+    result: dict[frozenset[str], tuple[float, float]] = {}
+    for node in tree.get_nonterminals():
+        key = canonical_split({str(t.name) for t in node.get_terminals()}, tips)
+        if min(len(key), len(tips - key)) < 2:
+            continue
+        value = support(node)
+        previous = result.get(key, (0.0, 0.0))
+        if previous != (0.0, 0.0) and value != (0.0, 0.0) and value != previous:
+            raise ValueError("Conflicting support labels on duplicate root edge")
+        result[key] = value if value != (0.0, 0.0) else previous
+    return result
+
+
+def root_tree(tree: Tree, metadata: dict[str, Row], *, midpoint: bool = False) -> Tree:
+    values = edge_supports(tree)
     result = copy.deepcopy(tree)
+    tips = {str(t.name) for t in result.get_terminals()}
     outgroups = [tip for tip in result.get_terminals()
                  if "bunyamwera" in metadata[str(tip.name)]["group"].lower()]
-    if outgroups:
+    if outgroups and not midpoint:
         result.root_with_outgroup(outgroups[0])
     else:
         result.root_at_midpoint()
+    for node in result.get_nonterminals():
+        key = canonical_split({str(t.name) for t in node.get_terminals()}, tips)
+        node.name = None
+        node.confidence = None
+        if key in values and node is not result.root:
+            sh, uf = values[key]
+            node.name = f"{sh:g}/{uf:g}"
+            node.comment = "support=original_unrooted_split;duplicate_root_edges_share_one_estimate"
     return result
+
+
+def prune_with_support(tree: Tree, retained: set[str]) -> tuple[Tree, list[Row]]:
+    """Use componentwise minimum support across all edges of a collapsed path.
+
+    These conservative annotations are not newly estimated focal-tree support.
+    Every contributing full-tree split is retained in a separate provenance TSV.
+    Missing support is zero, so a collapsed unsupported edge cannot gain a dot.
+    """
+    tips = {str(t.name) for t in tree.get_terminals()}
+    if not retained <= tips or len(retained) < 4:
+        raise ValueError("Focal pruning requires at least four existing tips")
+    sources: dict[frozenset[str], list[tuple[frozenset[str], tuple[float, float]]]] = {}
+    for full_split, value in edge_supports(tree).items():
+        key = canonical_split(set(full_split) & retained, retained)
+        if min(len(key), len(retained - key)) >= 2:
+            sources.setdefault(key, []).append((full_split, value))
+    result = copy.deepcopy(tree)
+    for tip in list(result.get_terminals()):
+        if str(tip.name) not in retained:
+            result.prune(tip)
+    provenance: list[Row] = []
+    for number, node in enumerate(result.get_nonterminals()):
+        key = canonical_split({str(t.name) for t in node.get_terminals()}, retained)
+        node.name = None
+        node.confidence = None
+        if node is result.root or key not in sources:
+            continue
+        contributors = sources[key]
+        sh = min(v[0] for _, v in contributors)
+        uf = min(v[1] for _, v in contributors)
+        node.name = f"{sh:g}/{uf:g}"
+        for full_split, value in contributors:
+            provenance.append({"display_node": f"node_{number}", "focal_split": ";".join(sorted(key)),
+                "full_split": ";".join(sorted(full_split)), "source_sh_alrt": f"{value[0]:g}",
+                "source_ufboot": f"{value[1]:g}", "display_sh_alrt": f"{sh:g}", "display_ufboot": f"{uf:g}",
+                "policy": "componentwise minimum across restricted full-tree edges; not reestimated support"})
+    result.root.branch_length = 0.0
+    return result, provenance
+
+
+def mutation_count_divergence(dataset: dict[str, Any]) -> None:
+    """Interactive divergence is cumulative inferred nucleotide state changes.
+
+    Count each listed Augur nuc event once, including reversions and ambiguous
+    state changes, in reference-CDS coordinates. The reconstructed root is zero;
+    root-to-reference differences are replayed but are not a tree branch.
+    These are inferred events, not ML expected substitutions or observed distances.
+    """
+    def visit(node: dict[str, Any], inherited: int, root: bool = False) -> None:
+        count = 0 if root else len(node.get("branch_attrs", {}).get("mutations", {}).get("nuc", []))
+        divergence = inherited + count
+        node.setdefault("node_attrs", {})["div"] = divergence
+        for child in node.get("children", []):
+            visit(child, divergence)
+    visit(dataset["tree"], 0, True)
+    dataset["meta"]["description"] = (dataset["meta"].get("description", "") +
+        " Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, "
+        "including reversions and ambiguous changes, from a zero reconstructed root. "
+        "Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.")
 
 
 def build_tree(alignment: Path, prefix: Path, settings: dict[str, Any]) -> Path:
@@ -363,7 +459,7 @@ def clade_rows(tree: Tree, metadata: dict[str, Row]) -> list[Row]:
                        "strong": str(is_strong(clade)).lower(), "focal_tips": str(len(focal)), "total_tips": str(len(members)),
                        "countries": ";".join(sorted({metadata[n]["country"] or "unknown" for n in focal})),
                        "hosts": ";".join(sorted({metadata[n]["host"] or "unknown" for n in focal})),
-                       "accessions": ";".join(members)})
+                       "accessions": ";".join(members), "support_provenance": str(clade.comment or "unestimated/root")})
     return result
 
 
@@ -407,7 +503,7 @@ def export(segment: str) -> None:
     tree = read_tree(work / "primary.treefile", "newick")
     strict = read_tree(work / "strict.treefile", "newick")
     rooted = root_tree(tree, metadata)
-    midpoint = copy.deepcopy(tree); midpoint.root_at_midpoint()
+    midpoint = root_tree(tree, metadata, midpoint=True)
     primary_splits, strict_splits = split_set(tree), split_set(strict)
     strong = split_set(tree, strong_only=True)
     sensitivity = {"primary_splits": len(primary_splits), "strict_splits": len(strict_splits),
@@ -417,9 +513,9 @@ def export(segment: str) -> None:
                    "alternative_root": "midpoint", "rooting_changes_unrooted_splits": split_set(rooted) != split_set(midpoint)}
     # Stable names preserve a separate support table while allowing Augur ancestral inference.
     rows = clade_rows(rooted, metadata)
-    write_tsv(work / "clades.tsv", rows, ["node", "sh_alrt", "ufboot", "strong", "focal_tips", "total_tips", "countries", "hosts", "accessions"])
+    write_tsv(work / "clades.tsv", rows, ["node", "sh_alrt", "ufboot", "strong", "focal_tips", "total_tips", "countries", "hosts", "accessions", "support_provenance"])
     for i, node in enumerate(rooted.get_nonterminals()):
-        node.name = f"NODE_{i:05d}"; node.confidence = None
+        node.name = f"NODE_{i:05d}"; node.confidence = None; node.comment = None
     write_tree(rooted, work / "tree.nwk", "newick")
     aligned = read_fasta(work / "backbone.fasta")
     pairs: list[Row] = []
@@ -446,11 +542,6 @@ def export(segment: str) -> None:
          "--root-sequence", str(work / "reference.fasta"), "--keep-ambiguous", "--keep-overhangs", "--seed", "159150",
          "--output-node-data", str(work / "ancestral.json"), "--output-sequences", str(work / "ancestral.fasta")], log=work / "ancestral.log")
     node_data = read_json(work / "ancestral.json")
-    # Derive divergence from the IQ-TREE branches. No clock or inferred dates.
-    for clade in rooted.find_clades():
-        name = str(clade.name)
-        node_data["nodes"].setdefault(name, {})["branch_length"] = float(clade.branch_length or 0.0)
-    write_json(work / "ancestral.json", node_data)
     dataset = ROOT / "nextclade" / segment
     dataset.mkdir(parents=True, exist_ok=True)
     config = {"title": f"Shamonda virus {segment} coding-sequence phylogeny", "maintainers": [{"name": "Bryan Tegomoh"}],
@@ -471,6 +562,7 @@ def export(segment: str) -> None:
     data["meta"]["description"] = (f"Independent {segment} segment analysis using its primary CDS. Branches show genetic divergence, not time. "
         "Public sampling is sparse and uneven. Genetic clustering does not establish transmission, virulence, or source attribution. "
         "Full methods, sequence acknowledgments and support tables are in the private repository.")
+    mutation_count_divergence(data)
     write_json(output, data)
     write_fasta(dataset / "reference.fasta", [(ref, reference)])
     write_json(dataset / "tree.json", data)

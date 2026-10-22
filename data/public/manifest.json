@@ -71,7 +71,7 @@
       "uids": []
     }
   },
-  "ingest_source_sha256": "e3140dcc38bad481dc6e18ac35fd8622b29008e73f812d5bb21b9be84fd612a0",
+  "ingest_source_sha256": "b2797a3c8ef4a97b8eb35972a5cef760ee6ba2c0d9e42b48c4ef7e9b601b50ad",
   "interpretation": "Host is verbatim source host only. Lab host never establishes patient/animal origin. Different accessions are not linked into isolates without explicit source annotations. Reference source labels are retained separately from current organism names. Dates without recognized precision remain blank and raw values persist.",
   "inventories": {
     "datasets": [
@@ -853,6 +853,8 @@
       "NC_043557.1"
     ]
   },
+  "normalization_note": "Rebuilt from identical pinned cached responses without new network discovery; original retrieval and query-check timestamps retained. isolation_source, lab_host and passage_history are separate literal source qualifiers; multiple values retained.",
+  "normalized_rebuilt_at": "2026-10-22T21:42:10.664631+00:00",
   "nuccore_uid_mapping": {
     "1093917583": "LF621743.1",
     "1354071386": "LC198185.1",
@@ -1118,7 +1120,7 @@
     "PZ860854.1": "PZ860854.1"
   },
   "outputs": {
-    "metadata.tsv": "47dc287e63534583a5485875f9addf6b884a91b6de94e6dcade0c31831da69eb",
+    "metadata.tsv": "9b2f60fb2c3804089d76df9db62a6242a4d0615c7f67b2544b665b3332d758a6",
     "read_catalog.tsv": "97cbc328af256f94aea826975b14e71b02fba7837ff0224fd285fbaf8f394abe",
     "records.gb": "b9aba5466fb5a12565d00e81eba34309b519782c318715c1996d8546dd1f5265",
     "sequences.fasta": "0baba9d25c589d06e0b19cd01900eb9b6c57feb9376d22753cb021186b044414"
@@ -1335,546 +1337,546 @@
   },
   "requests": [
     {
-      "accessed_at": "2026-10-22T21:09:34.966394+00:00",
+      "accessed_at": "2026-10-22T21:42:08.061548+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/f294f4a45ca97c193815853ec9bc493e3feaba33b347a2f288efd0f658d09928.raw",
       "retrieved_at": "2026-10-22T21:03:15.578767+00:00",
       "sha256": "821376bc40ee57b0a8e6664370bba964bae15e0fb865bfaab8262f2b092a51d7",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=txid159150%5BOrganism%3Aexp%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.966657+00:00",
+      "accessed_at": "2026-10-22T21:42:08.061754+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/538b831d62329df9e36ad551e11b008b2588bdbf60fc489cb431c83de4e1411a.raw",
       "retrieved_at": "2026-10-22T21:03:16.555768+00:00",
       "sha256": "f762a4a7c53880d5b302a0cbbc6b24913941049aa23ec91327f1c81cc34886be",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Shamonda%22%5BAll+Fields%5D+OR+%22SHAV%22%5BTitle%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.966816+00:00",
+      "accessed_at": "2026-10-22T21:42:08.062105+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/c9b7446a1b76c4698c3772952678ba6af6f7c5097cc962cd1633c059d84dcd5e.raw",
       "retrieved_at": "2026-10-22T21:03:18.449350+00:00",
       "sha256": "465fe5419fe19bdeab47f1f75d46afde69100a58f985d6cf939e40f0fcf011d5",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Shamonda%22%5BAll+Fields%5D+OR+%22SHAV%22%5BTitle%5D&retmode=json&retstart=100&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.966993+00:00",
+      "accessed_at": "2026-10-22T21:42:08.062358+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/475050cb8462bffaa85f98a4b92d9b0603325f846c0d519680bf535f815a35cd.raw",
       "retrieved_at": "2026-10-22T21:03:19.819389+00:00",
       "sha256": "1d164a359a6929251a15997e56ad41f306a9518279d8176a35e9b4a48c27ad4b",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=PZ860852.1%5BAccession%5D+OR+PZ860853.1%5BAccession%5D+OR+PZ860854.1%5BAccession%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.967160+00:00",
+      "accessed_at": "2026-10-22T21:42:08.062540+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/ee38abc5c0577405763379609b599937b3464a94e7fb31f50ee38151ffddf7cc.raw",
       "retrieved_at": "2026-10-22T21:03:22.754716+00:00",
       "sha256": "a1549e7b2d81c887bf4d7b9f15a47e5fc598bc70bc743f28c4823ba31b74c4c8",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22PRJEB123174%22%5BBioProject%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.967319+00:00",
+      "accessed_at": "2026-10-22T21:42:08.062911+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/60e50fc6550b4ecd294412deb12d65c915550ce993c5c93cb5f6fe3180880a4a.raw",
       "retrieved_at": "2026-10-22T21:03:25.815628+00:00",
       "sha256": "abeaa7ea7e8bc85bad27f5be6578fc9ce1b6fbe5739291733902f4e0b93f9e42",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22PRJEB125115%22%5BBioProject%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.968965+00:00",
+      "accessed_at": "2026-10-22T21:42:08.065264+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/03c87d829f33a81c7725ae6d42851e80cc0f64eed52f7c5600a998dce9bd9601.raw",
       "retrieved_at": "2026-10-22T21:03:28.884971+00:00",
       "sha256": "1069205b9261729038a837ddeb9a7c2c2acff066fc33dd9d50b9fa9dd7ca4362",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=PZ860854.1%2CPZ860853.1%2CPZ860852.1%2CPZ831166.1%2CPZ831165.1%2CPZ831164.1%2CPZ831163.1%2CPZ831162.1%2CPZ831161.1%2CPZ831160.1%2CPZ831159.1%2CPZ831158.1%2CPZ831157.1%2CPZ831156.1%2CPZ831155.1%2CPZ797893.1%2CPZ797892.1%2CPZ797891.1%2CPQ593041.1%2CPQ593040.1%2CPQ593039.1%2COZ516536.1%2COZ516535.1%2COZ516534.1%2COZ516533.1%2COZ516532.1%2COZ516531.1%2COZ502473.1%2COZ502472.1%2COZ502471.1%2COR249961.1%2COR249960.1%2COR249959.1%2COP976210.1%2CNC_018467.1%2CNC_018464.1%2CNC_018463.1%2CMH999471.1%2CLC811397.1%2CLC811396.1&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.974067+00:00",
+      "accessed_at": "2026-10-22T21:42:08.079099+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/da6d0dea872f394fb19e4618c4de367b74ddb97644001506c6764cf4f52e0434.raw",
       "retrieved_at": "2026-10-22T21:03:31.553694+00:00",
       "sha256": "f19628de6c67a75f5a698d1c67f54f0cbd16a36d6f157ada893082bde35a8e37",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=LC811395.1%2CLC741389.1%2CLC741388.1%2CLC741387.1%2CLC198193.1%2CLC198192.1%2CLC198191.1%2CLC198190.1%2CLC198189.1%2CLC198188.1%2CLC198187.1%2CLC198186.1%2CLC198185.1%2CHE795107.1%2CHE795106.1%2CHE795105.1%2CAF362404.1%2CAB698485.1%2CAB698484.1%2CAB698483.1%2CAB698477.1%2CAB698476.1%2CAB698475.1%2CAB698470.1%2CAB183283.1%2CAB183282.1%2CAB183281.1%2CAB183280.1%2CAB183279.1%2CAB183278.1&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.977067+00:00",
+      "accessed_at": "2026-10-22T21:42:08.082913+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/1a369833546d9018481b58e5fd205da7b85820ffe18c4b2e4d5b4da1dd0ab40d.raw",
       "retrieved_at": "2026-10-22T21:03:36.672730+00:00",
       "sha256": "7380fd8f62afc0ae5d2567c2185fe66be6a0f4870c40e415ac50ce6c983b89e2",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=1093917583%2C1354071386%2C1354071389%2C1354071392%2C1354071395%2C1354071397%2C1354071399%2C1354071401%2C1354071403%2C1354071405%2C1654302215%2C1695000039%2C1695000053%2C1695000065%2C1695000077%2C1695000092%2C1695000103%2C1695000113%2C1695000124%2C1695000132%2C18677233%2C2416134239%2C2416134243%2C2416134246%2C2416134248%2C2416134250%2C2553478142%2C2553478145%2C2553478147%2C2607440327%2C2705457669%2C2855371033%2C2855371110%2C2855371112%2C3369837375%2C3369837376%2C3369837377%2C3375250129%2C3375250131%2C3375250133&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.977615+00:00",
+      "accessed_at": "2026-10-22T21:42:08.083415+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/3a161afaf36ee86aa56f51a77a129fcb9641169f36010ec911ccf2531813f043.raw",
       "retrieved_at": "2026-10-22T21:03:40.357434+00:00",
       "sha256": "64a2a4cff158c2ee8d07e9e65c5c83ad77aaf010385f07d5afaec34bb8aec540",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=1093917583%2C1354071386%2C1354071389%2C1354071392%2C1354071395%2C1354071397%2C1354071399%2C1354071401%2C1354071403%2C1354071405%2C1654302215%2C1695000039%2C1695000053%2C1695000065%2C1695000077%2C1695000092%2C1695000103%2C1695000113%2C1695000124%2C1695000132%2C18677233%2C2416134239%2C2416134243%2C2416134246%2C2416134248%2C2416134250%2C2553478142%2C2553478145%2C2553478147%2C2607440327%2C2705457669%2C2855371033%2C2855371110%2C2855371112%2C3369837375%2C3369837376%2C3369837377%2C3375250129%2C3375250131%2C3375250133&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.981669+00:00",
+      "accessed_at": "2026-10-22T21:42:08.087844+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/769cf345ad6fdfa52ccbc01c50d4594c751efe7526da94ca42e0423b79f65266.raw",
       "retrieved_at": "2026-10-22T21:03:42.071978+00:00",
       "sha256": "fdd29806da24dff34aa064e93904693fbf8a21a406d296964ae8ae00fc555a18",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=3377243752%2C3377243754%2C3377243756%2C3377243758%2C3377243760%2C3377243762%2C3377243764%2C3377243766%2C3377243768%2C3377243771%2C3377243774%2C3377243777%2C3378296276%2C3378296277%2C3378296278%2C3378296279%2C3378296280%2C3378296281%2C3389078381%2C3389078382%2C3389078383%2C3389078384%2C3389078385%2C3389078386%2C3389078387%2C3389078388%2C3389078389%2C3389078390%2C3389078391%2C3389078392%2C3389078393%2C3389078394%2C3389078395%2C3389078396%2C3389078397%2C3389078398%2C3389078399%2C3389078400%2C3389078401%2C3389078402&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.982455+00:00",
+      "accessed_at": "2026-10-22T21:42:08.088407+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/aacbe77a3bf0e5a14afd98e36b468caaeb6a1260776bb6384d9c3cc0f41c86db.raw",
       "retrieved_at": "2026-10-22T21:03:45.497220+00:00",
       "sha256": "1928742fa7c754286bac82510a0512fc1099cda414dd7fc334e5daedb3b96090",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=3377243752%2C3377243754%2C3377243756%2C3377243758%2C3377243760%2C3377243762%2C3377243764%2C3377243766%2C3377243768%2C3377243771%2C3377243774%2C3377243777%2C3378296276%2C3378296277%2C3378296278%2C3378296279%2C3378296280%2C3378296281%2C3389078381%2C3389078382%2C3389078383%2C3389078384%2C3389078385%2C3389078386%2C3389078387%2C3389078388%2C3389078389%2C3389078390%2C3389078391%2C3389078392%2C3389078393%2C3389078394%2C3389078395%2C3389078396%2C3389078397%2C3389078398%2C3389078399%2C3389078400%2C3389078401%2C3389078402&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.985913+00:00",
+      "accessed_at": "2026-10-22T21:42:08.091971+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/b015bb257b993cbd3228b54a7b48dec4b33103bc88096859464193c5038b71e3.raw",
       "retrieved_at": "2026-10-22T21:03:46.749634+00:00",
       "sha256": "849e29861d26d9f541f0c4e2299c55843ecc404fda8e956ad4d0118316f3b021",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=3389078403%2C3389078404%2C3389078405%2C3389078406%2C3389078407%2C3390351650%2C3390351652%2C3390351654%2C3392124022%2C3392124025%2C3392124027%2C3392124029%2C3392124032%2C3392124034%2C3392124036%2C3392124039%2C3392124041%2C3392124043%2C3392124046%2C3392124048%2C3392124050%2C3392124053%2C3392124055%2C388240560%2C388240563%2C388240566%2C388240569%2C388240572%2C388240574%2C388240576%2C388240578%2C388240580%2C388240582%2C388240584%2C388240586%2C388240588%2C388240590%2C388240592%2C388240594%2C388240596&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.986596+00:00",
+      "accessed_at": "2026-10-22T21:42:08.092502+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/13afa6da7be94908fda63026d9eea3ef58cb29bbd2296f4ea215bfdb0b58d7f5.raw",
       "retrieved_at": "2026-10-22T21:03:49.436432+00:00",
       "sha256": "a2f126a83fb7ef2458347e589a5da9d3d3d52774bf6ae21b924d40e36f39cd60",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=3389078403%2C3389078404%2C3389078405%2C3389078406%2C3389078407%2C3390351650%2C3390351652%2C3390351654%2C3392124022%2C3392124025%2C3392124027%2C3392124029%2C3392124032%2C3392124034%2C3392124036%2C3392124039%2C3392124041%2C3392124043%2C3392124046%2C3392124048%2C3392124050%2C3392124053%2C3392124055%2C388240560%2C388240563%2C388240566%2C388240569%2C388240572%2C388240574%2C388240576%2C388240578%2C388240580%2C388240582%2C388240584%2C388240586%2C388240588%2C388240590%2C388240592%2C388240594%2C388240596&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.991103+00:00",
+      "accessed_at": "2026-10-22T21:42:08.096950+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/988ffbe9872df6f147cef6c2c3c23a19a86bb0a7bd48beafcdf466a04f1f625e.raw",
       "retrieved_at": "2026-10-22T21:03:50.731153+00:00",
       "sha256": "ac2498919a0d5bc3fca70edaf18d8197be0afb339654bd4cd97eacf6532e8e58",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=388240598%2C388240600%2C388240602%2C401771968%2C401771970%2C401771972%2C401771975%2C401771977%2C401771979%2C401771982%2C401771984%2C401771986%2C401771989%2C401771991%2C401771993%2C401771996%2C401771998%2C401772000%2C401772003%2C401772005%2C401772007%2C401772010%2C401772012%2C401772014%2C401772017%2C401772019%2C401772021%2C401829604%2C401829606%2C401829609%2C401829611%2C401829614%2C401829616%2C401829619%2C401829621%2C401829623%2C401829625%2C401829627%2C401829630%2C510020062&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.991736+00:00",
+      "accessed_at": "2026-10-22T21:42:08.097606+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/e9d36dd01161376178df86aa6e44a11f271f808b1f1b528906e576b5ec96a03b.raw",
       "retrieved_at": "2026-10-22T21:03:54.482160+00:00",
       "sha256": "ba2e6b03c09c6792b9608025eef49a628fdff28b80e3b5e09d8795eb3a74b625",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=388240598%2C388240600%2C388240602%2C401771968%2C401771970%2C401771972%2C401771975%2C401771977%2C401771979%2C401771982%2C401771984%2C401771986%2C401771989%2C401771991%2C401771993%2C401771996%2C401771998%2C401772000%2C401772003%2C401772005%2C401772007%2C401772010%2C401772012%2C401772014%2C401772017%2C401772019%2C401772021%2C401829604%2C401829606%2C401829609%2C401829611%2C401829614%2C401829616%2C401829619%2C401829621%2C401829623%2C401829625%2C401829627%2C401829630%2C510020062&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.997182+00:00",
+      "accessed_at": "2026-10-22T21:42:08.102931+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/ff84a605b4eca838edd22f6f352be7c0dc29620cddca3ad9eed34faad2cebaa8.raw",
       "retrieved_at": "2026-10-22T21:03:55.818783+00:00",
       "sha256": "0e3cec3b60fa3bd443dc406f84755dc437098666722350d7b04a67a4f03b44e4",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=510020064%2C510020066%2C583075201%2C930871145%2C930979340%2C94039068%2C94039075%2C94039081%2C94039088%2C94039095%2C94039103%2C972772013&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.997477+00:00",
+      "accessed_at": "2026-10-22T21:42:08.103172+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/74a710b352437d892bdb7724fd12d09dcbeb312fdc656023070d51b121b2ae89.raw",
       "retrieved_at": "2026-10-22T21:03:57.447372+00:00",
       "sha256": "9adc846b947a6c6d54968cdbe8e8bb9c8033370b8033a6fcb753d21371c02cb9",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=510020064%2C510020066%2C583075201%2C930871145%2C930979340%2C94039068%2C94039075%2C94039081%2C94039088%2C94039095%2C94039103%2C972772013&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.998927+00:00",
+      "accessed_at": "2026-10-22T21:42:08.104643+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/b9b4ec3d26f656cbebbc771a71e70e2e9a0d1bd755bd0a82bbd06399648b8702.raw",
       "retrieved_at": "2026-10-22T21:03:59.026283+00:00",
       "sha256": "0493eb80f1ad38a2f3470d77dbb643b159c985e2778a00a8702d23fecb2578d0",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Schmallenberg+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.999120+00:00",
+      "accessed_at": "2026-10-22T21:42:08.104932+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/36766cd1b1f244f55cccdcaca141db501efd2c497508d563757e9374dec865b3.raw",
       "retrieved_at": "2026-10-22T21:04:00.621896+00:00",
       "sha256": "29e76b6d615e5aaec7de638fc58cab9879ec2bc6a2d949a27b0a3341e8c63ef0",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=1695000353%2C1695000346%2C1695000336&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:34.999366+00:00",
+      "accessed_at": "2026-10-22T21:42:08.105140+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/86e090522ef76b85361774e6371cbef15b9033785fcebfeaaaa6778740fa5108.raw",
       "retrieved_at": "2026-10-22T21:04:04.551350+00:00",
       "sha256": "1fb640143641a6801440268eefbded97c458158be9be35f135491b14e8ff81c5",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=1695000353%2C1695000346%2C1695000336&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.000538+00:00",
+      "accessed_at": "2026-10-22T21:42:08.106252+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/47d9aba912b65e894d101f5ad7749a7f192adcdc14507280a01b4bded698d3b2.raw",
       "retrieved_at": "2026-10-22T21:04:06.148788+00:00",
       "sha256": "ba0855ddcf7a0a81cfa7e04519b59ac0d21f4a1ed022ef40e82291104bc81c32",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Sathuperi+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.000726+00:00",
+      "accessed_at": "2026-10-22T21:42:08.106504+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/5f10439fda7ff47f4f0c3b1a43a5a147223abeada5645324b0f58a00924b91b1.raw",
       "retrieved_at": "2026-10-22T21:04:08.286433+00:00",
       "sha256": "72515347a879292109e987fa309fa445859c1f75c7d1c9c6114cc682bb87ffaa",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=401829621%2C401829611%2C401829609&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.000992+00:00",
+      "accessed_at": "2026-10-22T21:42:08.106773+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/4f97a5eb05a9ffcdaab9f6cfe3afa6e0b818bc473dbef3ba66b715a5bfcbfeff.raw",
       "retrieved_at": "2026-10-22T21:04:11.233621+00:00",
       "sha256": "ff8daed04003bfc92e4e6da0932a334961ae32b771daf21026f27483b12f3c75",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=401829621%2C401829611%2C401829609&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.001797+00:00",
+      "accessed_at": "2026-10-22T21:42:08.107545+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/b52fc775f816ca9ff92051c5058bf685e0ee47357725dee1eba09e426eff70fc.raw",
       "retrieved_at": "2026-10-22T21:04:13.743349+00:00",
       "sha256": "773567319153cdfbe82331208ed4e004e00bcd5320b40aa3a70f21f90f0b59a1",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Douglas+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.002156+00:00",
+      "accessed_at": "2026-10-22T21:42:08.107779+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/09fde739ee91dfa66522dfd1de2fa4467c5a8fcfe9a22d6669c7f0988b3ffd6a.raw",
       "retrieved_at": "2026-10-22T21:04:15.408338+00:00",
       "sha256": "834e00869b34a12fa5f181dc7953cd81e251763ee64888d617f543bb785bbf46",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Douglas+virus%22%5BTitle%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.002356+00:00",
+      "accessed_at": "2026-10-22T21:42:08.107950+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/405c9b26c7a2c6bf42b29bd823456f597eabf52b598e208e1b3630c4cf431197.raw",
       "retrieved_at": "2026-10-22T21:04:16.394157+00:00",
       "sha256": "52bbe0b23b29f5e54683add8db56b49fc7f44d648fa40f7c9a5587ecd95a1f02",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=1663844841%2C1663844839%2C1663844727%2C1663844725%2C1663844613%2C1663844611%2C440356727%2C401771979%2C401771977%2C401771975%2C388240602%2C388240586%2C18677200&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.002770+00:00",
+      "accessed_at": "2026-10-22T21:42:08.108332+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/5356670c961b701dd4356c9486846a1e0b0f3b0f9729c25fbef625c1c2df0bd8.raw",
       "retrieved_at": "2026-10-22T21:04:17.740942+00:00",
       "sha256": "2e4ac5baef59a8e5d4abba6e724ad3cf7436678dd64951a9a2983d787d307b6e",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=1663844841%2C1663844839%2C1663844727%2C1663844725%2C1663844613%2C1663844611%2C440356727%2C401771979%2C401771977%2C401771975%2C388240602%2C388240586%2C18677200&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.005001+00:00",
+      "accessed_at": "2026-10-22T21:42:08.110710+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/9f4d72e7366d5c7da7a8e7b4027e71f42472e4f123ee4e6af3569d534f6b650b.raw",
       "retrieved_at": "2026-10-22T21:04:20.255813+00:00",
       "sha256": "43ca443f55a3f4c4958ea2478fce9bf3f57a1accf9c91067ce808f9f0b6a1285",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Peaton+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.005281+00:00",
+      "accessed_at": "2026-10-22T21:42:08.110981+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/81e9ffb3425279b59c632cbf6b0f1e97ccecabeddffc3c9dcc09a02a75f580a3.raw",
       "retrieved_at": "2026-10-22T21:04:20.942936+00:00",
       "sha256": "4909ed739ac8acc219d41a449ea22b5cf44cefdd62d390a0b4c51a30fd5751a0",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=1695000065%2C1695000053%2C1695000039&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.005536+00:00",
+      "accessed_at": "2026-10-22T21:42:08.111302+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/df156f16ecec4b11d23290efcbb7ef8431e5a61f4587c0ecf3dab069121d1927.raw",
       "retrieved_at": "2026-10-22T21:04:22.116755+00:00",
       "sha256": "3927f9ac58cdcde1666c5802643fadcd42925701a9a60b750b9d0cfec7e5f37b",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=1695000065%2C1695000053%2C1695000039&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.006499+00:00",
+      "accessed_at": "2026-10-22T21:42:08.112175+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/0639ce16466419859c38ed64ada6c8865823296876e3b6e6234e8a60231dcb5f.raw",
       "retrieved_at": "2026-10-22T21:04:24.138609+00:00",
       "sha256": "093dfb7d667a71b487f2aa7dd2811bd9b665fe43e07beb5bdb795f5e97acbd28",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Sango+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.006698+00:00",
+      "accessed_at": "2026-10-22T21:42:08.112382+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/261868611755fae78b4e535f07232fda5bc40b9e117eee3246875a13d0a54549.raw",
       "retrieved_at": "2026-10-22T21:04:25.008820+00:00",
       "sha256": "9850cb0db457e74532e49a7b5b80aab2f1307771f0bf3eb7f6a9e49d472c2f6c",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=1695000132%2C1695000124%2C1695000113&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.006917+00:00",
+      "accessed_at": "2026-10-22T21:42:08.112647+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/41e531a5a1204a36b6f24e4e8b9341df1d8d5099b4f6cb1bbaf191202d48671b.raw",
       "retrieved_at": "2026-10-22T21:04:27.658714+00:00",
       "sha256": "109ebce36952fca6d0bef695aba7f538080133daa8cb19db38ba01b8fbd95776",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=1695000132%2C1695000124%2C1695000113&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.007655+00:00",
+      "accessed_at": "2026-10-22T21:42:08.113335+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/a83bf642fbe16dc9e797a2e9d60e2faa13865efd71c07b5c8a30140d4141dbdf.raw",
       "retrieved_at": "2026-10-22T21:04:29.099963+00:00",
       "sha256": "24175afa6dfdff9a20e09ddd86c995551f153c3249803e971db5131044905900",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Shuni+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.007835+00:00",
+      "accessed_at": "2026-10-22T21:42:08.113559+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/e03ae1ae6d15e139a40afa4e44638d55275b94bdfa2ebc91aef403c3e5344816.raw",
       "retrieved_at": "2026-10-22T21:04:29.949695+00:00",
       "sha256": "cba902a959d54457a6ac20c9896208be78aafd4f710c847131c59423f05e963a",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=1695001321%2C1695001313%2C1695001305&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.008060+00:00",
+      "accessed_at": "2026-10-22T21:42:08.113822+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/9d038000c007d44fddfff7d2f2fb582b8744c580353a5bb42098cd217c6c5ec0.raw",
       "retrieved_at": "2026-10-22T21:05:04.229179+00:00",
       "sha256": "84eed321f227e07c582b3936aa9c92bf76e2cd47690eedf7d1ef6c46a26880d5",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=1695001321%2C1695001313%2C1695001305&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.008941+00:00",
+      "accessed_at": "2026-10-22T21:42:08.114681+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/2591e47504c41fb291e84f6f6b01f9a439455309369c156f34a0a3e6c1e6aebf.raw",
       "retrieved_at": "2026-10-22T21:04:56.342905+00:00",
       "sha256": "9663796b02e0bb27624c1e2963c983aa9faa6508d220317141dc4f671cde1fcc",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Aino+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.009102+00:00",
+      "accessed_at": "2026-10-22T21:42:08.114904+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/99bc701f225d675de78a1db26e558a84efcd47ff34dcf95d3ece5afc99b28614.raw",
       "retrieved_at": "2026-10-22T21:04:59.692344+00:00",
       "sha256": "b02cb5e7198b25b848786b83783bb320e492898184d8977c27d8cdf0e33a4c62",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=401829619%2C401829606%2C401829604&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.009314+00:00",
+      "accessed_at": "2026-10-22T21:42:08.115154+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/92c4b8d6247be54d9accd27475e872d16f23252519793d9f7b91628c1394f351.raw",
       "retrieved_at": "2026-10-22T21:05:00.544360+00:00",
       "sha256": "ecd47e7f02bd7d0954572a2e91c9f88aca12a63bd1388570a3da65eacac66bdf",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=401829619%2C401829606%2C401829604&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.010014+00:00",
+      "accessed_at": "2026-10-22T21:42:08.115941+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/392290217f988284068ae3979c2aa2fd1951b5a5193b88d3debf74c0bfc6417d.raw",
       "retrieved_at": "2026-10-22T21:05:04.904636+00:00",
       "sha256": "c7930801585f6da9a913ffbb8dd833596403b637df87adcee8173c673deb05ee",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Akabane+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.010164+00:00",
+      "accessed_at": "2026-10-22T21:42:08.116183+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/d790ebed9cf1fb06fc8f88ea2a10ec30babacb87bc4f7a31f10c9285da3e555d.raw",
       "retrieved_at": "2026-10-22T21:05:09.282875+00:00",
       "sha256": "a8d5b689b71dd7cb0a36d0b0c5173cb83272e5bda29294c5246ff99e76a9c13c",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=157939617%2C157939615%2C157939567&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.010357+00:00",
+      "accessed_at": "2026-10-22T21:42:08.116437+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/90aef0c73493ba6b939d6ead990e71b2a6ad78e7be99d1af427bf4456e24dd92.raw",
       "retrieved_at": "2026-10-22T21:05:06.443644+00:00",
       "sha256": "bf16bcd0836bc5966dc2e3ac374e5175cda57340cf79ab2fb9282f5829cebdcf",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=157939617%2C157939615%2C157939567&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.010967+00:00",
+      "accessed_at": "2026-10-22T21:42:08.117172+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/3f46244ca18d4f8335df00ade69bf5e741d1c2d37f9edec1ee55eff6d46f47fd.raw",
       "retrieved_at": "2026-10-22T21:05:07.455247+00:00",
       "sha256": "ecda2479bdc674c57e2a9bd64b42981eb60354b4b22a4c9f16958020ff562970",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Simbu+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.011137+00:00",
+      "accessed_at": "2026-10-22T21:42:08.117313+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/5c9898507bdc897c29800a51d8704b5d8b6d5e2a24fb79b68b0ef0cecca89e78.raw",
       "retrieved_at": "2026-10-22T21:05:09.234025+00:00",
       "sha256": "622388673c7865b939ed6cbcd37807f93cbb09a97db3cbfa530a6abd45cfb2b9",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=401829630%2C401829627%2C401829625&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.011366+00:00",
+      "accessed_at": "2026-10-22T21:42:08.117573+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/e6ab6d02d6b2e6610ec9eb461e73aa60e4f07d1616c3b0d6ed4927497057ed79.raw",
       "retrieved_at": "2026-10-22T21:05:12.484759+00:00",
       "sha256": "d73750a2b55f2af569f339a1993d001af135f6898d796ac6cfdee43a6b448118",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=401829630%2C401829627%2C401829625&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.012336+00:00",
+      "accessed_at": "2026-10-22T21:42:08.118312+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/a92f518ef032b1f183584e0673885e33d18ccfe48c8237959d8d01e95b4fb71a.raw",
       "retrieved_at": "2026-10-22T21:05:13.329186+00:00",
       "sha256": "c72def8c5fa8792956b474f62098c4447c25dbbbc9c10fd388c518584e15b6c5",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=%22Bunyamwera+virus%22%5BOrganism%5D+AND+srcdb_refseq%5BPROP%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.012483+00:00",
+      "accessed_at": "2026-10-22T21:42:08.118504+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/3bad0dd1af354e03b109fa607b53e2bbbb792fffcf2136487309e4b01165660c.raw",
       "retrieved_at": "2026-10-22T21:05:13.324353+00:00",
       "sha256": "7c8ecd38506f6f3f678896fd41b3110cca61249c6bcb7fc078259c987736d731",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=nuccore&id=9630660%2C9630658%2C9630656&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.012710+00:00",
+      "accessed_at": "2026-10-22T21:42:08.118706+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/7296fd976ad809a3e12bbd532053dbe18436437925f566bd7469e48911d8579b.raw",
       "retrieved_at": "2026-10-22T21:05:14.235325+00:00",
       "sha256": "63d3dc5235e0d7c97fbc17f8c881489fecdb8adc6e2a81085f92c4ffc5a4239e",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=9630660%2C9630658%2C9630656&rettype=gbwithparts&retmode=text"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.020766+00:00",
+      "accessed_at": "2026-10-22T21:42:08.126148+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/c31707f91dff03f090210da6be543dfc7e3ec97ac3ef575e14ac6a4b1262dd9d.raw",
       "retrieved_at": "2026-10-22T21:05:15.195678+00:00",
       "sha256": "cdffab1e32b8e84cc104847559d06ef8e63b85ef6ed9726b9edad557959b3f7d",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=txid159150%5BOrganism%3Aexp%5D+OR+%22Shamonda%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.020973+00:00",
+      "accessed_at": "2026-10-22T21:42:08.126455+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/49adf754b02cfb61d99c7c1ca3ca5aa774c8674c1c3530278cbf2235bc0d7ef1.raw",
       "retrieved_at": "2026-10-22T21:05:16.327626+00:00",
       "sha256": "78268a4b6f45aa6b795bd25ab76af4214b9b6efd6aa8aa5b0f193f6c9e79ea5c",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123275832%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.021148+00:00",
+      "accessed_at": "2026-10-22T21:42:08.126659+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/bf51715f787f826dfe4740dd7cfc5314a3134b7975b3c3e9564e4e3c41b200b6.raw",
       "retrieved_at": "2026-10-22T21:05:17.873320+00:00",
       "sha256": "59f89936d570ae0b917536bc4e30115e3f467ea04a304063b616e9d89e92b532",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123355367%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.021298+00:00",
+      "accessed_at": "2026-10-22T21:42:08.126908+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/bca9effd13e65b11731733ebaa27a5dbed655ef166f75f0ad3e81b6948891af8.raw",
       "retrieved_at": "2026-10-22T21:05:19.512403+00:00",
       "sha256": "64070ffe380130d3b334f1e826b2601f99f2c87dc451e17965d5cbae101aed9e",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123355368%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.021578+00:00",
+      "accessed_at": "2026-10-22T21:42:08.127159+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/e2588fa040e921a8f8e6fad018d3c983a9ebaba00103cd926cb7d140c6a6fd00.raw",
       "retrieved_at": "2026-10-22T21:05:20.492117+00:00",
       "sha256": "ba8264fe62958828683c7b716bcc502db852e92d4f4077bf2e13bfb6330d9f0c",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123413996%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.021868+00:00",
+      "accessed_at": "2026-10-22T21:42:08.127390+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/7eb7cc468ed1cc7585dc14bbc467eac3222e5010101755fd029d90ba2139c3f6.raw",
       "retrieved_at": "2026-10-22T21:05:21.222769+00:00",
       "sha256": "380df9acbc7fe9fc86bae07700e029047d7ff75ecafc1c94a7308520f8c8edbf",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123413997%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.022349+00:00",
+      "accessed_at": "2026-10-22T21:42:08.127590+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/468575c547aaa9e98eabc950c27b9314d4f9bd24a0bb1d9fb0be62c509a20842.raw",
       "retrieved_at": "2026-10-22T21:05:22.624561+00:00",
       "sha256": "1fada3b4c50bc57ae41b5780f93105e4c5d63d7ef20dd772f367415c9f13d55a",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123413998%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.022657+00:00",
+      "accessed_at": "2026-10-22T21:42:08.127736+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/73f398eb788ade346f1db0f7244f3c89ec1b35b7eefcb4bb8eff60f68d15d1de.raw",
       "retrieved_at": "2026-10-22T21:05:24.319637+00:00",
       "sha256": "d4fb9ca5d8e18ced40c80f7cd9a00a94f831e3b3267786b26e67ee013acc86e2",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123413999%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.022926+00:00",
+      "accessed_at": "2026-10-22T21:42:08.127956+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/23875d96c29fd1a6572500a0a8d06f30899b7acdcf1c179aae9ac142fa630210.raw",
       "retrieved_at": "2026-10-22T21:05:24.914177+00:00",
       "sha256": "ccab23f623588b1ddd7c5372f8414fd4a55f81154ec56aaeba36150be8a55ad6",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123414000%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.023229+00:00",
+      "accessed_at": "2026-10-22T21:42:08.128192+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/ecea844db62b5c6b38e5a25f6887b76499983f412677b08ccf6de128d74de006.raw",
       "retrieved_at": "2026-10-22T21:05:25.772893+00:00",
       "sha256": "1fcfbce0c4f8f891dfdd07d8dc6e38ef2e8ffb8e0aaff7824aa4e0823b149ee1",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123414001%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.023544+00:00",
+      "accessed_at": "2026-10-22T21:42:08.128570+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/61ec04611583c11ed61b835ef1169793855d6dc60a177fe9ebe873c0bac21b0d.raw",
       "retrieved_at": "2026-10-22T21:05:26.806600+00:00",
       "sha256": "9335cacbbdd4b37d1335ff049eafe577045745fb04cce2cb4785f210a0b35450",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123414002%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.023824+00:00",
+      "accessed_at": "2026-10-22T21:42:08.128825+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/93a20f6dc12ef12b2f15e14bcc1d9f02bca8e0597a97b5dd24e43579131eb2b0.raw",
       "retrieved_at": "2026-10-22T21:05:29.708913+00:00",
       "sha256": "c95867135c3355d927e09d141e6de05c9671de41ef7247eac60bf6c8d9eb1927",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123414003%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.024028+00:00",
+      "accessed_at": "2026-10-22T21:42:08.129087+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/bb2fdf1886d561228af4e85339d1c0097e49ff92f694e9f7d7da1c3add2cda6f.raw",
       "retrieved_at": "2026-10-22T21:05:32.141352+00:00",
       "sha256": "47b3284550b84edcc2f1045becf2905540111d8362af2a79c81567da890de688",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22SAMEA123414004%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.024197+00:00",
+      "accessed_at": "2026-10-22T21:42:08.129325+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/62daece0678aa73440c146c1431c3aec7a464eb768f43a226acfffddcd84e46e.raw",
       "retrieved_at": "2026-10-22T21:05:33.192934+00:00",
       "sha256": "610e77c02fe514401f7d9cb6acf7c7b53ec8d395343f9ff0d6231a789d2b8e3d",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22PRJEB123174%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.024349+00:00",
+      "accessed_at": "2026-10-22T21:42:08.129561+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/5b3161a578565a484a0730d35f872449e30f3286851381e4b64bf662a736e583.raw",
       "retrieved_at": "2026-10-22T21:05:48.964705+00:00",
       "sha256": "b30220b7ea78296780b69df69381866324ef1dae39f269a4bac164a6460494a1",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22PRJEB123869%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.024520+00:00",
+      "accessed_at": "2026-10-22T21:42:08.129781+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/bd8a21ff947d6c29304331696693a8fd4e81fea8490949ec295f9860694bc1da.raw",
       "retrieved_at": "2026-10-22T21:05:49.764209+00:00",
       "sha256": "22411f4ddd47e557bc441b62db78627474eb8b46d4523c81ca02a74437715ae2",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22PRJEB125115%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.024676+00:00",
+      "accessed_at": "2026-10-22T21:42:08.130029+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/71cadc1282b2050d782108df9691fba74c554cbaefdff0e42acd2cdac2c107bb.raw",
       "retrieved_at": "2026-10-22T21:05:50.414536+00:00",
       "sha256": "24b1ee351e44ddf9f3d7018646a3124d6322d14f51c6d5598cd809a516c366ab",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22PRJNA485481%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.024833+00:00",
+      "accessed_at": "2026-10-22T21:42:08.130292+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/a36d1865f2cfe7f9816d175ace5d7f7757999e086495cee30abc91aa333a0983.raw",
       "retrieved_at": "2026-10-22T21:05:51.172547+00:00",
       "sha256": "8856baaaf9f7c7a4757cb08c55bffa0c330e8b477c08f6a70262d1cc5b1ae4b2",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22AB183278.1%22%5BAll+Fields%5D+OR+%22AB183279.1%22%5BAll+Fields%5D+OR+%22AB183280.1%22%5BAll+Fields%5D+OR+%22AB183281.1%22%5BAll+Fields%5D+OR+%22AB183282.1%22%5BAll+Fields%5D+OR+%22AB183283.1%22%5BAll+Fields%5D+OR+%22AB698470.1%22%5BAll+Fields%5D+OR+%22AB698475.1%22%5BAll+Fields%5D+OR+%22AB698476.1%22%5BAll+Fields%5D+OR+%22AB698477.1%22%5BAll+Fields%5D+OR+%22AB698483.1%22%5BAll+Fields%5D+OR+%22AB698484.1%22%5BAll+Fields%5D+OR+%22AB698485.1%22%5BAll+Fields%5D+OR+%22AF362404.1%22%5BAll+Fields%5D+OR+%22HE795105.1%22%5BAll+Fields%5D+OR+%22HE795106.1%22%5BAll+Fields%5D+OR+%22HE795107.1%22%5BAll+Fields%5D+OR+%22LC198185.1%22%5BAll+Fields%5D+OR+%22LC198186.1%22%5BAll+Fields%5D+OR+%22LC198187.1%22%5BAll+Fields%5D+OR+%22LC198188.1%22%5BAll+Fields%5D+OR+%22LC198189.1%22%5BAll+Fields%5D+OR+%22LC198190.1%22%5BAll+Fields%5D+OR+%22LC198191.1%22%5BAll+Fields%5D+OR+%22LC198192.1%22%5BAll+Fields%5D+OR+%22LC198193.1%22%5BAll+Fields%5D+OR+%22LC741387.1%22%5BAll+Fields%5D+OR+%22LC741388.1%22%5BAll+Fields%5D+OR+%22LC741389.1%22%5BAll+Fields%5D+OR+%22LC811395.1%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.024989+00:00",
+      "accessed_at": "2026-10-22T21:42:08.130530+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/9353f3ea283ae537bb8404abd3de86257c1d9351a8fd75bcd68ba0d30b100212.raw",
       "retrieved_at": "2026-10-22T21:05:52.306701+00:00",
       "sha256": "dfa3adb21b7e0c3c5bef6b371026a8aad8b65001ca255837412707643d78520e",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22LC811396.1%22%5BAll+Fields%5D+OR+%22LC811397.1%22%5BAll+Fields%5D+OR+%22MH999471.1%22%5BAll+Fields%5D+OR+%22NC_018463.1%22%5BAll+Fields%5D+OR+%22NC_018464.1%22%5BAll+Fields%5D+OR+%22NC_018467.1%22%5BAll+Fields%5D+OR+%22OP976210.1%22%5BAll+Fields%5D+OR+%22OR249959.1%22%5BAll+Fields%5D+OR+%22OR249960.1%22%5BAll+Fields%5D+OR+%22OR249961.1%22%5BAll+Fields%5D+OR+%22OZ502471.1%22%5BAll+Fields%5D+OR+%22OZ502472.1%22%5BAll+Fields%5D+OR+%22OZ502473.1%22%5BAll+Fields%5D+OR+%22OZ516531.1%22%5BAll+Fields%5D+OR+%22OZ516532.1%22%5BAll+Fields%5D+OR+%22OZ516533.1%22%5BAll+Fields%5D+OR+%22OZ516534.1%22%5BAll+Fields%5D+OR+%22OZ516535.1%22%5BAll+Fields%5D+OR+%22OZ516536.1%22%5BAll+Fields%5D+OR+%22OZ541431.1%22%5BAll+Fields%5D+OR+%22OZ541432.1%22%5BAll+Fields%5D+OR+%22OZ541433.1%22%5BAll+Fields%5D+OR+%22OZ541448.1%22%5BAll+Fields%5D+OR+%22OZ541449.1%22%5BAll+Fields%5D+OR+%22OZ541450.1%22%5BAll+Fields%5D+OR+%22OZ541451.1%22%5BAll+Fields%5D+OR+%22OZ541452.1%22%5BAll+Fields%5D+OR+%22OZ541453.1%22%5BAll+Fields%5D+OR+%22OZ541460.1%22%5BAll+Fields%5D+OR+%22OZ541461.1%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.025148+00:00",
+      "accessed_at": "2026-10-22T21:42:08.130708+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/15860256f43a8a58d90e2982bf227d4df39e85e29011582522f685b7b2bac666.raw",
       "retrieved_at": "2026-10-22T21:05:53.732832+00:00",
       "sha256": "6bfa57f96a0c9b0bb3f0a6c3a6888d4423b98089a185bf70fbcd793e869f279d",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22OZ541462.1%22%5BAll+Fields%5D+OR+%22OZ541464.1%22%5BAll+Fields%5D+OR+%22OZ541465.1%22%5BAll+Fields%5D+OR+%22OZ541466.1%22%5BAll+Fields%5D+OR+%22OZ541467.1%22%5BAll+Fields%5D+OR+%22OZ541468.1%22%5BAll+Fields%5D+OR+%22OZ541469.1%22%5BAll+Fields%5D+OR+%22OZ541472.1%22%5BAll+Fields%5D+OR+%22OZ541473.1%22%5BAll+Fields%5D+OR+%22OZ541474.1%22%5BAll+Fields%5D+OR+%22OZ541481.1%22%5BAll+Fields%5D+OR+%22OZ541482.1%22%5BAll+Fields%5D+OR+%22OZ541483.1%22%5BAll+Fields%5D+OR+%22OZ541491.1%22%5BAll+Fields%5D+OR+%22OZ541492.1%22%5BAll+Fields%5D+OR+%22OZ541493.1%22%5BAll+Fields%5D+OR+%22PQ593039.1%22%5BAll+Fields%5D+OR+%22PQ593040.1%22%5BAll+Fields%5D+OR+%22PQ593041.1%22%5BAll+Fields%5D+OR+%22PZ797891.1%22%5BAll+Fields%5D+OR+%22PZ797892.1%22%5BAll+Fields%5D+OR+%22PZ797893.1%22%5BAll+Fields%5D+OR+%22PZ831155.1%22%5BAll+Fields%5D+OR+%22PZ831156.1%22%5BAll+Fields%5D+OR+%22PZ831157.1%22%5BAll+Fields%5D+OR+%22PZ831158.1%22%5BAll+Fields%5D+OR+%22PZ831159.1%22%5BAll+Fields%5D+OR+%22PZ831160.1%22%5BAll+Fields%5D+OR+%22PZ831161.1%22%5BAll+Fields%5D+OR+%22PZ831162.1%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.025300+00:00",
+      "accessed_at": "2026-10-22T21:42:08.130950+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/ea19ffa6bf999d715339d8844b4470c597232411bd520b176e8ab73e46d37157.raw",
       "retrieved_at": "2026-10-22T21:05:54.568797+00:00",
       "sha256": "d58694a5a9fc5ce7ae4cea406b6fc1c4ed01ef318dda6e822af3cd64fa1d102a",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term=%22PZ831163.1%22%5BAll+Fields%5D+OR+%22PZ831164.1%22%5BAll+Fields%5D+OR+%22PZ831165.1%22%5BAll+Fields%5D+OR+%22PZ831166.1%22%5BAll+Fields%5D+OR+%22PZ860852.1%22%5BAll+Fields%5D+OR+%22PZ860853.1%22%5BAll+Fields%5D+OR+%22PZ860854.1%22%5BAll+Fields%5D&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.025495+00:00",
+      "accessed_at": "2026-10-22T21:42:08.131349+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/1ca12a6bf7a61b29553c6c02328179a51ca2e4c745572956e132f2b78ad44609.raw",
       "retrieved_at": "2026-10-22T21:05:55.692583+00:00",
       "sha256": "090e5c52db053c52dd850dabeab5273c2841f38a9f43600d37832f568b1ff1b6",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&id=31721473%2C31721474%2C45995118%2C46433835%2C46436438%2C46436959%2C46436966%2C46437214%2C46437290%2C46437369%2C46437775%2C46437807%2C46437816%2C46439400%2C46439550%2C46439867%2C46439947%2C46440145%2C46468408%2C46708329&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.026767+00:00",
+      "accessed_at": "2026-10-22T21:42:08.132176+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/2a3e466f34e16c55e89913ce8e1ff704f2e1081a7242b96ba1b9769d0d2c4981.raw",
       "retrieved_at": "2026-10-22T21:05:57.055992+00:00",
       "sha256": "1dd399c60067d69ae2152b5bf502b352070a9b65fa55e12af310f45888d5a600",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=sra&id=31721473%2C31721474%2C45995118%2C46433835%2C46436438%2C46436959%2C46436966%2C46437214%2C46437290%2C46437369%2C46437775%2C46437807%2C46437816%2C46439400%2C46439550%2C46439867%2C46439947%2C46440145%2C46468408%2C46708329&retmode=xml"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.028865+00:00",
+      "accessed_at": "2026-10-22T21:42:08.134546+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/4c00a0a36594cc7c812d3a97286307c4b157019eb61502b7fc4565b355831236.raw",
       "retrieved_at": "2026-10-22T21:05:59.196646+00:00",
       "sha256": "bcfcfe6c78dbbc6f9f1866d0875f2fa2bfa55c7295e6c18763faef93230a22e1",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&id=46708330&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.029131+00:00",
+      "accessed_at": "2026-10-22T21:42:08.134896+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/9e86c93e7a132cf3bcc3819c12887d8f277abdc056209e0bfc0ef655449f5ed4.raw",
       "retrieved_at": "2026-10-22T21:06:00.640429+00:00",
       "sha256": "add66289594515577728f5353e32c1d9b955fe6ef65a2740878639fc34b359b7",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=sra&id=46708330&retmode=xml"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.029515+00:00",
+      "accessed_at": "2026-10-22T21:42:08.135333+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/e5ddfcd4f3eb21c4e8ed08e318d90130794c9db893cb144ea8adb1c6c8a8db19.raw",
       "retrieved_at": "2026-10-22T21:09:06.088369+00:00",
       "sha256": "97a265a3cc315dc2ca33cbe9f2a1eaa49be311b5527c06f17376fcc8c31f12c9",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&id=31721473%2C31721474%2C46433835%2C46436438%2C46436959%2C46436966%2C46437214%2C46437290%2C46437369%2C46437775%2C46437807%2C46437816%2C46439400%2C46439550%2C46439867%2C46439947%2C46440145%2C46468408%2C46708329%2C46708330&retmode=json"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.030115+00:00",
+      "accessed_at": "2026-10-22T21:42:08.135954+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/68982a75d03ce675181aba60c1d7bacf3631837366ed0b9496df85f67c2119ba.raw",
       "retrieved_at": "2026-10-22T21:06:02.994015+00:00",
       "sha256": "aa0cfdb8d866d5593959553ed032306427e3c165638390ee736b122eb95d0372",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=nuccore&retmode=xml"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.030504+00:00",
+      "accessed_at": "2026-10-22T21:42:08.136529+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/c40bc9cb4db543c9673c30b5a3a786819ab98b5e415eabb94582f5d6f32118a6.raw",
       "retrieved_at": "2026-10-22T21:06:03.738079+00:00",
       "sha256": "afa5ced8006668357e6cec1731816f961cfb273c76062570c1786fb19f5037f2",
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=txid159150%5BOrganism%3Aexp%5D+AND+%28%22Homo+sapiens%22%5BAll+Fields%5D+OR+human%5BAll+Fields%5D%29&retmode=json&retstart=0&retmax=100"
     },
     {
-      "accessed_at": "2026-10-22T21:09:35.030696+00:00",
+      "accessed_at": "2026-10-22T21:42:08.136833+00:00",
       "cache": "/Users/bryan/.cache/shamonda-virus-phylogenomics/ingest/331464d409d3e227c1dcf90e87aee4045794a7998e118936c5d80aee9c9dfffd.raw",
       "retrieved_at": "2026-10-22T21:06:04.516133+00:00",
       "sha256": "918fbcefb9cdd0f16e12aafcd65b0934016262d5b95980a2bc3f6b9e77fae977",

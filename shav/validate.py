@@ -30,6 +30,24 @@ def mutation_consistency(dataset: dict[str, Any], reference: str, observed: dict
     visit(dataset["tree"], reference)
 
 
+def interactive_divergence_consistency(dataset: dict[str, Any]) -> None:
+    """Check cumulative inferred nuc event counts independently of ML branch length."""
+    def visit(node: dict[str, Any], parent: int, root: bool = False) -> None:
+        expected = parent if root else parent + len(node.get("branch_attrs", {}).get("mutations", {}).get("nuc", []))
+        if node.get("node_attrs", {}).get("div") != expected:
+            raise ValueError(f"Interactive mutation-count divergence differs at {node['name']}")
+        for child in node.get("children", []):
+            visit(child, expected)
+    visit(dataset["tree"], 0, True)
+
+
+def placement_tree_agreement(display: Path, placement: Path) -> dict[str, Any]:
+    if sha256(display) != sha256(placement):
+        raise ValueError("Placement tree differs from validated display tree")
+    data: dict[str, Any] = read_json(placement)
+    return data
+
+
 def repository_privacy() -> None:
     paths = ["case-inputs/probe.fasta", "case-results/probe.json", "private/probe.tsv"]
     result = subprocess.run(["git", "check-ignore", "--no-index", *paths], cwd=ROOT, capture_output=True, text=True, check=True)
@@ -52,12 +70,13 @@ def main() -> None:
         aligned = read_fasta(work / "export.aligned.fasta")
         if tips != metadata or tips != set(aligned):
             raise ValueError(f"Tree/alignment/metadata identifiers differ: {segment}")
-        data = read_json(ROOT / "auspice" / f"shamonda_{segment}.json")
+        data = placement_tree_agreement(ROOT / "auspice" / f"shamonda_{segment}.json", ROOT / "nextclade" / segment / "tree.json")
         reference = next(iter(read_fasta(ROOT / "nextclade" / segment / "reference.fasta").values()))
         if data.get("root_sequence", {}).get("nuc") != reference:
             raise ValueError(f"Dataset reference differs from tree reference: {segment}")
         mutation_consistency(data, reference, aligned)
-        run(["augur", "validate", "export-v2", str(ROOT / "auspice" / f"shamonda_{segment}.json")], log=work / "schema-validation.log")
+        interactive_divergence_consistency(data)
+        run(["augur", "validate", "export-v2", str(ROOT / "nextclade" / segment / "tree.json")], log=work / "schema-validation.log")
         prepared, analysis = read_json(work / "prepared.json"), read_json(work / "analysis.json")
         if prepared["input_sha256"]["genbank"] != sha256(ROOT / "data/public/records.gb"):
             raise ValueError(f"Stale GenBank analysis: {segment}")
@@ -67,7 +86,7 @@ def main() -> None:
                            ("auspice", ROOT / "auspice" / f"shamonda_{segment}.json")]:
             if analysis["sha256"][name] != sha256(path):
                 raise ValueError(f"Output checksum differs: {segment}/{name}")
-        receipts[segment] = {"tips": len(tips), "schema": "passed", "mutation_replay": "passed", "snapshot": "matched"}
+        receipts[segment] = {"tips": len(tips), "schema": "passed", "mutation_replay": "passed", "snapshot": "matched", "placement_tree": "byte-identical and schema-validated", "interactive_divergence": "inferred nucleotide event counts verified"}
     write_json(ROOT / "reports" / "integrity-validation.json", receipts)
     print("Snapshot, three schemas, mutation replay, source/output hashes and private-file exclusions passed")
 

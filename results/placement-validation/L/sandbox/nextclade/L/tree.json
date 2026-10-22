@@ -27,6 +27,7 @@
         "type": "categorical"
       }
     ],
+    "description": " Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, including reversions and ambiguous changes, from a zero reconstructed root. Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.",
     "display_defaults": {
       "color_by": "group",
       "distance_measure": "div"
@@ -8001,7 +8002,7 @@
                         "name": "HE795090.1",
                         "node_attrs": {
                           "accession": "HE795090.1",
-                          "div": 12.84402,
+                          "div": 4854,
                           "group": {
                             "value": "Douglas virus"
                           }
@@ -8439,7 +8440,7 @@
                         "name": "NC_018461.1",
                         "node_attrs": {
                           "accession": "NC_018461.1",
-                          "div": 12.82661,
+                          "div": 4810,
                           "group": {
                             "value": "Sathuperi virus"
                           }
@@ -8448,7 +8449,7 @@
                     ],
                     "name": "NODE_00004",
                     "node_attrs": {
-                      "div": 12.74748
+                      "div": 4388
                     }
                   },
                   {
@@ -8992,7 +8993,7 @@
                                   "date": {
                                     "value": "2002"
                                   },
-                                  "div": 12.7837,
+                                  "div": 4619,
                                   "group": {
                                     "value": "SHAV"
                                   },
@@ -9131,7 +9132,7 @@
                                   "date": {
                                     "value": "2015"
                                   },
-                                  "div": 12.79876,
+                                  "div": 4712,
                                   "group": {
                                     "value": "SHAV"
                                   },
@@ -9143,7 +9144,7 @@
                             ],
                             "name": "NODE_00007",
                             "node_attrs": {
-                              "div": 12.78079
+                              "div": 4598
                             }
                           },
                           {
@@ -9329,7 +9330,7 @@
                                           "date": {
                                             "value": "2026-08"
                                           },
-                                          "div": 12.79991,
+                                          "div": 4701,
                                           "group": {
                                             "value": "SHAV"
                                           }
@@ -9352,7 +9353,7 @@
                                           "date": {
                                             "value": "2026-08"
                                           },
-                                          "div": 12.79991,
+                                          "div": 4701,
                                           "group": {
                                             "value": "SHAV"
                                           }
@@ -9361,7 +9362,7 @@
                                     ],
                                     "name": "NODE_00010",
                                     "node_attrs": {
-                                      "div": 12.79976
+                                      "div": 4700
                                     }
                                   },
                                   {
@@ -9392,7 +9393,7 @@
                                                   "date": {
                                                     "value": "2026-08"
                                                   },
-                                                  "div": 12.79961,
+                                                  "div": 4699,
                                                   "group": {
                                                     "value": "SHAV"
                                                   }
@@ -9416,7 +9417,7 @@
                                                       "date": {
                                                         "value": "2026-08"
                                                       },
-                                                      "div": 12.79961,
+                                                      "div": 4699,
                                                       "group": {
                                                         "value": "SHAV"
                                                       }
@@ -9435,7 +9436,7 @@
                                                       "date": {
                                                         "value": "2026-08"
                                                       },
-                                                      "div": 12.79961,
+                                                      "div": 4699,
                                                       "group": {
                                                         "value": "SHAV"
                                                       }
@@ -9444,13 +9445,13 @@
                                                 ],
                                                 "name": "NODE_00014",
                                                 "node_attrs": {
-                                                  "div": 12.79961
+                                                  "div": 4699
                                                 }
                                               }
                                             ],
                                             "name": "NODE_00013",
                                             "node_attrs": {
-                                              "div": 12.79961
+                                              "div": 4699
                                             }
                                           },
                                           {
@@ -9466,7 +9467,7 @@
                                               "date": {
                                                 "value": "2026-08"
                                               },
-                                              "div": 12.79961,
+                                              "div": 4699,
                                               "group": {
                                                 "value": "SHAV"
                                               }
@@ -9475,7 +9476,7 @@
                                         ],
                                         "name": "NODE_00012",
                                         "node_attrs": {
-                                          "div": 12.79961
+                                          "div": 4699
                                         }
                                       },
                                       {
@@ -9491,7 +9492,7 @@
                                           "date": {
                                             "value": "2026-08"
                                           },
-                                          "div": 12.79961,
+                                          "div": 4699,
                                           "group": {
                                             "value": "SHAV"
                                           }
@@ -9500,13 +9501,13 @@
                                     ],
                                     "name": "NODE_00011",
                                     "node_attrs": {
-                                      "div": 12.79961
+                                      "div": 4699
                                     }
                                   }
                                 ],
                                 "name": "NODE_00009",
                                 "node_attrs": {
-                                  "div": 12.79961
+                                  "div": 4699
                                 }
                               },
                               {
@@ -9542,7 +9543,7 @@
                                       "date": {
                                         "value": "2026-08"
                                       },
-                                      "div": 12.80031,
+                                      "div": 4707,
                                       "group": {
                                         "value": "SHAV"
                                       }
@@ -9561,7 +9562,7 @@
                                       "date": {
                                         "value": "2026-08"
                                       },
-                                      "div": 12.80016,
+                                      "div": 4706,
                                       "group": {
                                         "value": "SHAV"
                                       }
@@ -9570,19 +9571,19 @@
                                 ],
                                 "name": "NODE_00015",
                                 "node_attrs": {
-                                  "div": 12.80016
+                                  "div": 4706
                                 }
                               }
                             ],
                             "name": "NODE_00008",
                             "node_attrs": {
-                              "div": 12.79944
+                              "div": 4698
                             }
                           }
                         ],
                         "name": "NODE_00006",
                         "node_attrs": {
-                          "div": 12.77559
+                          "div": 4558
                         }
                       },
                       {
@@ -9906,7 +9907,7 @@
                                 "name": "NC_018463.1",
                                 "node_attrs": {
                                   "accession": "NC_018463.1",
-                                  "div": 12.77682,
+                                  "div": 4564,
                                   "group": {
                                     "value": "SHAV"
                                   }
@@ -10339,7 +10340,7 @@
                                       "date": {
                                         "value": "2026-07-24"
                                       },
-                                      "div": 12.83919,
+                                      "div": 4909,
                                       "group": {
                                         "value": "SHAV"
                                       }
@@ -10376,7 +10377,7 @@
                                               "date": {
                                                 "value": "2026-08-05"
                                               },
-                                              "div": 12.83949,
+                                              "div": 4911,
                                               "group": {
                                                 "value": "SHAV"
                                               }
@@ -10400,7 +10401,7 @@
                                               "date": {
                                                 "value": "2026-07"
                                               },
-                                              "div": 12.83963,
+                                              "div": 4912,
                                               "group": {
                                                 "value": "SHAV"
                                               },
@@ -10412,7 +10413,7 @@
                                         ],
                                         "name": "NODE_00020",
                                         "node_attrs": {
-                                          "div": 12.83934
+                                          "div": 4910
                                         }
                                       },
                                       {
@@ -10445,7 +10446,7 @@
                                                   "date": {
                                                     "value": "2026-08-06"
                                                   },
-                                                  "div": 12.83993,
+                                                  "div": 4914,
                                                   "group": {
                                                     "value": "SHAV"
                                                   }
@@ -10469,7 +10470,7 @@
                                                   "date": {
                                                     "value": "2026-07"
                                                   },
-                                                  "div": 12.83963,
+                                                  "div": 4912,
                                                   "group": {
                                                     "value": "SHAV"
                                                   },
@@ -10481,7 +10482,7 @@
                                             ],
                                             "name": "NODE_00022",
                                             "node_attrs": {
-                                              "div": 12.83934
+                                              "div": 4910
                                             }
                                           },
                                           {
@@ -10509,7 +10510,7 @@
                                                   "date": {
                                                     "value": "2026-07-25"
                                                   },
-                                                  "div": 12.83993,
+                                                  "div": 4914,
                                                   "group": {
                                                     "value": "SHAV"
                                                   },
@@ -10540,7 +10541,7 @@
                                                       "date": {
                                                         "value": "2026-07"
                                                       },
-                                                      "div": 12.83949,
+                                                      "div": 4911,
                                                       "group": {
                                                         "value": "SHAV"
                                                       },
@@ -10562,7 +10563,7 @@
                                                       "date": {
                                                         "value": "2026-07"
                                                       },
-                                                      "div": 12.83949,
+                                                      "div": 4911,
                                                       "group": {
                                                         "value": "SHAV"
                                                       },
@@ -10574,37 +10575,37 @@
                                                 ],
                                                 "name": "NODE_00024",
                                                 "node_attrs": {
-                                                  "div": 12.83949
+                                                  "div": 4911
                                                 }
                                               }
                                             ],
                                             "name": "NODE_00023",
                                             "node_attrs": {
-                                              "div": 12.83934
+                                              "div": 4910
                                             }
                                           }
                                         ],
                                         "name": "NODE_00021",
                                         "node_attrs": {
-                                          "div": 12.83934
+                                          "div": 4910
                                         }
                                       }
                                     ],
                                     "name": "NODE_00019",
                                     "node_attrs": {
-                                      "div": 12.83934
+                                      "div": 4910
                                     }
                                   }
                                 ],
                                 "name": "NODE_00018",
                                 "node_attrs": {
-                                  "div": 12.83919
+                                  "div": 4909
                                 }
                               }
                             ],
                             "name": "NODE_00017",
                             "node_attrs": {
-                              "div": 12.76778
+                              "div": 4503
                             }
                           },
                           {
@@ -10932,7 +10933,7 @@
                               "date": {
                                 "value": "2011"
                               },
-                              "div": 12.80506,
+                              "div": 4709,
                               "group": {
                                 "value": "Schmallenberg virus"
                               },
@@ -10944,19 +10945,19 @@
                         ],
                         "name": "NODE_00016",
                         "node_attrs": {
-                          "div": 12.74914
+                          "div": 4400
                         }
                       }
                     ],
                     "name": "NODE_00005",
                     "node_attrs": {
-                      "div": 12.72357
+                      "div": 4269
                     }
                   }
                 ],
                 "name": "NODE_00003",
                 "node_attrs": {
-                  "div": 12.68066
+                  "div": 4118
                 }
               },
               {
@@ -12911,7 +12912,7 @@
                             "name": "NC_018465.1",
                             "node_attrs": {
                               "accession": "NC_018465.1",
-                              "div": 13.11493,
+                              "div": 4816,
                               "group": {
                                 "value": "Aino virus"
                               }
@@ -13518,7 +13519,7 @@
                               "date": {
                                 "value": "2009-01-16"
                               },
-                              "div": 13.13275,
+                              "div": 4971,
                               "group": {
                                 "value": "Shuni virus"
                               },
@@ -13530,7 +13531,7 @@
                         ],
                         "name": "NODE_00027",
                         "node_attrs": {
-                          "div": 13.01308
+                          "div": 4386
                         }
                       },
                       {
@@ -14587,7 +14588,7 @@
                             "name": "NC_043550.1",
                             "node_attrs": {
                               "accession": "NC_043550.1",
-                              "div": 13.168,
+                              "div": 5100,
                               "group": {
                                 "value": "Peaton virus"
                               }
@@ -14977,7 +14978,7 @@
                             "name": "NC_043556.1",
                             "node_attrs": {
                               "accession": "NC_043556.1",
-                              "div": 13.10806,
+                              "div": 4817,
                               "group": {
                                 "value": "Sango virus"
                               }
@@ -14986,13 +14987,13 @@
                         ],
                         "name": "NODE_00028",
                         "node_attrs": {
-                          "div": 13.02251
+                          "div": 4443
                         }
                       }
                     ],
                     "name": "NODE_00026",
                     "node_attrs": {
-                      "div": 12.87018
+                      "div": 4064
                     }
                   },
                   {
@@ -16204,7 +16205,7 @@
                     "name": "NC_018476.1",
                     "node_attrs": {
                       "accession": "NC_018476.1",
-                      "div": 12.85504,
+                      "div": 4248,
                       "group": {
                         "value": "Simbu virus"
                       }
@@ -16213,13 +16214,13 @@
                 ],
                 "name": "NODE_00025",
                 "node_attrs": {
-                  "div": 12.23583
+                  "div": 3049
                 }
               }
             ],
             "name": "NODE_00002",
             "node_attrs": {
-              "div": 12.05054
+              "div": 2898
             }
           },
           {
@@ -17254,7 +17255,7 @@
             "name": "NC_009894.1",
             "node_attrs": {
               "accession": "NC_009894.1",
-              "div": 12.21949,
+              "div": 3920,
               "group": {
                 "value": "Akabane virus"
               }
@@ -17263,7 +17264,7 @@
         ],
         "name": "NODE_00001",
         "node_attrs": {
-          "div": 11.75992
+          "div": 2898
         }
       },
       {
@@ -17273,7 +17274,7 @@
         "name": "NC_001925.1",
         "node_attrs": {
           "accession": "NC_001925.1",
-          "div": 0.0,
+          "div": 0,
           "group": {
             "value": "Bunyamwera virus"
           }

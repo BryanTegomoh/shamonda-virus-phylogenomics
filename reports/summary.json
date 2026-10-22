@@ -167,7 +167,7 @@
       },
       "sha256": {
         "alignment": "1000d73238c56fcc13017442f8735a1d321ecc2e73cb607df39ba71d1033b814",
-        "auspice": "f247f44e818c0c487c5215db243124d785a631cf8390e243b08f24dbe86a72ea",
+        "auspice": "f566fd06be682df8c135dbdebea0b19c6db786709ff0bb4727793b4742ea90df",
         "tree": "97cae7084711be0729d8f0d1b29a401bdcd454be2594199684d17681dfe1da71"
       },
       "strict_alignment_nt": 6501,
@@ -334,7 +334,7 @@
       },
       "sha256": {
         "alignment": "f108a3cc2bf2e0bc8c8083719d661afefdaf95077fe9e0a2407658c8729a6549",
-        "auspice": "2fd672ea815f7a7a05d53b10df58445bea07c74ce13f786060106b5a4757448a",
+        "auspice": "cbe3f0596e159177677960212f3e93d04ed9989b951f9808223011009bc3596c",
         "tree": "5b1192602c0fd592f0b601b81c0beb2ffd8dd192bc6c259d95173269550223d0"
       },
       "strict_alignment_nt": 3909,
@@ -476,7 +476,7 @@
       },
       "sha256": {
         "alignment": "59b14e96a2253463503ab96b923ad18dacb2db34f12c53c6654c681e26503327",
-        "auspice": "6eaf0dbb2dc6da6166688769796435b05d35984eb19b11bf627b7d6407273aa2",
+        "auspice": "14240857ca6f8e329eeb1db86bb91b724b610a183e5fe8b846e4ccce94b3127b",
         "tree": "dd5a7e5c53e70b1b0d770a4c9872b0393ccb74d6dc767df85bdb90956da1e225"
       },
       "strict_alignment_nt": 621,

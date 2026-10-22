@@ -40,7 +40,7 @@
   ],
   "input_sha256": {
     "genbank": "b9aba5466fb5a12565d00e81eba34309b519782c318715c1996d8546dd1f5265",
-    "metadata": "47dc287e63534583a5485875f9addf6b884a91b6de94e6dcade0c31831da69eb"
+    "metadata": "9b2f60fb2c3804089d76df9db62a6242a4d0615c7f67b2544b665b3332d758a6"
   },
   "minimum_cds_nt": 3788.1,
   "partial_windows": [

@@ -20,6 +20,17 @@ protein identity and 50 matched residues. Routine placement additionally require
 90% of reference CDS length and at most 5% ambiguous bases. Short amplicons remain
 unresolved, with a nonzero batch exit. No missing segment is inferred.
 
+Interactive divergence in both production and held-out training trees is the
+cumulative count of inferred nucleotide state changes from Augur's branch mutation
+lists in reference-CDS coordinates. Each listed event counts once, including
+reversions and ambiguous-state changes. The reconstructed root has divergence zero;
+its differences from the reference remain in mutation replay but do not contribute
+to root-to-tip divergence. These counts are inferred ancestral-state events, not
+ML expected substitutions or pairwise observed differences. Auspice's mutation axis
+therefore uses count units consistently. ML branch lengths in Newick and static
+figures retain substitutions per site. `make validate` checks the actual placement
+tree against its display copy, replays mutations and verifies cumulative counts.
+
 Nextclade aligns each eligible CDS and places it on its segment-specific tree.
 The JSON report includes per-record QC, exact mismatches and callable nucleotide
 denominators for every public comparison, all tied nearest accessions, public

@@ -8,7 +8,8 @@ rebuild completed in ignored `case-results/placement-smoke/`.
 Run the script with `PYTHONPATH=. bash scripts/runtime.sh python
 results/placement-validation/validate.py`. Each segment uses one explicit public
 isolate and excludes all of that isolate's labelled accession aliases. Training
-trees are rebuilt from retained sequences. Full trees are inferred independently
+trees are inferred from retained sequences. Existing inference is reused only when
+the alignment hash and complete inference settings match its signature. Full trees are inferred independently
 in a separate prefix, with seed 159150, 1,000 SH-aLRT and 1,000 ultrafast bootstrap
 replicates. Ancestral inference and Nextclade use the rebuilt training tree.
 
@@ -33,3 +34,8 @@ exact placement claim. Both queries triggered and completed full coding rebuilds
 and retained null definitive assignments. M has a unique nearest public sequence,
 OZ502472.1, with agreement in these two trees; one example is not an accuracy
 estimate. None of these experiments measures clinical performance.
+
+The 2026-10-22 final-review rerun regenerated ancestral/export data and repeated real
+Nextclade acceptance against unchanged signature-verified inference. Interactive
+count semantics follow [the placement methods](../../docs/placement.md). Every
+training export passed schema, mutation replay and cumulative-event checks.

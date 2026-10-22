@@ -2,6 +2,7 @@
   "version": "v2",
   "meta": {
     "title": "Shamonda virus S coding-sequence phylogeny",
+    "description": " Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, including reversions and ambiguous changes, from a zero reconstructed root. Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.",
     "updated": "2026-10-22",
     "genome_annotations": {
       "nuc": {
@@ -852,7 +853,7 @@
           }
         },
         "node_attrs": {
-          "div": 10.0
+          "div": 344.0
         },
         "children": [
           {
@@ -861,7 +862,7 @@
               "mutations": {}
             },
             "node_attrs": {
-              "div": 10.0,
+              "div": 344.0,
               "accession": "NC_043557.1",
               "group": {
                 "value": "Sango virus"
@@ -895,7 +896,7 @@
               }
             },
             "node_attrs": {
-              "div": 10.02521
+              "div": 362.0
             },
             "children": [
               {
@@ -916,7 +917,7 @@
                   }
                 },
                 "node_attrs": {
-                  "div": 10.04989
+                  "div": 371.0
                 },
                 "children": [
                   {
@@ -955,7 +956,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 10.09626,
+                      "div": 398.0,
                       "accession": "NC_043549.1",
                       "group": {
                         "value": "Peaton virus"
@@ -991,7 +992,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 10.08713
+                      "div": 391.0
                     },
                     "children": [
                       {
@@ -1021,7 +1022,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 10.12188,
+                          "div": 409.0,
                           "accession": "NC_018460.1",
                           "group": {
                             "value": "Aino virus"
@@ -1062,7 +1063,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 10.12593,
+                          "div": 416.0,
                           "country": {
                             "value": "South Africa"
                           },
@@ -1165,7 +1166,7 @@
                   }
                 },
                 "node_attrs": {
-                  "div": 10.28651
+                  "div": 439.0
                 },
                 "children": [
                   {
@@ -1264,7 +1265,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 10.5537,
+                      "div": 526.0,
                       "accession": "NC_009896.1",
                       "group": {
                         "value": "Akabane virus"
@@ -1296,7 +1297,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 10.35891
+                      "div": 455.0
                     },
                     "children": [
                       {
@@ -1368,7 +1369,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 10.55755,
+                          "div": 515.0,
                           "accession": "NC_018477.1",
                           "group": {
                             "value": "Simbu virus"
@@ -1465,7 +1466,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 10.5861
+                          "div": 536.0
                         },
                         "children": [
                           {
@@ -1484,7 +1485,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 10.59578,
+                              "div": 543.0,
                               "accession": "HE795092.1",
                               "group": {
                                 "value": "Douglas virus"
@@ -1521,7 +1522,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 10.62584
+                              "div": 557.0
                             },
                             "children": [
                               {
@@ -1554,7 +1555,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 10.66297,
+                                  "div": 578.0,
                                   "accession": "NC_018462.1",
                                   "group": {
                                     "value": "Sathuperi virus"
@@ -1585,7 +1586,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 10.6526
+                                  "div": 572.0
                                 },
                                 "children": [
                                   {
@@ -1601,7 +1602,7 @@
                                       }
                                     },
                                     "node_attrs": {
-                                      "div": 10.66075
+                                      "div": 576.0
                                     },
                                     "children": [
                                       {
@@ -1614,7 +1615,7 @@
                                           }
                                         },
                                         "node_attrs": {
-                                          "div": 10.66228,
+                                          "div": 577.0,
                                           "country": {
                                             "value": "France"
                                           },
@@ -1641,7 +1642,7 @@
                                           }
                                         },
                                         "node_attrs": {
-                                          "div": 10.66075,
+                                          "div": 576.0,
                                           "Node type": {
                                             "value": "New"
                                           },
@@ -1674,7 +1675,7 @@
                                           "mutations": {}
                                         },
                                         "node_attrs": {
-                                          "div": 10.66075
+                                          "div": 576.0
                                         },
                                         "children": [
                                           {
@@ -1683,7 +1684,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 10.66075,
+                                              "div": 576.0,
                                               "country": {
                                                 "value": "France"
                                               },
@@ -1702,7 +1703,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 10.66075
+                                              "div": 576.0
                                             },
                                             "children": [
                                               {
@@ -1711,7 +1712,7 @@
                                                   "mutations": {}
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.66075,
+                                                  "div": 576.0,
                                                   "country": {
                                                     "value": "Switzerland"
                                                   },
@@ -1733,7 +1734,7 @@
                                                   "mutations": {}
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.66075
+                                                  "div": 576.0
                                                 },
                                                 "children": [
                                                   {
@@ -1742,7 +1743,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.66075,
+                                                      "div": 576.0,
                                                       "country": {
                                                         "value": "Switzerland"
                                                       },
@@ -1764,7 +1765,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.66075
+                                                      "div": 576.0
                                                     },
                                                     "children": [
                                                       {
@@ -1818,7 +1819,7 @@
                                                           }
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.66075,
+                                                          "div": 618.0,
                                                           "country": {
                                                             "value": "France"
                                                           },
@@ -1840,7 +1841,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.66075
+                                                          "div": 576.0
                                                         },
                                                         "children": [
                                                           {
@@ -1849,7 +1850,7 @@
                                                               "mutations": {}
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.66075,
+                                                              "div": 576.0,
                                                               "country": {
                                                                 "value": "Switzerland"
                                                               },
@@ -1871,7 +1872,7 @@
                                                               "mutations": {}
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.66075
+                                                              "div": 576.0
                                                             },
                                                             "children": [
                                                               {
@@ -1880,7 +1881,7 @@
                                                                   "mutations": {}
                                                                 },
                                                                 "node_attrs": {
-                                                                  "div": 10.66075,
+                                                                  "div": 576.0,
                                                                   "country": {
                                                                     "value": "Germany"
                                                                   },
@@ -1899,7 +1900,7 @@
                                                                   "mutations": {}
                                                                 },
                                                                 "node_attrs": {
-                                                                  "div": 10.66075,
+                                                                  "div": 576.0,
                                                                   "country": {
                                                                     "value": "Switzerland"
                                                                   },
@@ -1953,7 +1954,7 @@
                                       }
                                     },
                                     "node_attrs": {
-                                      "div": 10.67509
+                                      "div": 587.0
                                     },
                                     "children": [
                                       {
@@ -1967,7 +1968,7 @@
                                           }
                                         },
                                         "node_attrs": {
-                                          "div": 10.67841
+                                          "div": 589.0
                                         },
                                         "children": [
                                           {
@@ -1980,7 +1981,7 @@
                                               }
                                             },
                                             "node_attrs": {
-                                              "div": 10.6789
+                                              "div": 590.0
                                             },
                                             "children": [
                                               {
@@ -2002,7 +2003,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.69589,
+                                                  "div": 600.0,
                                                   "accession": "AF362404.1",
                                                   "group": {
                                                     "value": "SHAV"
@@ -2033,7 +2034,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.70384,
+                                                  "div": 605.0,
                                                   "country": {
                                                     "value": "Netherlands"
                                                   },
@@ -2057,7 +2058,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 10.67841
+                                              "div": 589.0
                                             },
                                             "children": [
                                               {
@@ -2066,7 +2067,7 @@
                                                   "mutations": {}
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.67841,
+                                                  "div": 589.0,
                                                   "accession": "MH999471.1",
                                                   "group": {
                                                     "value": "SHAV"
@@ -2079,7 +2080,7 @@
                                                   "mutations": {}
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.67841,
+                                                  "div": 589.0,
                                                   "accession": "NC_018464.1",
                                                   "group": {
                                                     "value": "SHAV"
@@ -2107,7 +2108,7 @@
                                           }
                                         },
                                         "node_attrs": {
-                                          "div": 10.68768
+                                          "div": 595.0
                                         },
                                         "children": [
                                           {
@@ -2122,7 +2123,7 @@
                                               }
                                             },
                                             "node_attrs": {
-                                              "div": 10.6924
+                                              "div": 598.0
                                             },
                                             "children": [
                                               {
@@ -2135,7 +2136,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.69393,
+                                                  "div": 599.0,
                                                   "country": {
                                                     "value": "Japan"
                                                   },
@@ -2157,7 +2158,7 @@
                                                   "mutations": {}
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.6924
+                                                  "div": 598.0
                                                 },
                                                 "children": [
                                                   {
@@ -2166,7 +2167,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.6924,
+                                                      "div": 598.0,
                                                       "country": {
                                                         "value": "Japan"
                                                       },
@@ -2188,7 +2189,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.6924
+                                                      "div": 598.0
                                                     },
                                                     "children": [
                                                       {
@@ -2197,7 +2198,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.6924,
+                                                          "div": 598.0,
                                                           "country": {
                                                             "value": "Japan"
                                                           },
@@ -2219,7 +2220,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.6924,
+                                                          "div": 598.0,
                                                           "country": {
                                                             "value": "Japan"
                                                           },
@@ -2251,7 +2252,7 @@
                                               }
                                             },
                                             "node_attrs": {
-                                              "div": 10.68914
+                                              "div": 596.0
                                             },
                                             "children": [
                                               {
@@ -2260,7 +2261,7 @@
                                                   "mutations": {}
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.68914
+                                                  "div": 596.0
                                                 },
                                                 "children": [
                                                   {
@@ -2269,7 +2270,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.68914
+                                                      "div": 596.0
                                                     },
                                                     "children": [
                                                       {
@@ -2278,7 +2279,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.68914,
+                                                          "div": 596.0,
                                                           "country": {
                                                             "value": "Japan"
                                                           },
@@ -2294,7 +2295,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.68914
+                                                          "div": 596.0
                                                         },
                                                         "children": [
                                                           {
@@ -2303,7 +2304,7 @@
                                                               "mutations": {}
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.68914,
+                                                              "div": 596.0,
                                                               "country": {
                                                                 "value": "Japan"
                                                               },
@@ -2325,7 +2326,7 @@
                                                               "mutations": {}
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.68914,
+                                                              "div": 596.0,
                                                               "country": {
                                                                 "value": "Japan"
                                                               },
@@ -2351,7 +2352,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.68914
+                                                      "div": 596.0
                                                     },
                                                     "children": [
                                                       {
@@ -2364,7 +2365,7 @@
                                                           }
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.69068,
+                                                          "div": 597.0,
                                                           "country": {
                                                             "value": "Japan"
                                                           },
@@ -2380,7 +2381,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.68914
+                                                          "div": 596.0
                                                         },
                                                         "children": [
                                                           {
@@ -2430,7 +2431,7 @@
                                                               }
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.69734,
+                                                              "div": 634.0,
                                                               "country": {
                                                                 "value": "South Africa"
                                                               },
@@ -2456,7 +2457,7 @@
                                                               }
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.69067
+                                                              "div": 597.0
                                                             },
                                                             "children": [
                                                               {
@@ -2465,7 +2466,7 @@
                                                                   "mutations": {}
                                                                 },
                                                                 "node_attrs": {
-                                                                  "div": 10.69067,
+                                                                  "div": 597.0,
                                                                   "country": {
                                                                     "value": "Japan"
                                                                   },
@@ -2481,7 +2482,7 @@
                                                                   "mutations": {}
                                                                 },
                                                                 "node_attrs": {
-                                                                  "div": 10.69067
+                                                                  "div": 597.0
                                                                 },
                                                                 "children": [
                                                                   {
@@ -2490,7 +2491,7 @@
                                                                       "mutations": {}
                                                                     },
                                                                     "node_attrs": {
-                                                                      "div": 10.69067,
+                                                                      "div": 597.0,
                                                                       "country": {
                                                                         "value": "Japan"
                                                                       },
@@ -2506,7 +2507,7 @@
                                                                       "mutations": {}
                                                                     },
                                                                     "node_attrs": {
-                                                                      "div": 10.69067
+                                                                      "div": 597.0
                                                                     },
                                                                     "children": [
                                                                       {
@@ -2515,7 +2516,7 @@
                                                                           "mutations": {}
                                                                         },
                                                                         "node_attrs": {
-                                                                          "div": 10.69067,
+                                                                          "div": 597.0,
                                                                           "country": {
                                                                             "value": "Japan"
                                                                           },
@@ -2531,7 +2532,7 @@
                                                                           "mutations": {}
                                                                         },
                                                                         "node_attrs": {
-                                                                          "div": 10.69067,
+                                                                          "div": 597.0,
                                                                           "country": {
                                                                             "value": "Japan"
                                                                           },
@@ -2568,7 +2569,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 10.69844
+                                                  "div": 602.0
                                                 },
                                                 "children": [
                                                   {
@@ -2577,7 +2578,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.69844
+                                                      "div": 602.0
                                                     },
                                                     "children": [
                                                       {
@@ -2586,7 +2587,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.69844,
+                                                          "div": 602.0,
                                                           "country": {
                                                             "value": "Germany"
                                                           },
@@ -2605,7 +2606,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.69844,
+                                                          "div": 602.0,
                                                           "country": {
                                                             "value": "Germany"
                                                           },
@@ -2626,7 +2627,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 10.69844
+                                                      "div": 602.0
                                                     },
                                                     "children": [
                                                       {
@@ -2635,7 +2636,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.69844,
+                                                          "div": 602.0,
                                                           "country": {
                                                             "value": "Germany"
                                                           },
@@ -2654,7 +2655,7 @@
                                                           "mutations": {}
                                                         },
                                                         "node_attrs": {
-                                                          "div": 10.69844
+                                                          "div": 602.0
                                                         },
                                                         "children": [
                                                           {
@@ -2663,7 +2664,7 @@
                                                               "mutations": {}
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.69844,
+                                                              "div": 602.0,
                                                               "country": {
                                                                 "value": "Germany"
                                                               },
@@ -2682,7 +2683,7 @@
                                                               "mutations": {}
                                                             },
                                                             "node_attrs": {
-                                                              "div": 10.69844
+                                                              "div": 602.0
                                                             },
                                                             "children": [
                                                               {
@@ -2691,7 +2692,7 @@
                                                                   "mutations": {}
                                                                 },
                                                                 "node_attrs": {
-                                                                  "div": 10.69844,
+                                                                  "div": 602.0,
                                                                   "country": {
                                                                     "value": "Germany"
                                                                   },
@@ -2710,7 +2711,7 @@
                                                                   "mutations": {}
                                                                 },
                                                                 "node_attrs": {
-                                                                  "div": 10.69844
+                                                                  "div": 602.0
                                                                 },
                                                                 "children": [
                                                                   {
@@ -2719,7 +2720,7 @@
                                                                       "mutations": {}
                                                                     },
                                                                     "node_attrs": {
-                                                                      "div": 10.69844
+                                                                      "div": 602.0
                                                                     },
                                                                     "children": [
                                                                       {
@@ -2728,7 +2729,7 @@
                                                                           "mutations": {}
                                                                         },
                                                                         "node_attrs": {
-                                                                          "div": 10.69844,
+                                                                          "div": 602.0,
                                                                           "country": {
                                                                             "value": "Germany"
                                                                           },
@@ -2747,7 +2748,7 @@
                                                                           "mutations": {}
                                                                         },
                                                                         "node_attrs": {
-                                                                          "div": 10.69844,
+                                                                          "div": 602.0,
                                                                           "country": {
                                                                             "value": "Germany"
                                                                           },
@@ -2768,7 +2769,7 @@
                                                                       "mutations": {}
                                                                     },
                                                                     "node_attrs": {
-                                                                      "div": 10.69844
+                                                                      "div": 602.0
                                                                     },
                                                                     "children": [
                                                                       {
@@ -2777,7 +2778,7 @@
                                                                           "mutations": {}
                                                                         },
                                                                         "node_attrs": {
-                                                                          "div": 10.69844,
+                                                                          "div": 602.0,
                                                                           "country": {
                                                                             "value": "Germany"
                                                                           },
@@ -2796,7 +2797,7 @@
                                                                           "mutations": {}
                                                                         },
                                                                         "node_attrs": {
-                                                                          "div": 10.69844,
+                                                                          "div": 602.0,
                                                                           "country": {
                                                                             "value": "Germany"
                                                                           },

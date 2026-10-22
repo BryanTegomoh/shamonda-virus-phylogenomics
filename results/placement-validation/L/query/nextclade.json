@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/nextstrain/nextclade/refs/heads/release/packages/nextclade-schemas/output-json.schema.json",
   "schemaVersion": "3.0.0",
   "nextcladeAlgoVersion": "3.25.1",
-  "createdAt": "2026-10-22T21:27:38.158705+00:00",
+  "createdAt": "2026-10-22T21:44:16.531588+00:00",
   "cladeNodeAttrKeys": [],
   "phenotypeAttrKeys": [],
   "refNodes": {},
@@ -9017,7 +9017,7 @@
       "relativeAaMutations": [],
       "warnings": [],
       "missingCdses": [],
-      "divergence": 12.83934,
+      "divergence": 4910.0,
       "coverage": 0.9719018041999409,
       "cdsCoverage": {
         "RdRp": 0.9716060337178349
@@ -9077,11 +9077,11 @@
                     },
                     "exceptions": [],
                     "attributes": {
-                      "Name": [
-                        "RdRp"
-                      ],
                       "ID": [
                         "CDS-0-RdRp"
+                      ],
+                      "Name": [
+                        "RdRp"
                       ],
                       "seq_index": [
                         "0"
@@ -9106,10 +9106,10 @@
                 "proteins": [],
                 "exceptions": [],
                 "attributes": {
-                  "Name": [
+                  "ID": [
                     "RdRp"
                   ],
-                  "ID": [
+                  "Name": [
                     "RdRp"
                   ],
                   "seq_index": [

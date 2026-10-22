@@ -18,9 +18,9 @@ Europe is tested from deposited country metadata; EU1/EU2 project labels are kep
 | M | 27 / 37 | 4209 | No | 1 | GTR+F+I+G4 |
 | S | 34 / 44 | 699 | No | 1 | TPM2u+G4 |
 
-Groups use SH-aLRT ≥80 and UFBoot ≥95. Separate Europe-only groups do not establish separate transmission chains. Sparse sampling and unresolved branches limit interpretation.
+Groups use SH-aLRT ≥80 and UFBoot ≥95. Full-tree support is restored by unrooted split after rooting. Focused figures use the componentwise minimum across full-tree edges collapsed into each focal split, including zero for missing support; these are conservative annotations, not reestimated focal-tree supports. Each segment has focused_support_provenance.tsv. Separate Europe-only groups do not establish separate transmission chains. Sparse sampling and unresolved branches limit interpretation.
 
-The earlier France/Germany/Switzerland tip set is distinct from the second German project (EU2), which falls nearer Japanese references. European sampling therefore spans separate genetic backgrounds. Support is segment-dependent:
+Project labels and the earlier European tip set are compared using measured MRCA support. Labels do not establish separate transmission chains:
 
 | Segment | Earlier European group, SH-aLRT / UFBoot | EU2, SH-aLRT / UFBoot |
 |---|---:|---:|
@@ -28,7 +28,7 @@ The earlier France/Germany/Switzerland tip set is distinct from the second Germa
 | M | 100 / 99 | 74.7 / 88 |
 | S | 87.8 / 91 | 99.5 / 100 |
 
-The M branch for EU2 and the S branch for the earlier European group fall below the prespecified joint strong-support thresholds. Their displayed grouping should not be described as equally well resolved as the other branches.
+Groups below the prespecified joint strong-support thresholds or without enough labelled tips: M EU2, S earlier European group. Grouping is not a transmission inference.
 
 ### L segment
 
@@ -68,7 +68,7 @@ Root-to-tip collection-date diagnostics include 100 seeded date permutations and
 
 ## Is a human-case sequence publicly available?
 
-No explicitly human-labelled SHAV nucleotide sequence was identified in this snapshot. Both recorded NCBI human-keyword sensitivity queries returned zero results. However, 50 focal records lack a host qualifier, so global absence cannot be established. No case accession was identified in the inspected October 22 ECDC or Inserm announcements. IHUMI_Shav000001 (PZ860852–PZ860854) is explicitly cattle and must not be relabelled as the human case.
+No explicitly human-labelled SHAV nucleotide sequence was identified in this snapshot. Recorded NCBI keyword sensitivity checks: name_human_keywords: 0 results (checked 2026-10-22T21:09:35.030707+00:00); taxon_human_keywords: 0 results (checked 2026-10-22T21:09:35.030516+00:00). 50 focal records lack a host qualifier, so global absence cannot be established. Source inspection on 2026-10-22 identified no case accession in the ECDC or Inserm announcements checked that day. That dated inspection is not a claim about later announcements. IHUMI_Shav000001 (PZ860852–PZ860854) was deposited as cattle in the reviewed snapshot.
 
 ## Disease, transmission and countermeasures
 

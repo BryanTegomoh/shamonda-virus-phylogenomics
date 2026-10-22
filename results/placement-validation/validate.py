@@ -7,8 +7,9 @@ from typing import Any
 from Bio.Phylo._io import read as read_tree, write as write_tree
 
 from shav.common import ROOT, read_fasta, read_json, read_tsv, run, write_fasta, write_json, write_tsv
-from shav.phylogeny import build_tree, root_tree
+from shav.phylogeny import build_tree, mutation_count_divergence, root_tree
 from shav.place import place_one
+from shav.validate import interactive_divergence_consistency, mutation_consistency
 
 BASE = ROOT / 'results/placement-validation'
 SETTINGS = {'bootstrap': 1000, 'shalrt': 1000, 'seed': 159150, 'threads': 2}
@@ -35,6 +36,7 @@ def validate(segment: str) -> dict[str, Any]:
     for number, node in enumerate(rooted.get_nonterminals()):
         node.name = f'NODE_{number:05d}'
         node.confidence = None
+        node.comment = None
     write_tree(rooted, directory / 'training.nwk', 'newick')
     sandbox = directory / 'sandbox'
     dataset = sandbox / 'nextclade' / segment
@@ -52,7 +54,11 @@ def validate(segment: str) -> dict[str, Any]:
          str(ROOT / 'results' / segment / 'auspice_config.json'), '--include-root-sequence-inline', '--output', str(dataset / 'tree.json')], log=directory / 'export.log')
     tree_data = read_json(dataset / 'tree.json')
     tree_data['meta']['genome_annotations'] = read_json(ROOT / 'nextclade' / segment / 'tree.json')['meta']['genome_annotations']
+    mutation_count_divergence(tree_data)
+    mutation_consistency(tree_data, next(iter(read_fasta(dataset / 'reference.fasta').values())), {a: exported[a] for a in training})
+    interactive_divergence_consistency(tree_data)
     write_json(dataset / 'tree.json', tree_data)
+    run(['augur', 'validate', 'export-v2', str(dataset / 'tree.json')], log=directory / 'schema-validation.log')
     work = sandbox / 'results' / segment
     work.mkdir(parents=True, exist_ok=True)
     write_fasta(work / 'export.aligned.fasta', ((a, exported[a]) for a in training))
