@@ -105,7 +105,7 @@ def place_one(row: Row, identifier: str, sequence: str, directory: Path,
     minimum = min(c['p_distance'] for c in eligible)
     closest = [c for c in eligible if abs(c['p_distance'] - minimum) < 1e-12]
     result.update({'closest_public': closest, 'comparisons': comparisons, 'nextclade': next_result,
-                   'status': 'compared', 'interpretation': 'Genetic similarity and local tree placement only. No transmission, virulence, source or definitive clade assignment.'})
+                   'status': 'compared', 'nextclade_qc_modules_configured': any(v is not None for k, v in next_result.get('qc', {}).items() if k not in ('overallScore', 'overallStatus')), 'interpretation': 'Genetic similarity and local tree placement only. No transmission, virulence, source or definitive clade assignment.'})
     ambiguous_placement = len(closest) > 1 or minimum > .05 or next_result.get('qc', {}).get('overallStatus') == 'bad'
     if ambiguous_placement or force_rebuild:
         result['warnings'] = ['Ambiguous or divergent relationship; full coding-sequence rebuild required. Tied nearest sequences remain tied.']

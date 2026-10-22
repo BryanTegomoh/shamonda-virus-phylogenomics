@@ -28,6 +28,10 @@ selection, 1,000 ultrafast bootstraps, 1,000 SH-aLRT replicates and seed 159150.
 The 5% trigger is an operational conservative threshold, not a validated species
 or lineage boundary. Rebuild completion does not resolve a biological tie.
 
+The local dataset currently leaves Nextclade QC submodules unconfigured. Its
+aggregate QC status is not an independent validation; the explicit CDS, ambiguity,
+and callable-overlap gates above determine routine eligibility.
+
 These are genetic comparisons, with local tree artifacts, not definitive clade,
 transmission, virulence, origin or clinical predictions. Sparse public sampling
 limits interpretation. Errors are collected per record; a partly failed batch
