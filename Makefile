@@ -22,7 +22,7 @@ validate:
 	$(RUN) python -m shav.validate
 
 view:
-	$(RUN) auspice view --datasetDir auspice --port 4000
+	PORT=4000 HOST=localhost $(RUN) auspice view --datasetDir auspice
 
 place:
 	@test -n "$(SEQUENCES)" -a -n "$(METADATA)" || (echo 'Provide SEQUENCES=case.fasta METADATA=case.tsv' >&2; exit 2)
