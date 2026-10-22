@@ -1,0 +1,6 @@
+{
+  "taxid": "159150",
+  "datasets_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/hantavirus-nextstrain/bin/datasets",
+  "publication_accessions": ["PZ860852.1", "PZ860853.1", "PZ860854.1"],
+  "references": ["Schmallenberg virus", "Sathuperi virus", "Douglas virus", "Peaton virus", "Sango virus", "Shuni virus", "Aino virus", "Akabane virus", "Simbu virus", "Bunyamwera virus"]
+}
