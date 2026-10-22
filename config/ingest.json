@@ -1,6 +1,6 @@
 {
   "taxid": "159150",
-  "datasets_executable": "/opt/homebrew/Caskroom/miniforge/base/envs/hantavirus-nextstrain/bin/datasets",
+  "datasets_executable": "datasets",
   "publication_accessions": [
     "PZ860852.1",
     "PZ860853.1",
@@ -24,5 +24,9 @@
       "HE795091.1",
       "HE795092.1"
     ]
-  }
+  },
+  "publication_bioprojects": [
+    "PRJEB123174",
+    "PRJEB125115"
+  ]
 }

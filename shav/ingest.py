@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import io
 import json
@@ -32,6 +31,7 @@ class Client:
         self.refresh = refresh
         self.requests: list[dict[str, str]] = []
         self.last = 0.0
+        self.identities: dict[str, str] = {}
 
     def get(self, endpoint: str, **params: str) -> bytes:
         url = BASE + endpoint + "?" + urllib.parse.urlencode(params)
@@ -64,7 +64,7 @@ class Client:
                         raise
                     time.sleep(2 ** (attempt + 1))
         body = path.read_bytes()
-        self.requests.append({"url": url, "cache": str(path.relative_to(ROOT)), "sha256": hashlib.sha256(body).hexdigest()})
+        self.requests.append({"url": url, "cache": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path), "sha256": hashlib.sha256(body).hexdigest(), "retrieved_at": datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat(), "accessed_at": datetime.now(timezone.utc).isoformat()})
         return body
 
     def search(self, db: str, term: str, page_size: int = 100) -> list[str]:
@@ -87,16 +87,126 @@ class Client:
             raise ValueError("Duplicate or incomplete search pagination")
         return ids
 
+    def summary(self, db: str, ids: list[str]) -> dict[str, Any]:
+        result = json.loads(self.get("esummary.fcgi", db=db, id=",".join(ids), retmode="json"))["result"]
+        if set(result.get("uids", [])) != set(ids) or len(result.get("uids", [])) != len(ids):
+            raise ValueError(f"Incomplete {db} summary identity mapping")
+        if any("error" in result[uid] for uid in ids):
+            raise ValueError(f"Failed {db} summary")
+        return cast(dict[str, Any], result)
+
     def fetch(self, ids: list[str]) -> list[SeqRecord]:
+        if len(set(ids)) != len(ids):
+            raise ValueError("Duplicate requested nucleotide identities")
         records: list[SeqRecord] = []
         for start in range(0, len(ids), 40):
             batch = ids[start:start + 40]
+            numeric = [identity for identity in batch if identity.isdigit()]
+            resolved = self.summary("nuccore", numeric) if numeric else {}
+            mapping = {identity: str(resolved[identity]["accessionversion"]) if identity.isdigit() else identity for identity in batch}
+            if len(set(mapping.values())) != len(batch):
+                raise ValueError("Nucleotide identities unexpectedly resolve to duplicate accessions")
             body = self.get("efetch.fcgi", db="nuccore", id=",".join(batch), rettype="gbwithparts", retmode="text")
             parsed: list[SeqRecord] = list(SeqIO.parse(io.StringIO(body.decode()), "genbank"))
-            if len(parsed) != len(batch):
-                raise ValueError(f"Incomplete GenBank retrieval: expected {len(batch)}, got {len(parsed)}")
+            actual = [str(record.id) for record in parsed]
+            if len(actual) != len(batch) or len(set(actual)) != len(actual) or set(actual) != set(mapping.values()):
+                raise ValueError(f"Incomplete or substituted GenBank retrieval: expected {sorted(mapping.values())}, got {actual}")
+            self.identities.update(mapping)
             records.extend(parsed)
         return records
+
+    def sra(self, ids: list[str]) -> list[dict[str, str]]:
+        rows: list[dict[str, str]] = []
+        for start in range(0, len(ids), 20):
+            batch = ids[start:start + 20]
+            summary = self.summary("sra", batch)
+            expected: dict[str, dict[str, str]] = {}
+            for uid in batch:
+                doc = ET.fromstring("<ROOT>" + summary[uid]["expxml"] + "</ROOT>")
+                experiment = doc.find("Experiment")
+                sample = doc.find("Sample")
+                if experiment is None or sample is None:
+                    raise ValueError("Missing SRA summary experiment or sample identity")
+                experiment_id = experiment.get("acc", "")
+                if not experiment_id or experiment_id in expected:
+                    raise ValueError("Empty or duplicate SRA summary experiment identity")
+                run_ids = [run.get("acc", "") for run in ET.fromstring("<ROOT>" + summary[uid]["runs"] + "</ROOT>").findall("Run")]
+                if not run_ids or any(not re.fullmatch(r"[SED]RR[0-9]+", run_id) for run_id in run_ids) or len(set(run_ids)) != len(run_ids):
+                    raise ValueError("Missing or duplicate SRA summary run identity")
+                expected[experiment_id] = {"runs": ";".join(sorted(run_ids)), "uid": uid, "sample": sample.get("acc", ""), "biosample": doc.findtext("Biosample", ""), "bioproject": doc.findtext("Bioproject", "")}
+            body = self.get("efetch.fcgi", db="sra", id=",".join(batch), retmode="xml")
+            rows.extend(parse_sra_packages(body, expected))
+        run_ids = [row["run"] for row in rows]
+        if len(set(run_ids)) != len(run_ids):
+            raise ValueError("Duplicate SRA runs across retrieval batches")
+        return rows
+
+
+def parse_sra_packages(body: bytes, expected: dict[str, dict[str, str]]) -> list[dict[str, str]]:
+    packages = ET.fromstring(body).findall(".//EXPERIMENT_PACKAGE")
+    found: set[str] = set()
+    rows: list[dict[str, str]] = []
+    for package in packages:
+        experiment = package.find("EXPERIMENT")
+        sample = package.find("SAMPLE")
+        if experiment is None or sample is None:
+            raise ValueError("SRA package missing experiment/sample")
+        accession = experiment.get("accession", "")
+        if accession not in expected or accession in found or experiment.findtext("IDENTIFIERS/PRIMARY_ID") != accession:
+            raise ValueError("Unexpected, duplicate or inconsistent SRA experiment identity")
+        found.add(accession)
+        identity = expected[accession]
+        def external(namespace: str) -> str:
+            return ";".join(sorted({e.text or "" for e in package.findall(".//EXTERNAL_ID") if e.get("namespace") == namespace}))
+        biosample, bioproject = external("BioSample"), external("BioProject")
+        if sample.get("accession") != identity["sample"] or sample.findtext("IDENTIFIERS/PRIMARY_ID") != identity["sample"]:
+            raise ValueError("SRA sample identity does not match UID summary")
+        if any(identity[key] and identity[key] not in value.split(";") for key, value in [("biosample", biosample), ("bioproject", bioproject)]):
+            raise ValueError("SRA BioSample/BioProject links do not match UID summary")
+        runs = package.findall(".//RUN")
+        if not runs:
+            raise ValueError(f"SRA experiment lacks public runs: {accession}")
+        if {run.get("accession", "") for run in runs} != set(identity["runs"].split(";")):
+            raise ValueError("Incomplete or substituted SRA runs relative to UID summary")
+        for run_element in runs:
+            run_id = run_element.get("accession", "")
+            if not re.fullmatch(r"[SED]RR[0-9]+", run_id):
+                raise ValueError("Missing or malformed public SRA run accession")
+            rows.append({"run": run_id, "experiment": accession, "sample": identity["sample"], "biosample": biosample, "bioproject": bioproject, "source": "NCBI SRA linked INSDC catalog", "reads_downloaded": "false"})
+    if found != set(expected):
+        raise ValueError(f"Incomplete SRA experiment packages: missing {set(expected) - found}")
+    if len({row["run"] for row in rows}) != len(rows):
+        raise ValueError("Duplicate public SRA run accession")
+    return rows
+
+
+def discover_reads(client: Client, rows: list[dict[str, str]]) -> tuple[list[str], dict[str, dict[str, Any]]]:
+    queries = {"taxon_name": 'txid159150[Organism:exp] OR "Shamonda"[All Fields]'}
+    focal_rows = [row for row in rows if row["group"] == "SHAV"]
+    for field in ("biosample", "bioproject"):
+        for identifier in sorted({part for row in focal_rows for part in row[field].split(";") if part}):
+            queries[field + ":" + identifier] = f'"{identifier}"[All Fields]'
+    accessions = sorted({row["accession"] for row in rows if row["group"] == "SHAV"})
+    for start in range(0, len(accessions), 30):
+        queries[f"nucleotide_accessions:{start}"] = " OR ".join(f'"{accession}"[All Fields]' for accession in accessions[start:start + 30])
+    inventory: dict[str, dict[str, Any]] = {}
+    union: set[str] = set()
+    for label, query in queries.items():
+        hits = client.search("sra", query)
+        inventory[label] = {"query": query, "uids": hits, "count": len(hits), "checked_at": datetime.now(timezone.utc).isoformat()}
+        union.update(hits)
+    return sorted(union), inventory
+
+
+def select_linked_reads(candidates: list[dict[str, str]], named_experiments: set[str], focal_samples: set[str], focal_projects: set[str]) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    included: list[dict[str, str]] = []
+    excluded: list[dict[str, str]] = []
+    for read in candidates:
+        if read["experiment"] in named_experiments or focal_samples.intersection(read["biosample"].split(";")) or focal_projects.intersection(read["bioproject"].split(";")):
+            included.append(read)
+        else:
+            excluded.append(dict(read, reason="Identifier search candidate lacks matching focal BioSample/BioProject and was absent from focal name/taxon search"))
+    return included, excluded
 
 
 def normalize_date(raw: str) -> tuple[str, str]:
@@ -195,23 +305,27 @@ def reconcile(records: list[SeqRecord], rows: list[dict[str, str]]) -> None:
             canonical.append(row)
 
 
-def run(refresh: bool = False) -> None:
+def run(refresh: bool = False, rebuild: bool = False, cache: Path | None = None) -> None:
     config_path = ROOT / "config/ingest.json"
     config = json.loads(config_path.read_text())
     output = ROOT / "data/public"
     manifest_path = output / "manifest.json"
-    if manifest_path.exists() and not refresh:
+    if manifest_path.exists() and not (refresh or rebuild):
         manifest = json.loads(manifest_path.read_text())
         for name, digest in manifest["outputs"].items():
             if sha256(output / name) != digest:
                 raise ValueError(f"Pinned snapshot changed: {name}; restore or use --refresh")
         if manifest["config_sha256"] != sha256(config_path):
             raise ValueError("Config changed; explicit --refresh required")
+        if manifest.get("ingest_source_sha256") != sha256(Path(__file__)):
+            raise ValueError("Ingestion code changed; explicit --rebuild or --refresh required")
         print("Verified pinned public snapshot")
         return
-    client = Client(ROOT / ".cache/ingest", refresh)
+    client = Client(cache if cache is not None else ROOT / ".cache/ingest", refresh)
     inventories: dict[str, list[str]] = {}
     queries = {"taxon": "txid159150[Organism:exp]", "keyword": '"Shamonda"[All Fields] OR "SHAV"[Title]', "publication": " OR ".join(f'{accession}[Accession]' for accession in config["publication_accessions"])}
+    for bioproject in config.get("publication_bioprojects", []):
+        queries["publication_project:" + bioproject] = f'"{bioproject}"[BioProject]'
     provenance: dict[str, list[str]] = {}
     for label, query in queries.items():
         inventories[label] = client.search("nuccore", query)
@@ -219,15 +333,21 @@ def run(refresh: bool = False) -> None:
             provenance.setdefault(uid, []).append(label)
     datasets_path = ROOT / "ingest/datasets-summary.jsonl"
     datasets_path.parent.mkdir(parents=True, exist_ok=True)
-    result = subprocess.run([config["datasets_executable"], "summary", "virus", "genome", "taxon", config["taxid"], "--as-json-lines"], check=True, capture_output=True, text=True)
-    datasets_path.write_text(result.stdout)
-    dataset_accessions = [json.loads(line)["accession"] for line in result.stdout.splitlines() if line.strip()]
+    if refresh or not datasets_path.exists():
+        result = subprocess.run([config["datasets_executable"], "summary", "virus", "genome", "taxon", config["taxid"], "--as-json-lines"], check=True, capture_output=True, text=True)
+        datasets_path.write_text(result.stdout)
+    dataset_accessions = [json.loads(line)["accession"] for line in datasets_path.read_text().splitlines() if line.strip()]
     inventories["datasets"] = dataset_accessions
+    if rebuild and manifest_path.exists():
+        previous = json.loads(manifest_path.read_text())["inventories"]
+        for label in set(previous) & set(inventories):
+            if set(previous[label]) != set(inventories[label]):
+                raise ValueError(f"Source inventory changed during cached rebuild: {label}; review and use --refresh")
     # Query by accession as Datasets and Entrez expose different inventory units.
     dataset_records = client.fetch(dataset_accessions)
     focal_records = client.fetch(sorted(provenance))
     records_by_id: dict[str, SeqRecord] = {str(r.id): r for r in focal_records + dataset_records}
-    origins = {str(r.id): provenance[uid] for uid, r in zip(sorted(provenance), focal_records, strict=True)}
+    origins = {client.identities[uid]: list(labels) for uid, labels in provenance.items()}
     for r in dataset_records:
         origins.setdefault(str(r.id), []).append("datasets")
     expected = set(config["publication_accessions"]) | set(dataset_accessions)
@@ -262,19 +382,28 @@ def run(refresh: bool = False) -> None:
             row.update(inclusion="exclude", reason="keyword hit outside exact focal taxonomy; retained for audit only")
         elif not row["segment"]:
             row.update(inclusion="exclude", reason="segment not explicitly annotated; retained without inferred assignment")
-    sra_ids = client.search("sra", 'txid159150[Organism:exp] OR "Shamonda"[All Fields]')
-    read_rows: list[dict[str, str]] = []
-    for start in range(0, len(sra_ids), 20):
-        xml = client.get("efetch.fcgi", db="sra", id=",".join(sra_ids[start:start + 20]), retmode="xml")
-        root = ET.fromstring(xml)
-        packages = root.findall(".//EXPERIMENT_PACKAGE")
-        if not packages:
-            raise ValueError("SRA retrieval returned no experiment packages")
-        for package in packages:
-            sample = package.find(".//SAMPLE")
-            experiment = package.find(".//EXPERIMENT")
-            for run_element in package.findall(".//RUN"):
-                read_rows.append({"run": run_element.get("accession", ""), "experiment": experiment.get("accession", "") if experiment is not None else "", "sample": sample.get("accession", "") if sample is not None else "", "biosample": ";".join(e.text or "" for e in package.findall(".//EXTERNAL_ID") if e.get("namespace") == "BioSample"), "bioproject": ";".join(e.text or "" for e in package.findall(".//EXTERNAL_ID") if e.get("namespace") == "BioProject"), "source": "NCBI SRA linked INSDC catalog", "reads_downloaded": "false"})
+    sra_ids, read_discovery = discover_reads(client, rows)
+    candidate_reads = client.sra(sra_ids)
+    focal_samples = {part for row in rows if row["group"] == "SHAV" for part in row["biosample"].split(";") if part}
+    focal_projects = {part for row in rows if row["group"] == "SHAV" for part in row["bioproject"].split(";") if part}
+    name_uids = set(read_discovery["taxon_name"]["uids"])
+    named_experiments: set[str] = set()
+    if name_uids:
+        named_summary = client.summary("sra", sorted(name_uids))
+        for uid in name_uids:
+            named_doc = ET.fromstring("<ROOT>" + named_summary[uid]["expxml"] + "</ROOT>")
+            named_experiment = named_doc.find("Experiment")
+            if named_experiment is None:
+                raise ValueError("Missing named SRA experiment")
+            named_experiments.add(named_experiment.get("acc", ""))
+    read_rows, excluded_reads = select_linked_reads(candidate_reads, named_experiments, focal_samples, focal_projects)
+    host_field_catalog = ET.fromstring(client.get("einfo.fcgi", db="nuccore", retmode="xml"))
+    field_names = [field.findtext("Name", "") for field in host_field_catalog.findall(".//Field")]
+    human_queries = {
+        "taxon_human_keywords": 'txid159150[Organism:exp] AND ("Homo sapiens"[All Fields] OR human[All Fields])',
+        "name_human_keywords": 'Shamonda[All Fields] AND ("Homo sapiens"[All Fields] OR human[All Fields])',
+    }
+    human_checks = {label: {"query": query, "uids": client.search("nuccore", query), "checked_at": datetime.now(timezone.utc).isoformat()} for label, query in human_queries.items()}
     for row in rows:
         sample_ids = set(row["biosample"].split(";")) - {""}
         matched_runs = sorted({read["run"] for read in read_rows if sample_ids & set(read["biosample"].split(";"))})
@@ -285,14 +414,19 @@ def run(refresh: bool = False) -> None:
     SeqIO.write(records, output / "records.gb", "genbank")
     write_tsv(output / "read_catalog.tsv", read_rows, ["run", "experiment", "sample", "biosample", "bioproject", "source", "reads_downloaded"])
     version = subprocess.run([config["datasets_executable"], "version"], check=True, capture_output=True, text=True).stdout.strip()
-    write_json(output / "manifest.json", {"retrieved_at": datetime.now(timezone.utc).isoformat(), "config_sha256": sha256(config_path), "queries": queries, "inventories": inventories, "reference_choices": reference_choices, "inventory_comparison": {"accessions_by_source": {label: sorted(accession for accession, labels in origins.items() if label in labels) for label in queries}, "datasets_only": sorted(set(dataset_accessions) - {accession for accession, labels in origins.items() if "taxon" in labels}), "keyword_outside_taxon": sorted(accession for accession, labels in origins.items() if "keyword" in labels and "taxon" not in labels)}, "sra_ids": sra_ids, "requests": client.requests, "datasets_version": version, "datasets_summary_sha256": sha256(datasets_path), "outputs": {name: sha256(output / name) for name in ["metadata.tsv", "sequences.fasta", "records.gb", "read_catalog.tsv"]}, "counts": {"records": len(rows), "included": sum(r["inclusion"] == "include" for r in rows), "explicit_human_records": [r["accession"] for r in rows if re.search(r"human|Homo sapiens", r["host"], re.I)], "unknown_host_records": sum(not r["host"] for r in rows)}, "interpretation": "Host is verbatim source host only. Lab host never establishes patient/animal origin. Different accessions are not linked into isolates without explicit source annotations. Reference source labels are retained separately from current organism names. Dates without recognized precision remain blank and raw values persist."})
+    write_json(output / "manifest.json", {"retrieved_at": datetime.now(timezone.utc).isoformat(), "config_sha256": sha256(config_path), "ingest_source_sha256": sha256(Path(__file__)), "queries": queries, "inventories": inventories, "reference_choices": reference_choices, "inventory_comparison": {"accessions_by_source": {label: sorted(accession for accession, labels in origins.items() if label in labels) for label in queries}, "datasets_only": sorted(set(dataset_accessions) - {accession for accession, labels in origins.items() if "taxon" in labels}), "keyword_outside_taxon": sorted(accession for accession, labels in origins.items() if "keyword" in labels and "taxon" not in labels)}, "sra_ids": sra_ids, "excluded_read_candidates": excluded_reads, "read_discovery": read_discovery, "human_checks": human_checks, "host_field_evidence": {"available_nuccore_fields": field_names, "method": "No dedicated Host field is exposed by nuccore EInfo. Human keyword searches are sensitivity checks; explicit hosts are checked separately from GenBank source qualifiers."}, "nuccore_uid_mapping": client.identities, "requests": client.requests, "datasets_version": version, "datasets_summary_sha256": sha256(datasets_path), "outputs": {name: sha256(output / name) for name in ["metadata.tsv", "sequences.fasta", "records.gb", "read_catalog.tsv"]}, "counts": {"records": len(rows), "included": sum(r["inclusion"] == "include" for r in rows), "explicit_human_records": [r["accession"] for r in rows if re.search(r"human|Homo sapiens", r["host"], re.I)], "unknown_host_records": sum(not r["host"] for r in rows)}, "interpretation": "Host is verbatim source host only. Lab host never establishes patient/animal origin. Different accessions are not linked into isolates without explicit source annotations. Reference source labels are retained separately from current organism names. Dates without recognized precision remain blank and raw values persist."})
     print(f"Saved {len(rows)} nucleotide records, {len(read_rows)} public read catalog runs")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--refresh", action="store_true")
-    run(parser.parse_args().refresh)
+    parser.add_argument("--rebuild", action="store_true", help="Rebuild outputs from cached source responses, fetching only missing requests")
+    parser.add_argument("--cache-dir", type=Path, help="Source response cache directory, including locations outside cloud storage")
+    arguments = parser.parse_args()
+    if arguments.refresh and arguments.rebuild:
+        parser.error("--refresh and --rebuild are mutually exclusive")
+    run(arguments.refresh, arguments.rebuild, arguments.cache_dir)
 
 
 if __name__ == "__main__":

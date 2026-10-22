@@ -1,0 +1,16 @@
+{
+  "taxon_human_keywords": {
+    "query": "txid159150[Organism:exp] AND (\"Homo sapiens\"[All Fields] OR human[All Fields])",
+    "uids": [],
+    "count": 0,
+    "checked_at": "2026-10-22T21:02:58.336452+00:00",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=txid159150%5BOrganism%3Aexp%5D+AND+%28%22Homo+sapiens%22%5BAll+Fields%5D+OR+human%5BAll+Fields%5D%29&retmode=json&retstart=0&retmax=100"
+  },
+  "name_human_keywords": {
+    "query": "Shamonda[All Fields] AND (\"Homo sapiens\"[All Fields] OR human[All Fields])",
+    "uids": [],
+    "count": 0,
+    "checked_at": "2026-10-22T21:02:58.704724+00:00",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=Shamonda%5BAll+Fields%5D+AND+%28%22Homo+sapiens%22%5BAll+Fields%5D+OR+human%5BAll+Fields%5D%29&retmode=json&retstart=0&retmax=100"
+  }
+}
