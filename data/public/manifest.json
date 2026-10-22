@@ -1,8 +1,8 @@
 {
-  "config_sha256": "3514187b820ccaff49f8989b46d24aa3a39b7d2aa25a2b7598281a6e450d0eae",
+  "config_sha256": "c47316c6a1bc2673be0b186cc3b3787dd37f01720482afcb03499743fdd810f9",
   "counts": {
     "explicit_human_records": [],
-    "included": 122,
+    "included": 124,
     "records": 184,
     "unknown_host_records": 104
   },
@@ -722,10 +722,10 @@
     ]
   },
   "outputs": {
-    "metadata.tsv": "aed12a0bef01f207043127dd1b5b0184085acdaf2b57949e38c12400cd481acf",
+    "metadata.tsv": "63a7acd073c9ef5e332787e464baa481048de171dfc11787bed4b6c40dd8d87c",
     "read_catalog.tsv": "d9d3b196047a9f69fac5c679f98897466a45c126224bab41678fb3759ad81aeb",
     "records.gb": "b9aba5466fb5a12565d00e81eba34309b519782c318715c1996d8546dd1f5265",
-    "sequences.fasta": "ca641d5e4387815ea15d59c1a43988f1cbf0eb11f6f0f9059f961064e948421b"
+    "sequences.fasta": "0baba9d25c589d06e0b19cd01900eb9b6c57feb9376d22753cb021186b044414"
   },
   "queries": {
     "keyword": "\"Shamonda\"[All Fields] OR \"SHAV\"[Title]",
@@ -956,7 +956,7 @@
       "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=sra&id=46708330%2C46708329%2C46468408%2C46440145%2C46439947%2C46439867%2C46439550%2C46439400%2C46437816%2C46437807%2C46437775%2C46437369%2C46437290%2C46437214%2C46436966%2C46436959%2C46436438%2C46433835%2C31721474%2C31721473&retmode=xml"
     }
   ],
-  "retrieved_at": "2026-10-22T20:14:44.562424+00:00",
+  "retrieved_at": "2026-10-22T20:18:20.089481+00:00",
   "sra_ids": [
     "46708330",
     "46708329",

@@ -7,7 +7,7 @@ changed configuration, malformed records and incomplete requests fail loudly.
 `data/public/records.gb` retains every retrieved nucleotide record and its full
 annotation. `metadata.tsv` contains one row per accession.version, including
 excluded keyword-context records. `sequences.fasta` contains only canonical,
-explicitly assigned focal and reference segments. Unknown metadata stays blank.
+annotated focal and reference segments. Missing source segment qualifiers can be resolved only from explicit orthobunyavirus nucleocapsid/NSs CDS products, with assignment provenance retained. Unknown metadata stays blank.
 No records are linked into a putative isolate from their accession order.
 
 Sources are the union of NCBI Nucleotide focal taxonomy, broad name search,

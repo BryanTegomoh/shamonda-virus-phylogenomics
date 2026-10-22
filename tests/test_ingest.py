@@ -14,7 +14,7 @@ from shav.ingest import Client, metadata, normalize_date, reconcile, segment
 
 def record(accession: str = "AB123456.1", sequence: str = "ACGTAA", seg: str = "L") -> SeqRecord:
     result = SeqRecord(Seq(sequence), id=accession, description=f"Shamonda virus {seg} segment")
-    result.features = [SeqFeature(SimpleLocation(0, len(sequence)), type="source", qualifiers={"segment": [seg], "isolate": ["named-isolate"], "db_xref": ["taxon:159150"]})]  # type: ignore[no-untyped-call]  # Biopython feature constructors lack typed signatures.
+    result.features = [SeqFeature(SimpleLocation(0, len(sequence)), type="source", qualifiers={"segment": [seg], "isolate": ["named-isolate"], "db_xref": ["taxon:159150"]})]
     return result
 
 
@@ -114,3 +114,33 @@ def test_transient_failure_retries_then_cache(tmp_path: Path) -> None:
             file.unlink()
         if cache.exists():
             cache.rmdir()
+
+
+def test_source_geography_normalization() -> None:
+    value = record()
+    value.features[0].qualifiers["geo_loc_name"] = ["Japan: Kagoshima"]
+    row = metadata(value, "SHAV", [])
+    assert row["country"] == "Japan"
+    assert row["location"] == "Kagoshima"
+    assert row["geo_loc_raw"] == "Japan: Kagoshima"
+
+
+def test_cds_product_assigns_s_and_rejects_conflict() -> None:
+    value = record()
+    value.description = "Shamonda virus nucleocapsid gene"
+    value.features[0].qualifiers.pop("segment")
+    value.features.append(SeqFeature(type="CDS", qualifiers={"product": ["nucleocapsid protein"]}))
+    row = metadata(value, "SHAV", [])
+    assert row["segment"] == "S"
+    assert "CDS product" in row["assignment_provenance"]
+    value.features[0].qualifiers["segment"] = ["L"]
+    with pytest.raises(ValueError, match="Conflicting"):
+        segment(value)
+
+
+def test_cds_polymerase_assigns_l() -> None:
+    value = record()
+    value.description = "Shamonda virus partial polymerase gene"
+    value.features[0].qualifiers.pop("segment")
+    value.features.append(SeqFeature(type="CDS", qualifiers={"product": ["RNA-dependent RNA polymerase"]}))
+    assert segment(value) == "L"

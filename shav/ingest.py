@@ -23,7 +23,7 @@ from Bio.SeqRecord import SeqRecord
 from shav.common import ROOT, sha256, write_fasta, write_json, write_tsv
 
 BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
-FIELDS = "accession segment isolate country host date date_raw date_precision group taxid canonical_accession inclusion reason biosample bioproject sra passage publication length organism orientation provenance".split()
+FIELDS = "accession segment isolate country host date date_raw date_precision group taxid canonical_accession inclusion reason biosample bioproject sra passage publication length organism orientation provenance geo_loc_raw location assignment_provenance".split()
 
 
 class Client:
@@ -92,7 +92,7 @@ class Client:
         for start in range(0, len(ids), 40):
             batch = ids[start:start + 40]
             body = self.get("efetch.fcgi", db="nuccore", id=",".join(batch), rettype="gbwithparts", retmode="text")
-            parsed: list[SeqRecord] = list(SeqIO.parse(io.StringIO(body.decode()), "genbank"))  # type: ignore[no-untyped-call]  # Biopython parser lacks a typed public signature.
+            parsed: list[SeqRecord] = list(SeqIO.parse(io.StringIO(body.decode()), "genbank"))
             if len(parsed) != len(batch):
                 raise ValueError(f"Incomplete GenBank retrieval: expected {len(batch)}, got {len(parsed)}")
             records.extend(parsed)
@@ -122,6 +122,17 @@ def segment(record: SeqRecord) -> str:
                     candidates.add(match.group(1).upper())
     for value in re.findall(r"\b([LMS])\s+(?:RNA\s+)?segment\b|\bsegment\s+([LMS])\b", record.description, re.I):
         candidates.update(v.upper() for v in value if v)
+    # Orthobunyavirus N/nucleocapsid and NSs are encoded on S. Only explicit CDS
+    # products supply this fallback, never accession order or isolate name.
+    is_orthobunyavirus = "Shamonda" in record.description or "Orthobunyavirus" in cast(list[str], record.annotations.get("taxonomy", []))
+    if is_orthobunyavirus:
+        for feature in record.features:
+            if feature.type == "CDS" and any(re.search(r"nucleocapsid|nucleoprotein|^NSs$", product, re.I) for product in feature.qualifiers.get("product", [])):
+                candidates.add("S")
+            if feature.type == "CDS" and any(re.search(r"RNA-dependent RNA polymerase", product, re.I) for product in feature.qualifiers.get("product", [])):
+                candidates.add("L")
+            if feature.type == "CDS" and any(re.search(r"glycoprotein", product, re.I) for product in feature.qualifiers.get("product", [])):
+                candidates.add("M")
     if len(candidates) > 1:
         raise ValueError(f"Conflicting segment annotations: {record.id}: {candidates}")
     return next(iter(candidates), "")
@@ -147,6 +158,12 @@ def metadata(record: SeqRecord, group: str, provenance: list[str]) -> dict[str, 
     publications = ["PMID:" + ref.pubmed_id if getattr(ref, "pubmed_id", "") else ref.title for ref in refs]
     row = dict.fromkeys(FIELDS, "")
     row.update(accession=record.id, segment=segment(record), isolate=q("isolate") or q("strain"), country=q("geo_loc_name") or q("country"), host=q("host"), date=date, date_raw=raw_date, date_precision=precision, group=group, taxid=link("taxon"), canonical_accession=record.id, inclusion="include", reason="canonical public nucleotide record", biosample=link("BioSample"), bioproject=link("BioProject") or link("Project"), sra=link("SRA"), passage=q("lab_host") or q("passage_history"), publication="; ".join(publications), length=str(len(record.seq)), organism=str(record.annotations.get("organism", "")), orientation="as deposited", provenance=";".join(sorted(provenance)))
+    geo = row["country"]
+    row["geo_loc_raw"] = geo
+    row["country"] = geo.partition(":")[0].strip()
+    row["location"] = geo.partition(":")[2].strip()
+    has_explicit_segment = any(feature.qualifiers.get("segment") for feature in sources) or bool(re.search(r"\b[LMS]\s+(?:RNA\s+)?segment\b|\bsegment\s+[LMS]\b", record.description, re.I))
+    row["assignment_provenance"] = "explicit source/title segment annotation" if has_explicit_segment else ("annotated orthobunyavirus segment-specific CDS product" if row["segment"] else "")
     return row
 
 
@@ -228,7 +245,7 @@ def run(refresh: bool = False) -> None:
         candidates = client.fetch(ids)
         chosen: list[SeqRecord] = []
         for seg in ("L", "M", "S"):
-            options = [r for r in candidates if segment(r) == seg]
+            options = [r for r in candidates if segment(r) == seg and (name not in config.get("reference_accessions", {}) or str(r.id) in config["reference_accessions"][name])]
             if not options:
                 raise ValueError(f"Missing reference segment {seg}: {name}")
             chosen.append(max(options, key=lambda r: (len(r), str(r.id).startswith("NC_"), str(r.id))))
