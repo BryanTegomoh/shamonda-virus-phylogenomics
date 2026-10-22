@@ -46,3 +46,13 @@ def test_low_coverage_withheld(tmp_path: Path) -> None:
     assert result['status'] == 'rejected_qc'
     assert result['strand'] == -1
     assert result['assignment'] is None
+
+
+def test_reports_all_mapping_errors(tmp_path: Path) -> None:
+    write_fasta(tmp_path / 'q.fa', [('unused', 'ACGT')])
+    write_tsv(tmp_path / 'q.tsv', [{'sample': 'x', 'segment': 'Q'}, {'sample': 'missing', 'segment': 'S'}])
+    assert not execute(tmp_path / 'q.fa', tmp_path / 'q.tsv', tmp_path / 'out')
+    error = read_json(tmp_path / 'out/report.json')['errors'][0]['error']
+    assert 'Metadata requires' in error
+    assert 'Missing or reused' in error
+    assert 'without matching' in error

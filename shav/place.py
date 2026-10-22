@@ -20,23 +20,29 @@ def inputs(sequences: Path, metadata: Path) -> list[tuple[Row, str, str]]:
     seen: set[tuple[str, str]] = set()
     used: set[str] = set()
     result: list[tuple[Row, str, str]] = []
+    errors: list[str] = []
     for row in rows:
         sample, segment = row.get('sample', ''), row.get('segment', '')
         if not sample or segment not in SEGMENTS:
-            raise ValueError('Metadata requires nonempty sample and segment L, M or S')
+            errors.append('Metadata requires nonempty sample and segment L, M or S')
+            continue
         key = (sample, segment)
         if key in seen:
-            raise ValueError(f'Duplicate sample, segment: {key}')
+            errors.append(f'Duplicate sample, segment: {key}')
+            continue
         seen.add(key)
         identifier = row.get('sequence_id') or (f'{sample}|{segment}' if f'{sample}|{segment}' in fasta else sample)
         if identifier not in fasta or identifier in used:
-            raise ValueError(f'Missing or reused FASTA identifier: {identifier}')
+            errors.append(f'Missing or reused FASTA identifier: {identifier}')
+            continue
         used.add(identifier)
         result.append((row, identifier, fasta[identifier]))
     if set(fasta) != used:
-        raise ValueError('FASTA records without matching metadata')
+        errors.append('FASTA records without matching metadata')
     if not rows:
-        raise ValueError('No metadata records')
+        errors.append('No metadata records')
+    if errors:
+        raise ValueError('; '.join(errors))
     return result
 
 
