@@ -1,25 +1,25 @@
 {
   "L": {
     "focused_provenance_rows": 23,
-    "interactive_maximum_inferred_nucleotide_events": 5102,
+    "interactive_maximum_inferred_nucleotide_events": 5029,
     "split_support_invariant_outgroup_and_midpoint": true,
-    "training_maximum_inferred_nucleotide_events": 5100,
+    "training_maximum_inferred_nucleotide_events": 5028,
     "training_mutation_replay_and_divergence": "passed",
     "unrooted_supported_or_unestimated_edges": 28
   },
   "M": {
     "focused_provenance_rows": 27,
-    "interactive_maximum_inferred_nucleotide_events": 4307,
+    "interactive_maximum_inferred_nucleotide_events": 4072,
     "split_support_invariant_outgroup_and_midpoint": true,
-    "training_maximum_inferred_nucleotide_events": 4163,
+    "training_maximum_inferred_nucleotide_events": 4072,
     "training_mutation_replay_and_divergence": "passed",
     "unrooted_supported_or_unestimated_edges": 34
   },
   "S": {
     "focused_provenance_rows": 34,
-    "interactive_maximum_inferred_nucleotide_events": 634,
+    "interactive_maximum_inferred_nucleotide_events": 602,
     "split_support_invariant_outgroup_and_midpoint": true,
-    "training_maximum_inferred_nucleotide_events": 634,
+    "training_maximum_inferred_nucleotide_events": 602,
     "training_mutation_replay_and_divergence": "passed",
     "unrooted_supported_or_unestimated_edges": 41
   },
@@ -55,6 +55,7 @@
       "training_tip_count": 30
     }
   ],
+  "interactive_count_policy": "Distinct A/C/G/T substitutions only; reversions included; ambiguous transitions and root-to-reference differences excluded from counts but retained for replay",
   "pinned_metadata": {
     "nonempty_isolation_source": 37,
     "nonempty_lab_host": 0,

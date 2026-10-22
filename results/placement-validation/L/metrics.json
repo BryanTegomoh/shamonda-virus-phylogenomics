@@ -1250,7 +1250,7 @@
     "dataset_sha256": {
       "pathogen.json": "4b45414b8f84cfd03b9c6f814fc8181b055e3c4e47c83c11bfa32456ec0abb65",
       "reference.fasta": "bad90a16cc173eaeab003d52d46f20bb04927143dfdb7d513f84666563996b21",
-      "tree.json": "6575f2121f5902896e61783cdaa7764128a09bd376ee2acaa163f44d5ec92173"
+      "tree.json": "3844819167489c302f4b3995d6f1be322823d326b0848a298238edaf80a79d2f"
     },
     "interpretation": "Genetic similarity and local tree placement only. No transmission, virulence, source or definitive clade assignment.",
     "metadata": {
@@ -4369,7 +4369,7 @@
       "customNodeAttributes": {},
       "datasetName": "/Users/bryan/Projects/shamonda-virus-phylogenomics/results/placement-validation/L/sandbox/nextclade/L",
       "deletions": [],
-      "divergence": 4910.0,
+      "divergence": 4835.0,
       "frameShifts": [],
       "index": 0,
       "insertions": [],

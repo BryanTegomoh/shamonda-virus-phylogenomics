@@ -21,9 +21,11 @@ protein identity and 50 matched residues. Routine placement additionally require
 unresolved, with a nonzero batch exit. No missing segment is inferred.
 
 Interactive divergence in both production and held-out training trees is the
-cumulative count of inferred nucleotide state changes from Augur's branch mutation
-lists in reference-CDS coordinates. Each listed event counts once, including
-reversions and ambiguous-state changes. The reconstructed root has divergence zero;
+cumulative count of inferred substitutions between distinct A/C/G/T states from
+Augur's branch mutation lists in reference-CDS coordinates. Each such event counts
+once, including reversions. Transitions involving ambiguity remain in mutation
+replay but do not contribute to divergence, because an ambiguity resolution is
+not an identified nucleotide substitution. The reconstructed root has divergence zero;
 its differences from the reference remain in mutation replay but do not contribute
 to root-to-tip divergence. These counts are inferred ancestral-state events, not
 ML expected substitutions or pairwise observed differences. Auspice's mutation axis

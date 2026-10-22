@@ -33,7 +33,9 @@ def mutation_consistency(dataset: dict[str, Any], reference: str, observed: dict
 def interactive_divergence_consistency(dataset: dict[str, Any]) -> None:
     """Check cumulative inferred nuc event counts independently of ML branch length."""
     def visit(node: dict[str, Any], parent: int, root: bool = False) -> None:
-        expected = parent if root else parent + len(node.get("branch_attrs", {}).get("mutations", {}).get("nuc", []))
+        expected = parent if root else parent + sum(
+            event[0] in "ACGT" and event[-1] in "ACGT" and event[0] != event[-1]
+            for event in node.get("branch_attrs", {}).get("mutations", {}).get("nuc", []))
         if node.get("node_attrs", {}).get("div") != expected:
             raise ValueError(f"Interactive mutation-count divergence differs at {node['name']}")
         for child in node.get("children", []):

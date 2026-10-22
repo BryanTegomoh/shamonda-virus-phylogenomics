@@ -277,13 +277,15 @@ def prune_with_support(tree: Tree, retained: set[str]) -> tuple[Tree, list[Row]]
 def mutation_count_divergence(dataset: dict[str, Any]) -> None:
     """Interactive divergence is cumulative inferred nucleotide state changes.
 
-    Count each listed Augur nuc event once, including reversions and ambiguous
-    state changes, in reference-CDS coordinates. The reconstructed root is zero;
+    Count each listed Augur nuc substitution between distinct A/C/G/T states
+    once, including reversions, in reference-CDS coordinates. Ambiguous-state
+    transitions remain in replay but do not count as identified substitutions. The reconstructed root is zero;
     root-to-reference differences are replayed but are not a tree branch.
     These are inferred events, not ML expected substitutions or observed distances.
     """
     def visit(node: dict[str, Any], inherited: int, root: bool = False) -> None:
-        count = 0 if root else len(node.get("branch_attrs", {}).get("mutations", {}).get("nuc", []))
+        count = 0 if root else sum(m[0] in "ACGT" and m[-1] in "ACGT" and m[0] != m[-1]
+                                   for m in node.get("branch_attrs", {}).get("mutations", {}).get("nuc", []))
         divergence = inherited + count
         node.setdefault("node_attrs", {})["div"] = divergence
         for child in node.get("children", []):
@@ -291,7 +293,7 @@ def mutation_count_divergence(dataset: dict[str, Any]) -> None:
     visit(dataset["tree"], 0, True)
     dataset["meta"]["description"] = (dataset["meta"].get("description", "") +
         " Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, "
-        "including reversions and ambiguous changes, from a zero reconstructed root. "
+        "between distinct A/C/G/T states, including reversions, from a zero reconstructed root. Ambiguous-state transitions remain in replay but are excluded from divergence. "
         "Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.")
 
 

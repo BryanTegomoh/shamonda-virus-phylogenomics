@@ -2,7 +2,7 @@
   "version": "v2",
   "meta": {
     "title": "Shamonda virus M coding-sequence phylogeny",
-    "description": " Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, including reversions and ambiguous changes, from a zero reconstructed root. Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.",
+    "description": " Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, between distinct A/C/G/T states, including reversions, from a zero reconstructed root. Ambiguous-state transitions remain in replay but are excluded from divergence. Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.",
     "updated": "2026-10-22",
     "genome_annotations": {
       "nuc": {
@@ -4293,7 +4293,7 @@
           }
         },
         "node_attrs": {
-          "div": 1870.0
+          "div": 1823.0
         },
         "children": [
           {
@@ -4560,7 +4560,7 @@
               }
             },
             "node_attrs": {
-              "div": 2125.0
+              "div": 2057.0
             },
             "children": [
               {
@@ -5567,7 +5567,7 @@
                   }
                 },
                 "node_attrs": {
-                  "div": 3120.0,
+                  "div": 3035.0,
                   "accession": "NC_018478.1",
                   "group": {
                     "value": "Simbu virus"
@@ -5727,7 +5727,7 @@
                   }
                 },
                 "node_attrs": {
-                  "div": 2269.0
+                  "div": 2200.0
                 },
                 "children": [
                   {
@@ -6103,7 +6103,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 2633.0
+                      "div": 2558.0
                     },
                     "children": [
                       {
@@ -6771,7 +6771,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3289.0,
+                          "div": 3214.0,
                           "accession": "NC_018459.1",
                           "group": {
                             "value": "Aino virus"
@@ -7341,7 +7341,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3187.0,
+                          "div": 3112.0,
                           "country": {
                             "value": "South Africa"
                           },
@@ -8280,7 +8280,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 3181.0
+                      "div": 3097.0
                     },
                     "children": [
                       {
@@ -8619,7 +8619,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3508.0,
+                          "div": 3424.0,
                           "country": {
                             "value": "Netherlands"
                           },
@@ -8796,7 +8796,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3333.0
+                          "div": 3249.0
                         },
                         "children": [
                           {
@@ -9115,7 +9115,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 3640.0,
+                              "div": 3556.0,
                               "accession": "HE795091.1",
                               "group": {
                                 "value": "Douglas virus"
@@ -9421,7 +9421,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 3623.0,
+                              "div": 3539.0,
                               "accession": "NC_018466.1",
                               "group": {
                                 "value": "Sathuperi virus"
@@ -9938,7 +9938,7 @@
               }
             },
             "node_attrs": {
-              "div": 2363.0
+              "div": 2292.0
             },
             "children": [
               {
@@ -9947,7 +9947,7 @@
                   "mutations": {}
                 },
                 "node_attrs": {
-                  "div": 2363.0
+                  "div": 2292.0
                 },
                 "children": [
                   {
@@ -11174,7 +11174,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 3578.0,
+                      "div": 3500.0,
                       "accession": "NC_009895.1",
                       "group": {
                         "value": "Akabane virus"
@@ -12077,7 +12077,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 3250.0
+                      "div": 3177.0
                     },
                     "children": [
                       {
@@ -12592,7 +12592,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3753.0,
+                          "div": 3680.0,
                           "accession": "NC_043551.1",
                           "group": {
                             "value": "Peaton virus"
@@ -12780,7 +12780,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3422.0,
+                          "div": 3349.0,
                           "accession": "NC_043555.1",
                           "group": {
                             "value": "Sango virus"
@@ -14004,7 +14004,7 @@
                   }
                 },
                 "node_attrs": {
-                  "div": 3567.0
+                  "div": 3486.0
                 },
                 "children": [
                   {
@@ -14046,7 +14046,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 3597.0
+                      "div": 3516.0
                     },
                     "children": [
                       {
@@ -14055,7 +14055,7 @@
                           "mutations": {}
                         },
                         "node_attrs": {
-                          "div": 3597.0,
+                          "div": 3516.0,
                           "country": {
                             "value": "Germany"
                           },
@@ -14074,7 +14074,7 @@
                           "mutations": {}
                         },
                         "node_attrs": {
-                          "div": 3597.0
+                          "div": 3516.0
                         },
                         "children": [
                           {
@@ -14087,7 +14087,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 3598.0,
+                              "div": 3517.0,
                               "country": {
                                 "value": "Germany"
                               },
@@ -14106,7 +14106,7 @@
                               "mutations": {}
                             },
                             "node_attrs": {
-                              "div": 3597.0
+                              "div": 3516.0
                             },
                             "children": [
                               {
@@ -14115,7 +14115,7 @@
                                   "mutations": {}
                                 },
                                 "node_attrs": {
-                                  "div": 3597.0,
+                                  "div": 3516.0,
                                   "country": {
                                     "value": "Germany"
                                   },
@@ -14134,7 +14134,7 @@
                                   "mutations": {}
                                 },
                                 "node_attrs": {
-                                  "div": 3597.0
+                                  "div": 3516.0
                                 },
                                 "children": [
                                   {
@@ -14143,7 +14143,7 @@
                                       "mutations": {}
                                     },
                                     "node_attrs": {
-                                      "div": 3597.0
+                                      "div": 3516.0
                                     },
                                     "children": [
                                       {
@@ -14152,7 +14152,7 @@
                                           "mutations": {}
                                         },
                                         "node_attrs": {
-                                          "div": 3597.0,
+                                          "div": 3516.0,
                                           "country": {
                                             "value": "Germany"
                                           },
@@ -14171,7 +14171,7 @@
                                           "mutations": {}
                                         },
                                         "node_attrs": {
-                                          "div": 3597.0
+                                          "div": 3516.0
                                         },
                                         "children": [
                                           {
@@ -14180,7 +14180,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 3597.0,
+                                              "div": 3516.0,
                                               "country": {
                                                 "value": "Germany"
                                               },
@@ -14199,7 +14199,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 3597.0,
+                                              "div": 3516.0,
                                               "country": {
                                                 "value": "Germany"
                                               },
@@ -14222,7 +14222,7 @@
                                       "mutations": {}
                                     },
                                     "node_attrs": {
-                                      "div": 3597.0
+                                      "div": 3516.0
                                     },
                                     "children": [
                                       {
@@ -14235,7 +14235,7 @@
                                           }
                                         },
                                         "node_attrs": {
-                                          "div": 3598.0,
+                                          "div": 3517.0,
                                           "country": {
                                             "value": "Germany"
                                           },
@@ -14259,7 +14259,7 @@
                                           }
                                         },
                                         "node_attrs": {
-                                          "div": 3599.0
+                                          "div": 3518.0
                                         },
                                         "children": [
                                           {
@@ -14272,7 +14272,7 @@
                                               }
                                             },
                                             "node_attrs": {
-                                              "div": 3600.0,
+                                              "div": 3519.0,
                                               "country": {
                                                 "value": "Germany"
                                               },
@@ -14291,7 +14291,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 3599.0,
+                                              "div": 3518.0,
                                               "country": {
                                                 "value": "Germany"
                                               },
@@ -14384,7 +14384,7 @@
                       }
                     },
                     "node_attrs": {
-                      "div": 3626.0
+                      "div": 3545.0
                     },
                     "children": [
                       {
@@ -14418,7 +14418,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3648.0
+                          "div": 3567.0
                         },
                         "children": [
                           {
@@ -14438,7 +14438,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 3656.0
+                              "div": 3575.0
                             },
                             "children": [
                               {
@@ -14486,7 +14486,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 3692.0,
+                                  "div": 3610.0,
                                   "country": {
                                     "value": "Japan"
                                   },
@@ -14513,7 +14513,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 3658.0
+                                  "div": 3577.0
                                 },
                                 "children": [
                                   {
@@ -14522,7 +14522,7 @@
                                       "mutations": {}
                                     },
                                     "node_attrs": {
-                                      "div": 3658.0,
+                                      "div": 3577.0,
                                       "country": {
                                         "value": "Japan"
                                       },
@@ -14548,7 +14548,7 @@
                                       }
                                     },
                                     "node_attrs": {
-                                      "div": 3659.0,
+                                      "div": 3578.0,
                                       "country": {
                                         "value": "Japan"
                                       },
@@ -14657,7 +14657,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 3728.0
+                              "div": 3647.0
                             },
                             "children": [
                               {
@@ -14671,7 +14671,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 3730.0,
+                                  "div": 3647.0,
                                   "country": {
                                     "value": "Japan"
                                   },
@@ -14693,7 +14693,7 @@
                                   "mutations": {}
                                 },
                                 "node_attrs": {
-                                  "div": 3728.0
+                                  "div": 3647.0
                                 },
                                 "children": [
                                   {
@@ -14707,7 +14707,7 @@
                                       }
                                     },
                                     "node_attrs": {
-                                      "div": 3730.0,
+                                      "div": 3648.0,
                                       "country": {
                                         "value": "Japan"
                                       },
@@ -14733,7 +14733,7 @@
                                       }
                                     },
                                     "node_attrs": {
-                                      "div": 3729.0
+                                      "div": 3648.0
                                     },
                                     "children": [
                                       {
@@ -14746,7 +14746,7 @@
                                           }
                                         },
                                         "node_attrs": {
-                                          "div": 3730.0,
+                                          "div": 3649.0,
                                           "country": {
                                             "value": "Japan"
                                           },
@@ -14768,7 +14768,7 @@
                                           "mutations": {}
                                         },
                                         "node_attrs": {
-                                          "div": 3729.0,
+                                          "div": 3648.0,
                                           "country": {
                                             "value": "Japan"
                                           },
@@ -15104,7 +15104,7 @@
                           }
                         },
                         "node_attrs": {
-                          "div": 3929.0
+                          "div": 3848.0
                         },
                         "children": [
                           {
@@ -15203,7 +15203,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 4016.0
+                              "div": 3935.0
                             },
                             "children": [
                               {
@@ -15221,7 +15221,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 4022.0,
+                                  "div": 3941.0,
                                   "country": {
                                     "value": "Nigeria"
                                   },
@@ -15247,7 +15247,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 4017.0,
+                                  "div": 3936.0,
                                   "accession": "NC_018467.1",
                                   "group": {
                                     "value": "SHAV"
@@ -15485,7 +15485,7 @@
                               }
                             },
                             "node_attrs": {
-                              "div": 4149.0
+                              "div": 4068.0
                             },
                             "children": [
                               {
@@ -15494,7 +15494,7 @@
                                   "mutations": {}
                                 },
                                 "node_attrs": {
-                                  "div": 4149.0,
+                                  "div": 4068.0,
                                   "country": {
                                     "value": "Switzerland"
                                   },
@@ -15520,7 +15520,7 @@
                                   }
                                 },
                                 "node_attrs": {
-                                  "div": 4150.0
+                                  "div": 4069.0
                                 },
                                 "children": [
                                   {
@@ -15533,7 +15533,7 @@
                                       }
                                     },
                                     "node_attrs": {
-                                      "div": 4151.0,
+                                      "div": 4070.0,
                                       "country": {
                                         "value": "France"
                                       },
@@ -15591,7 +15591,7 @@
                                       }
                                     },
                                     "node_attrs": {
-                                      "div": 4150.0,
+                                      "div": 4069.0,
                                       "Node type": {
                                         "value": "New"
                                       },
@@ -15624,7 +15624,7 @@
                                       "mutations": {}
                                     },
                                     "node_attrs": {
-                                      "div": 4150.0
+                                      "div": 4069.0
                                     },
                                     "children": [
                                       {
@@ -15633,7 +15633,7 @@
                                           "mutations": {}
                                         },
                                         "node_attrs": {
-                                          "div": 4150.0,
+                                          "div": 4069.0,
                                           "country": {
                                             "value": "Germany"
                                           },
@@ -15652,7 +15652,7 @@
                                           "mutations": {}
                                         },
                                         "node_attrs": {
-                                          "div": 4150.0
+                                          "div": 4069.0
                                         },
                                         "children": [
                                           {
@@ -15661,7 +15661,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 4150.0
+                                              "div": 4069.0
                                             },
                                             "children": [
                                               {
@@ -15686,7 +15686,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 4163.0,
+                                                  "div": 4070.0,
                                                   "country": {
                                                     "value": "France"
                                                   },
@@ -15709,7 +15709,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 4151.0,
+                                                  "div": 4070.0,
                                                   "country": {
                                                     "value": "Switzerland"
                                                   },
@@ -15733,7 +15733,7 @@
                                               "mutations": {}
                                             },
                                             "node_attrs": {
-                                              "div": 4150.0
+                                              "div": 4069.0
                                             },
                                             "children": [
                                               {
@@ -15747,7 +15747,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 4152.0,
+                                                  "div": 4071.0,
                                                   "country": {
                                                     "value": "France"
                                                   },
@@ -15775,7 +15775,7 @@
                                                   }
                                                 },
                                                 "node_attrs": {
-                                                  "div": 4153.0
+                                                  "div": 4072.0
                                                 },
                                                 "children": [
                                                   {
@@ -15784,7 +15784,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 4153.0,
+                                                      "div": 4072.0,
                                                       "country": {
                                                         "value": "Switzerland"
                                                       },
@@ -15806,7 +15806,7 @@
                                                       "mutations": {}
                                                     },
                                                     "node_attrs": {
-                                                      "div": 4153.0,
+                                                      "div": 4072.0,
                                                       "country": {
                                                         "value": "Switzerland"
                                                       },

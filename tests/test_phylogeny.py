@@ -127,12 +127,12 @@ def test_pruning_collapsed_path_preserves_all_support_provenance():
     assert support(focused.common_ancestor(['a', 'b'])) == (0, 0)
 
 
-def test_interactive_counts_events_including_reversions_not_root_differences():
+def test_interactive_counts_reversions_excludes_ambiguity_and_root_differences():
     from shav.phylogeny import mutation_count_divergence
     from shav.validate import mutation_consistency
     leaf = {'name': 'tip', 'branch_attrs': {'mutations': {'nuc': ['C1A', 'A2N']}}}
     dataset = {'meta': {}, 'tree': {'name': 'root', 'branch_attrs': {'mutations': {'nuc': ['A1C']}}, 'children': [leaf]}}
     mutation_count_divergence(dataset)
     assert dataset['tree']['node_attrs']['div'] == 0
-    assert leaf['node_attrs']['div'] == 2
+    assert leaf['node_attrs']['div'] == 1
     mutation_consistency(dataset, 'AAA', {'tip': 'ANA'})
