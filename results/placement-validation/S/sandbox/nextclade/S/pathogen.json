@@ -1,0 +1,12 @@
+{
+  "attributes": {
+    "name": "SHAV S primary CDS"
+  },
+  "files": {
+    "genomeAnnotation": "genome_annotation.gff3",
+    "pathogenJson": "pathogen.json",
+    "reference": "reference.fasta",
+    "treeJson": "tree.json"
+  },
+  "schemaVersion": "3.0.0"
+}

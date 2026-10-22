@@ -1,0 +1,562 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nextstrain/nextclade/refs/heads/release/packages/nextclade-schemas/output-json.schema.json",
+  "schemaVersion": "3.0.0",
+  "nextcladeAlgoVersion": "3.25.1",
+  "createdAt": "2026-10-22T21:21:52.859528+00:00",
+  "cladeNodeAttrKeys": [],
+  "phenotypeAttrKeys": [],
+  "refNodes": {},
+  "results": [
+    {
+      "index": 0,
+      "seqName": "QUERY",
+      "seqId": "QUERY",
+      "seqDesc": "",
+      "lenUnaligned": 699,
+      "lenAligned": 699,
+      "lenStripped": 699,
+      "refName": "NC_018464.1",
+      "datasetName": "/Users/bryan/Projects/shamonda-virus-phylogenomics/results/placement-validation/S/sandbox/nextclade/S",
+      "substitutions": [
+        {
+          "pos": 152,
+          "refNuc": "A",
+          "qryNuc": "G"
+        },
+        {
+          "pos": 278,
+          "refNuc": "T",
+          "qryNuc": "C"
+        },
+        {
+          "pos": 290,
+          "refNuc": "A",
+          "qryNuc": "G"
+        },
+        {
+          "pos": 305,
+          "refNuc": "C",
+          "qryNuc": "T"
+        },
+        {
+          "pos": 309,
+          "refNuc": "A",
+          "qryNuc": "G"
+        },
+        {
+          "pos": 368,
+          "refNuc": "C",
+          "qryNuc": "A"
+        },
+        {
+          "pos": 374,
+          "refNuc": "C",
+          "qryNuc": "T"
+        },
+        {
+          "pos": 398,
+          "refNuc": "C",
+          "qryNuc": "T"
+        },
+        {
+          "pos": 413,
+          "refNuc": "T",
+          "qryNuc": "C"
+        },
+        {
+          "pos": 443,
+          "refNuc": "C",
+          "qryNuc": "A"
+        },
+        {
+          "pos": 479,
+          "refNuc": "A",
+          "qryNuc": "G"
+        },
+        {
+          "pos": 488,
+          "refNuc": "A",
+          "qryNuc": "G"
+        },
+        {
+          "pos": 494,
+          "refNuc": "T",
+          "qryNuc": "C"
+        },
+        {
+          "pos": 503,
+          "refNuc": "T",
+          "qryNuc": "G"
+        },
+        {
+          "pos": 509,
+          "refNuc": "C",
+          "qryNuc": "T"
+        },
+        {
+          "pos": 527,
+          "refNuc": "T",
+          "qryNuc": "C"
+        },
+        {
+          "pos": 542,
+          "refNuc": "C",
+          "qryNuc": "T"
+        },
+        {
+          "pos": 617,
+          "refNuc": "T",
+          "qryNuc": "C"
+        },
+        {
+          "pos": 635,
+          "refNuc": "C",
+          "qryNuc": "T"
+        },
+        {
+          "pos": 683,
+          "refNuc": "A",
+          "qryNuc": "G"
+        }
+      ],
+      "totalSubstitutions": 20,
+      "deletions": [],
+      "totalDeletions": 0,
+      "insertions": [],
+      "totalInsertions": 0,
+      "missing": [],
+      "totalMissing": 0,
+      "nonACGTNs": [],
+      "totalNonACGTNs": 0,
+      "nucleotideComposition": {
+        "T": 203,
+        "A": 190,
+        "C": 143,
+        "G": 163
+      },
+      "frameShifts": [],
+      "totalFrameShifts": 0,
+      "aaSubstitutions": [
+        {
+          "cdsName": "N",
+          "pos": 103,
+          "refAa": "I",
+          "qryAa": "V"
+        }
+      ],
+      "totalAminoacidSubstitutions": 1,
+      "aaDeletions": [],
+      "totalAminoacidDeletions": 0,
+      "aaInsertions": [],
+      "totalAminoacidInsertions": 0,
+      "unknownAaRanges": [],
+      "totalUnknownAa": 0,
+      "aaChangesGroups": [
+        {
+          "name": "N",
+          "range": {
+            "begin": 101,
+            "end": 106
+          },
+          "changes": [
+            {
+              "cdsName": "N",
+              "pos": 101,
+              "refAa": "R",
+              "qryAa": "R",
+              "nucPos": 303,
+              "refTriplet": "CGC",
+              "qryTriplet": "CGT",
+              "nucRanges": [
+                {
+                  "begin": 303,
+                  "end": 306
+                }
+              ]
+            },
+            {
+              "cdsName": "N",
+              "pos": 102,
+              "refAa": "W",
+              "qryAa": "W",
+              "nucPos": 306,
+              "refTriplet": "TGG",
+              "qryTriplet": "TGG",
+              "nucRanges": [
+                {
+                  "begin": 306,
+                  "end": 309
+                }
+              ]
+            },
+            {
+              "cdsName": "N",
+              "pos": 103,
+              "refAa": "I",
+              "qryAa": "V",
+              "nucPos": 309,
+              "refTriplet": "ATT",
+              "qryTriplet": "GTT",
+              "nucRanges": [
+                {
+                  "begin": 309,
+                  "end": 312
+                }
+              ]
+            },
+            {
+              "cdsName": "N",
+              "pos": 104,
+              "refAa": "A",
+              "qryAa": "A",
+              "nucPos": 312,
+              "refTriplet": "GCT",
+              "qryTriplet": "GCT",
+              "nucRanges": [
+                {
+                  "begin": 312,
+                  "end": 315
+                }
+              ]
+            },
+            {
+              "cdsName": "N",
+              "pos": 105,
+              "refAa": "D",
+              "qryAa": "D",
+              "nucPos": 315,
+              "refTriplet": "GAT",
+              "qryTriplet": "GAT",
+              "nucRanges": [
+                {
+                  "begin": 315,
+                  "end": 318
+                }
+              ]
+            }
+          ],
+          "nucSubs": [
+            {
+              "pos": 305,
+              "refNuc": "C",
+              "qryNuc": "T"
+            },
+            {
+              "pos": 309,
+              "refNuc": "A",
+              "qryNuc": "G"
+            }
+          ],
+          "nucDels": [],
+          "nucDelRanges": []
+        }
+      ],
+      "nucToAaMuts": {
+        "309": [
+          {
+            "cdsName": "N",
+            "pos": 103,
+            "refAa": "I",
+            "qryAa": "V"
+          }
+        ],
+        "310": [
+          {
+            "cdsName": "N",
+            "pos": 103,
+            "refAa": "I",
+            "qryAa": "V"
+          }
+        ],
+        "311": [
+          {
+            "cdsName": "N",
+            "pos": 103,
+            "refAa": "I",
+            "qryAa": "V"
+          }
+        ]
+      },
+      "alignmentRange": {
+        "begin": 0,
+        "end": 699
+      },
+      "alignmentScore": 2017,
+      "aaAlignmentRanges": {
+        "N": [
+          {
+            "begin": 0,
+            "end": 233
+          }
+        ]
+      },
+      "aaUnsequencedRanges": {
+        "N": []
+      },
+      "pcrPrimerChanges": [],
+      "totalPcrPrimerChanges": 0,
+      "privateNucMutations": {
+        "privateSubstitutions": [],
+        "privateDeletions": [],
+        "privateDeletionRanges": [],
+        "reversionSubstitutions": [],
+        "labeledSubstitutions": [],
+        "unlabeledSubstitutions": [],
+        "totalPrivateSubstitutions": 0,
+        "totalPrivateDeletions": 0,
+        "totalReversionSubstitutions": 0,
+        "totalLabeledSubstitutions": 0,
+        "totalUnlabeledSubstitutions": 0
+      },
+      "privateAaMutations": {
+        "N": {
+          "cdsName": "N",
+          "privateSubstitutions": [
+            {
+              "cdsName": "N",
+              "pos": 103,
+              "refAa": "I",
+              "qryAa": "V"
+            }
+          ],
+          "privateDeletions": [],
+          "privateDeletionRanges": [],
+          "reversionSubstitutions": [],
+          "labeledSubstitutions": [],
+          "unlabeledSubstitutions": [
+            {
+              "cdsName": "N",
+              "pos": 103,
+              "refAa": "I",
+              "qryAa": "V"
+            }
+          ],
+          "totalPrivateSubstitutions": 1,
+          "totalPrivateDeletions": 0,
+          "totalReversionSubstitutions": 0,
+          "totalLabeledSubstitutions": 0,
+          "totalUnlabeledSubstitutions": 1,
+          "aaChangesGroups": [
+            {
+              "name": "N",
+              "range": {
+                "begin": 101,
+                "end": 106
+              },
+              "changes": [
+                {
+                  "cdsName": "N",
+                  "pos": 101,
+                  "refAa": "R",
+                  "qryAa": "R",
+                  "nucPos": 303,
+                  "refTriplet": "CGT",
+                  "qryTriplet": "CGT",
+                  "nucRanges": [
+                    {
+                      "begin": 303,
+                      "end": 306
+                    }
+                  ]
+                },
+                {
+                  "cdsName": "N",
+                  "pos": 102,
+                  "refAa": "W",
+                  "qryAa": "W",
+                  "nucPos": 306,
+                  "refTriplet": "TGG",
+                  "qryTriplet": "TGG",
+                  "nucRanges": [
+                    {
+                      "begin": 306,
+                      "end": 309
+                    }
+                  ]
+                },
+                {
+                  "cdsName": "N",
+                  "pos": 103,
+                  "refAa": "I",
+                  "qryAa": "V",
+                  "nucPos": 309,
+                  "refTriplet": "GTT",
+                  "qryTriplet": "GTT",
+                  "nucRanges": [
+                    {
+                      "begin": 309,
+                      "end": 312
+                    }
+                  ]
+                },
+                {
+                  "cdsName": "N",
+                  "pos": 104,
+                  "refAa": "A",
+                  "qryAa": "A",
+                  "nucPos": 312,
+                  "refTriplet": "GCT",
+                  "qryTriplet": "GCT",
+                  "nucRanges": [
+                    {
+                      "begin": 312,
+                      "end": 315
+                    }
+                  ]
+                },
+                {
+                  "cdsName": "N",
+                  "pos": 105,
+                  "refAa": "D",
+                  "qryAa": "D",
+                  "nucPos": 315,
+                  "refTriplet": "GAT",
+                  "qryTriplet": "GAT",
+                  "nucRanges": [
+                    {
+                      "begin": 315,
+                      "end": 318
+                    }
+                  ]
+                }
+              ],
+              "nucSubs": [],
+              "nucDels": [],
+              "nucDelRanges": []
+            }
+          ]
+        }
+      },
+      "cladeFounderInfo": null,
+      "cladeNodeAttrFounderInfo": {},
+      "refNodes": {},
+      "refNodeSearchResults": [],
+      "relativeNucMutations": [],
+      "relativeAaMutations": [],
+      "warnings": [],
+      "missingCdses": [],
+      "divergence": 10.66075,
+      "coverage": 1.0,
+      "cdsCoverage": {
+        "N": 1.0
+      },
+      "qc": {
+        "missingData": null,
+        "mixedSites": null,
+        "privateMutations": null,
+        "snpClusters": null,
+        "frameShifts": null,
+        "stopCodons": null,
+        "overallScore": 0.0,
+        "overallStatus": "good"
+      },
+      "customNodeAttributes": {},
+      "nearestNodeId": 59,
+      "nearestNodeName": "NODE_00033",
+      "isReverseComplement": false,
+      "phenotypeValues": null,
+      "aaMotifs": {},
+      "aaMotifsChanges": {},
+      "annotation": {
+        "genes": [
+          {
+            "index": 0,
+            "id": "N",
+            "name": "N",
+            "range": {
+              "begin": 0,
+              "end": 699
+            },
+            "cdses": [
+              {
+                "id": "N",
+                "name": "N",
+                "product": "N",
+                "segments": [
+                  {
+                    "index": 0,
+                    "id": "N",
+                    "name": "N",
+                    "range": {
+                      "begin": 0,
+                      "end": 699
+                    },
+                    "rangeLocal": {
+                      "begin": 0,
+                      "end": 699
+                    },
+                    "landmark": null,
+                    "wrappingPart": "non-wrapping",
+                    "strand": "+",
+                    "frame": 0,
+                    "phase": 0,
+                    "truncation": "none",
+                    "exceptions": [],
+                    "attributes": {
+                      "ID": [
+                        "CDS-0-N"
+                      ],
+                      "Name": [
+                        "N"
+                      ],
+                      "seq_index": [
+                        "0"
+                      ],
+                      "Parent": [
+                        "Gene-0-N"
+                      ],
+                      "product": [
+                        "N"
+                      ]
+                    },
+                    "compatIsGene": false,
+                    "color": null,
+                    "gffSeqid": "QUERY",
+                    "gffSource": "GenBank",
+                    "gffFeatureType": "CDS"
+                  }
+                ],
+                "proteins": [],
+                "exceptions": [],
+                "attributes": {
+                  "ID": [
+                    "N"
+                  ],
+                  "Name": [
+                    "N"
+                  ],
+                  "seq_index": [
+                    "0"
+                  ]
+                },
+                "compatIsGene": false,
+                "color": null
+              }
+            ],
+            "exceptions": [],
+            "attributes": {
+              "seq_index": [
+                "0"
+              ],
+              "ID": [
+                "Gene-0-N"
+              ],
+              "Name": [
+                "N"
+              ],
+              "product": [
+                "N"
+              ]
+            },
+            "compatIsCds": true,
+            "color": null,
+            "gffSeqid": "QUERY",
+            "gffSource": "GenBank",
+            "gffFeatureType": "CDS"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

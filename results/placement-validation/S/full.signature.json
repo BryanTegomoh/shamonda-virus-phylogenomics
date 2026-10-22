@@ -1,0 +1,9 @@
+{
+  "alignment_sha256": "59b14e96a2253463503ab96b923ad18dacb2db34f12c53c6654c681e26503327",
+  "settings": {
+    "bootstrap": 1000,
+    "seed": 159150,
+    "shalrt": 1000,
+    "threads": 2
+  }
+}
