@@ -1,0 +1,3 @@
+# Empty terminal TSV fields preserve unknown metadata. Tool logs retain raw bytes.
+*.tsv whitespace=-blank-at-eol
+*.log -whitespace

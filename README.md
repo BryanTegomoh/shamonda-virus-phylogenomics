@@ -11,6 +11,8 @@ separately from observed sequence variation.
 
 ## Run
 
+Prerequisites: conda or mamba, uv, curl and Git.
+
 Tested on Apple Silicon with Python 3.12.12 for helpers and the scientific tools
 pinned in [environment.yml](environment.yml). Create that conda environment and
 activate it, then install the Python lock and Nextclade:
