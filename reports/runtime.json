@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-10-22T21:32:42.346732+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "commands": {
+    "python": [
+      "python",
+      "--version"
+    ],
+    "mafft": [
+      "mafft",
+      "--version"
+    ],
+    "iqtree": [
+      "iqtree",
+      "--version"
+    ],
+    "augur": [
+      "augur",
+      "--version"
+    ],
+    "auspice": [
+      "auspice",
+      "--version"
+    ],
+    "snakemake": [
+      "snakemake",
+      "--version"
+    ],
+    "nextclade": [
+      "nextclade",
+      "--version"
+    ],
+    "datasets": [
+      "datasets",
+      "version"
+    ]
+  },
+  "versions": {
+    "python": "Python 3.12.12",
+    "mafft": "v7.526 (2024/Apr/26)",
+    "iqtree": "IQ-TREE version 3.1.1 for MacOS ARM 64-bit built Apr  8 2026\nDeveloped by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren\nContributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,\nOlga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt",
+    "augur": "augur 33.1.0",
+    "auspice": "2.66.0",
+    "snakemake": "7.32.4",
+    "nextclade": "nextclade 3.25.1",
+    "datasets": "datasets version: 18.25.1\nNew version of client (18.39.0) available at https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/LATEST/mac/datasets."
+  }
+}

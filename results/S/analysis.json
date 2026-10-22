@@ -1,0 +1,46 @@
+{
+  "backbone_tips": 44,
+  "best_fit_model": "TPM2u+G4",
+  "focal_backbone_tips": 34,
+  "partial_windows": [],
+  "primary_alignment_nt": 699,
+  "reference": "NC_018464.1",
+  "reference_cds_length": 699,
+  "segment": "S",
+  "sensitivity": {
+    "alternative_root": "midpoint",
+    "primary_splits": 41,
+    "primary_strong_splits": 6,
+    "primary_strong_splits_present_strict": 6,
+    "rooting_changes_unrooted_splits": false,
+    "rooting_primary": "Bunyamwera outgroup",
+    "shared_splits": 13,
+    "strict_splits": 41
+  },
+  "sha256": {
+    "alignment": "59b14e96a2253463503ab96b923ad18dacb2db34f12c53c6654c681e26503327",
+    "auspice": "6eaf0dbb2dc6da6166688769796435b05d35984eb19b11bf627b7d6407273aa2",
+    "tree": "dd5a7e5c53e70b1b0d770a4c9872b0393ccb74d6dc767df85bdb90956da1e225"
+  },
+  "strict_alignment_nt": 621,
+  "temporal": {
+    "dated_unique_isolates": 25,
+    "midpoint_sensitivity": {
+      "dated_unique_isolates": 25,
+      "permutation_p": 0.21782178217821782,
+      "permutations": 100,
+      "positive_slope": false,
+      "r_squared": 0.06259305409372971,
+      "rate_estimate": null,
+      "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+      "status": "diagnostic_only"
+    },
+    "permutation_p": 0.25742574257425743,
+    "permutations": 100,
+    "positive_slope": false,
+    "r_squared": 0.06259305409373656,
+    "rate_estimate": null,
+    "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+    "status": "diagnostic_only"
+  }
+}

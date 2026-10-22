@@ -1,0 +1,13 @@
+{
+  "seed": 159150,
+  "bootstrap": 1000,
+  "shalrt": 1000,
+  "threads": 2,
+  "minimum_cds_fraction": 0.9,
+  "maximum_ambiguity_fraction": 0.05,
+  "primary_maximum_codon_missing_fraction": 0.5,
+  "sensitivity_maximum_codon_missing_fraction": 0.0,
+  "minimum_partial_overlap_nt": 150,
+  "temporal_permutations": 100,
+  "tools": {"mafft": "mafft", "iqtree": "iqtree", "augur": "augur", "nextclade": "nextclade"}
+}

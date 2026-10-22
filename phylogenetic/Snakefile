@@ -1,0 +1,40 @@
+"""Run all segment analyses. Execute from the project root with make build."""
+SEGMENTS = ["L", "M", "S"]
+
+rule all:
+    input:
+        expand("auspice/shamonda_{segment}.json", segment=SEGMENTS),
+        expand("results/{segment}/analysis.json", segment=SEGMENTS),
+
+rule prepare:
+    input:
+        records="data/public/records.gb",
+        metadata="data/public/metadata.tsv",
+        settings="config/analysis.json",
+        implementation="shav/phylogeny.py",
+    output:
+        "results/{segment}/prepared.json",
+    threads: 2
+    shell:
+        "python -m shav.phylogeny prepare --segment {wildcards.segment}"
+
+rule infer:
+    input:
+        "results/{segment}/prepared.json",
+        "shav/phylogeny.py",
+    output:
+        "results/{segment}/inferred.json",
+    threads: 2
+    shell:
+        "python -m shav.phylogeny infer --segment {wildcards.segment}"
+
+rule export:
+    input:
+        "results/{segment}/inferred.json",
+        "shav/phylogeny.py",
+    output:
+        "auspice/shamonda_{segment}.json",
+        "results/{segment}/analysis.json",
+    threads: 1
+    shell:
+        "python -m shav.phylogeny export --segment {wildcards.segment}"

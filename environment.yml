@@ -1,0 +1,13 @@
+name: shamonda-phylogenomics-tools
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12.13
+  - mafft=7.526
+  - iqtree=3.1.1
+  - augur=33.1.0
+  - auspice=2.66.0
+  - snakemake=7.32.4
+  - pulp=2.7.0
+  - ncbi-datasets-cli=18.25.1

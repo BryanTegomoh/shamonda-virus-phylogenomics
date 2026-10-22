@@ -41,7 +41,10 @@ def read_fasta(path: Path) -> dict[str, str]:
     name = ""
     for line in path.read_text().splitlines():
         if line.startswith(">"):
-            name = line[1:].split()[0]
+            header = line[1:].split()
+            if not header:
+                raise ValueError(f"Empty FASTA identifier: {path}")
+            name = header[0]
             if not name or name in sequences:
                 raise ValueError(f"Empty or duplicate FASTA identifier: {name}")
             sequences[name] = ""

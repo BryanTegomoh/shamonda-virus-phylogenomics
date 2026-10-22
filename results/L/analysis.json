@@ -1,0 +1,83 @@
+{
+  "backbone_tips": 31,
+  "best_fit_model": "GTR+F+I+R2",
+  "focal_backbone_tips": 21,
+  "partial_windows": [
+    {
+      "alignment_end_1based": 549,
+      "alignment_start_1based": 1,
+      "name": "partial_1",
+      "partial_accessions": [
+        "AB698483.1",
+        "AB698484.1",
+        "AB698485.1",
+        "LC198191.1",
+        "LC198192.1",
+        "LC198193.1",
+        "OP976210.1"
+      ],
+      "retained_nt": 543,
+      "tips": 38
+    },
+    {
+      "alignment_end_1based": 3414,
+      "alignment_start_1based": 2494,
+      "name": "partial_2",
+      "partial_accessions": [
+        "OR249961.1"
+      ],
+      "retained_nt": 921,
+      "tips": 32
+    },
+    {
+      "alignment_end_1based": 3390,
+      "alignment_start_1based": 2863,
+      "name": "partial_3",
+      "partial_accessions": [
+        "PQ593039.1"
+      ],
+      "retained_nt": 528,
+      "tips": 33
+    }
+  ],
+  "primary_alignment_nt": 6762,
+  "reference": "NC_018463.1",
+  "reference_cds_length": 6762,
+  "segment": "L",
+  "sensitivity": {
+    "alternative_root": "midpoint",
+    "primary_splits": 28,
+    "primary_strong_splits": 11,
+    "primary_strong_splits_present_strict": 11,
+    "rooting_changes_unrooted_splits": false,
+    "rooting_primary": "Bunyamwera outgroup",
+    "shared_splits": 22,
+    "strict_splits": 28
+  },
+  "sha256": {
+    "alignment": "1000d73238c56fcc13017442f8735a1d321ecc2e73cb607df39ba71d1033b814",
+    "auspice": "f247f44e818c0c487c5215db243124d785a631cf8390e243b08f24dbe86a72ea",
+    "tree": "97cae7084711be0729d8f0d1b29a401bdcd454be2594199684d17681dfe1da71"
+  },
+  "strict_alignment_nt": 6501,
+  "temporal": {
+    "dated_unique_isolates": 20,
+    "midpoint_sensitivity": {
+      "dated_unique_isolates": 20,
+      "permutation_p": 0.039603960396039604,
+      "permutations": 100,
+      "positive_slope": true,
+      "r_squared": 0.17531171686515443,
+      "rate_estimate": null,
+      "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+      "status": "diagnostic_only"
+    },
+    "permutation_p": 0.0297029702970297,
+    "permutations": 100,
+    "positive_slope": true,
+    "r_squared": 0.17531171686515612,
+    "rate_estimate": null,
+    "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+    "status": "diagnostic_only"
+  }
+}

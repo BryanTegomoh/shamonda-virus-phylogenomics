@@ -12,4 +12,10 @@ case-inputs/
 case-results/
 *.egg-info/
 .DS_Store
+*.ckp.gz
+*.model.gz
+*.console.log
+.cache-ingest-run.log
+.venv-evicted/
+.snakemake-evicted/
 

@@ -1,0 +1,505 @@
+{
+  "canonical_focal_records": 94,
+  "country_record_counts": {
+    "France": 12,
+    "Germany": 30,
+    "Japan": 26,
+    "Nigeria": 2,
+    "South Africa": 6,
+    "Switzerland": 12,
+    "Taiwan": 1,
+    "unknown": 5
+  },
+  "explicit_human_records": [],
+  "focal_missing_host": 50,
+  "focal_records": 97,
+  "read_catalog_runs": 20,
+  "retrieved_at": "2026-10-22T21:09:47.937213+00:00",
+  "segments": [
+    {
+      "backbone_tips": 31,
+      "best_fit_model": "GTR+F+I+R2",
+      "europe": {
+        "europe_exclusive_monophyly": false,
+        "europe_tips_outside_supported_europe_only_groups": [],
+        "maximal_supported_europe_only_groups": [
+          {
+            "accessions": [
+              "OZ541431.1",
+              "OZ541448.1",
+              "OZ541451.1",
+              "OZ541460.1",
+              "OZ541464.1",
+              "OZ541467.1",
+              "OZ541472.1",
+              "OZ541481.1",
+              "OZ541491.1"
+            ],
+            "countries": [
+              "Germany"
+            ],
+            "sh_alrt": 100.0,
+            "ufboot": 100.0
+          },
+          {
+            "accessions": [
+              "OZ502471.1",
+              "OZ516531.1",
+              "OZ516534.1",
+              "PZ797891.1",
+              "PZ831155.1",
+              "PZ831156.1",
+              "PZ831157.1",
+              "PZ831158.1",
+              "PZ860852.1"
+            ],
+            "countries": [
+              "France",
+              "Germany",
+              "Switzerland"
+            ],
+            "sh_alrt": 100.0,
+            "ufboot": 100.0
+          }
+        ],
+        "other_mrca_members": [
+          "LC741387.1",
+          "LC811397.1",
+          "NC_018463.1",
+          "NC_043583.1"
+        ],
+        "project_labels": {
+          "EU1_German_project": {
+            "accessions": [
+              "OZ502471.1"
+            ],
+            "status": "fewer_than_two_tips"
+          },
+          "EU2_German_project": {
+            "accessions": [
+              "OZ541431.1",
+              "OZ541448.1",
+              "OZ541451.1",
+              "OZ541460.1",
+              "OZ541464.1",
+              "OZ541467.1",
+              "OZ541472.1",
+              "OZ541481.1",
+              "OZ541491.1"
+            ],
+            "mrca_sh_alrt": 100.0,
+            "mrca_ufboot": 100.0,
+            "other_mrca_members": [],
+            "project": "PRJEB125115"
+          },
+          "other_European_tip_set": {
+            "accessions": [
+              "OZ502471.1",
+              "OZ516531.1",
+              "OZ516534.1",
+              "PZ797891.1",
+              "PZ831155.1",
+              "PZ831156.1",
+              "PZ831157.1",
+              "PZ831158.1",
+              "PZ860852.1"
+            ],
+            "interpretation": "Earlier European accessions in this snapshot; not a geography-only assignment of future sequences to EU1.",
+            "mrca_sh_alrt": 100.0,
+            "mrca_ufboot": 100.0,
+            "other_mrca_members": []
+          }
+        },
+        "tips": 18
+      },
+      "focal_backbone_tips": 21,
+      "partial_windows": [
+        {
+          "alignment_end_1based": 549,
+          "alignment_start_1based": 1,
+          "name": "partial_1",
+          "partial_accessions": [
+            "AB698483.1",
+            "AB698484.1",
+            "AB698485.1",
+            "LC198191.1",
+            "LC198192.1",
+            "LC198193.1",
+            "OP976210.1"
+          ],
+          "retained_nt": 543,
+          "tips": 38
+        },
+        {
+          "alignment_end_1based": 3414,
+          "alignment_start_1based": 2494,
+          "name": "partial_2",
+          "partial_accessions": [
+            "OR249961.1"
+          ],
+          "retained_nt": 921,
+          "tips": 32
+        },
+        {
+          "alignment_end_1based": 3390,
+          "alignment_start_1based": 2863,
+          "name": "partial_3",
+          "partial_accessions": [
+            "PQ593039.1"
+          ],
+          "retained_nt": 528,
+          "tips": 33
+        }
+      ],
+      "primary_alignment_nt": 6762,
+      "reference": "NC_018463.1",
+      "reference_cds_length": 6762,
+      "segment": "L",
+      "sensitivity": {
+        "alternative_root": "midpoint",
+        "primary_splits": 28,
+        "primary_strong_splits": 11,
+        "primary_strong_splits_present_strict": 11,
+        "rooting_changes_unrooted_splits": false,
+        "rooting_primary": "Bunyamwera outgroup",
+        "shared_splits": 22,
+        "strict_splits": 28
+      },
+      "sha256": {
+        "alignment": "1000d73238c56fcc13017442f8735a1d321ecc2e73cb607df39ba71d1033b814",
+        "auspice": "f247f44e818c0c487c5215db243124d785a631cf8390e243b08f24dbe86a72ea",
+        "tree": "97cae7084711be0729d8f0d1b29a401bdcd454be2594199684d17681dfe1da71"
+      },
+      "strict_alignment_nt": 6501,
+      "temporal": {
+        "dated_unique_isolates": 20,
+        "midpoint_sensitivity": {
+          "dated_unique_isolates": 20,
+          "permutation_p": 0.039603960396039604,
+          "permutations": 100,
+          "positive_slope": true,
+          "r_squared": 0.17531171686515443,
+          "rate_estimate": null,
+          "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+          "status": "diagnostic_only"
+        },
+        "permutation_p": 0.0297029702970297,
+        "permutations": 100,
+        "positive_slope": true,
+        "r_squared": 0.17531171686515612,
+        "rate_estimate": null,
+        "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+        "status": "diagnostic_only"
+      }
+    },
+    {
+      "backbone_tips": 37,
+      "best_fit_model": "GTR+F+I+G4",
+      "europe": {
+        "europe_exclusive_monophyly": false,
+        "europe_tips_outside_supported_europe_only_groups": [
+          "OZ541432.1",
+          "OZ541449.1",
+          "OZ541452.1",
+          "OZ541461.1",
+          "OZ541465.1",
+          "OZ541468.1",
+          "OZ541473.1",
+          "OZ541482.1",
+          "OZ541492.1"
+        ],
+        "maximal_supported_europe_only_groups": [
+          {
+            "accessions": [
+              "OZ502472.1",
+              "OZ516532.1",
+              "OZ516535.1",
+              "PZ797892.1",
+              "PZ831159.1",
+              "PZ831160.1",
+              "PZ831161.1",
+              "PZ831162.1",
+              "PZ860853.1"
+            ],
+            "countries": [
+              "France",
+              "Germany",
+              "Switzerland"
+            ],
+            "sh_alrt": 100.0,
+            "ufboot": 99.0
+          }
+        ],
+        "other_mrca_members": [
+          "AB698475.1",
+          "AB698476.1",
+          "AB698477.1",
+          "LC198188.1",
+          "LC198189.1",
+          "LC198190.1",
+          "LC741388.1",
+          "LC811396.1",
+          "NC_018467.1"
+        ],
+        "project_labels": {
+          "EU1_German_project": {
+            "accessions": [
+              "OZ502472.1"
+            ],
+            "status": "fewer_than_two_tips"
+          },
+          "EU2_German_project": {
+            "accessions": [
+              "OZ541432.1",
+              "OZ541449.1",
+              "OZ541452.1",
+              "OZ541461.1",
+              "OZ541465.1",
+              "OZ541468.1",
+              "OZ541473.1",
+              "OZ541482.1",
+              "OZ541492.1"
+            ],
+            "mrca_sh_alrt": 74.7,
+            "mrca_ufboot": 88.0,
+            "other_mrca_members": [],
+            "project": "PRJEB125115"
+          },
+          "other_European_tip_set": {
+            "accessions": [
+              "OZ502472.1",
+              "OZ516532.1",
+              "OZ516535.1",
+              "PZ797892.1",
+              "PZ831159.1",
+              "PZ831160.1",
+              "PZ831161.1",
+              "PZ831162.1",
+              "PZ860853.1"
+            ],
+            "interpretation": "Earlier European accessions in this snapshot; not a geography-only assignment of future sequences to EU1.",
+            "mrca_sh_alrt": 100.0,
+            "mrca_ufboot": 99.0,
+            "other_mrca_members": []
+          }
+        },
+        "tips": 18
+      },
+      "focal_backbone_tips": 27,
+      "partial_windows": [
+        {
+          "alignment_end_1based": 3267,
+          "alignment_start_1based": 2848,
+          "name": "partial_1",
+          "partial_accessions": [
+            "OR249960.1"
+          ],
+          "retained_nt": 420,
+          "tips": 39
+        },
+        {
+          "alignment_end_1based": 3195,
+          "alignment_start_1based": 2854,
+          "name": "partial_2",
+          "partial_accessions": [
+            "PQ593040.1"
+          ],
+          "retained_nt": 342,
+          "tips": 40
+        },
+        {
+          "alignment_end_1based": 3252,
+          "alignment_start_1based": 2854,
+          "name": "partial_3",
+          "partial_accessions": [
+            "PQ593041.1"
+          ],
+          "retained_nt": 399,
+          "tips": 39
+        }
+      ],
+      "primary_alignment_nt": 4209,
+      "reference": "NC_018467.1",
+      "reference_cds_length": 4209,
+      "segment": "M",
+      "sensitivity": {
+        "alternative_root": "midpoint",
+        "primary_splits": 34,
+        "primary_strong_splits": 14,
+        "primary_strong_splits_present_strict": 14,
+        "rooting_changes_unrooted_splits": false,
+        "rooting_primary": "Bunyamwera outgroup",
+        "shared_splits": 23,
+        "strict_splits": 34
+      },
+      "sha256": {
+        "alignment": "f108a3cc2bf2e0bc8c8083719d661afefdaf95077fe9e0a2407658c8729a6549",
+        "auspice": "2fd672ea815f7a7a05d53b10df58445bea07c74ce13f786060106b5a4757448a",
+        "tree": "5b1192602c0fd592f0b601b81c0beb2ffd8dd192bc6c259d95173269550223d0"
+      },
+      "strict_alignment_nt": 3909,
+      "temporal": {
+        "dated_unique_isolates": 25,
+        "midpoint_sensitivity": {
+          "dated_unique_isolates": 25,
+          "permutation_p": 0.8712871287128713,
+          "permutations": 100,
+          "positive_slope": true,
+          "r_squared": 0.0014824642260860411,
+          "rate_estimate": null,
+          "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+          "status": "diagnostic_only"
+        },
+        "permutation_p": 0.9306930693069307,
+        "permutations": 100,
+        "positive_slope": true,
+        "r_squared": 0.0014964097098004977,
+        "rate_estimate": null,
+        "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+        "status": "diagnostic_only"
+      }
+    },
+    {
+      "backbone_tips": 44,
+      "best_fit_model": "TPM2u+G4",
+      "europe": {
+        "europe_exclusive_monophyly": false,
+        "europe_tips_outside_supported_europe_only_groups": [
+          "OZ502473.1",
+          "OZ516533.1",
+          "OZ516536.1",
+          "PZ797893.1",
+          "PZ831163.1",
+          "PZ831164.1",
+          "PZ831165.1",
+          "PZ831166.1",
+          "PZ860854.1"
+        ],
+        "maximal_supported_europe_only_groups": [
+          {
+            "accessions": [
+              "OZ541433.1",
+              "OZ541450.1",
+              "OZ541453.1",
+              "OZ541462.1",
+              "OZ541466.1",
+              "OZ541469.1",
+              "OZ541474.1",
+              "OZ541483.1",
+              "OZ541493.1"
+            ],
+            "countries": [
+              "Germany"
+            ],
+            "sh_alrt": 99.5,
+            "ufboot": 100.0
+          }
+        ],
+        "other_mrca_members": [
+          "AB183278.1",
+          "AB183279.1",
+          "AB183280.1",
+          "AB183281.1",
+          "AB183282.1",
+          "AB183283.1",
+          "AB698470.1",
+          "AF362404.1",
+          "LC198185.1",
+          "LC198186.1",
+          "LC198187.1",
+          "LC741389.1",
+          "LC811395.1",
+          "MH999471.1",
+          "NC_018464.1",
+          "NC_043582.1",
+          "OR249959.1"
+        ],
+        "project_labels": {
+          "EU1_German_project": {
+            "accessions": [
+              "OZ502473.1"
+            ],
+            "status": "fewer_than_two_tips"
+          },
+          "EU2_German_project": {
+            "accessions": [
+              "OZ541433.1",
+              "OZ541450.1",
+              "OZ541453.1",
+              "OZ541462.1",
+              "OZ541466.1",
+              "OZ541469.1",
+              "OZ541474.1",
+              "OZ541483.1",
+              "OZ541493.1"
+            ],
+            "mrca_sh_alrt": 99.5,
+            "mrca_ufboot": 100.0,
+            "other_mrca_members": [],
+            "project": "PRJEB125115"
+          },
+          "other_European_tip_set": {
+            "accessions": [
+              "OZ502473.1",
+              "OZ516533.1",
+              "OZ516536.1",
+              "PZ797893.1",
+              "PZ831163.1",
+              "PZ831164.1",
+              "PZ831165.1",
+              "PZ831166.1",
+              "PZ860854.1"
+            ],
+            "interpretation": "Earlier European accessions in this snapshot; not a geography-only assignment of future sequences to EU1.",
+            "mrca_sh_alrt": 87.8,
+            "mrca_ufboot": 91.0,
+            "other_mrca_members": []
+          }
+        },
+        "tips": 18
+      },
+      "focal_backbone_tips": 34,
+      "partial_windows": [],
+      "primary_alignment_nt": 699,
+      "reference": "NC_018464.1",
+      "reference_cds_length": 699,
+      "segment": "S",
+      "sensitivity": {
+        "alternative_root": "midpoint",
+        "primary_splits": 41,
+        "primary_strong_splits": 6,
+        "primary_strong_splits_present_strict": 6,
+        "rooting_changes_unrooted_splits": false,
+        "rooting_primary": "Bunyamwera outgroup",
+        "shared_splits": 13,
+        "strict_splits": 41
+      },
+      "sha256": {
+        "alignment": "59b14e96a2253463503ab96b923ad18dacb2db34f12c53c6654c681e26503327",
+        "auspice": "6eaf0dbb2dc6da6166688769796435b05d35984eb19b11bf627b7d6407273aa2",
+        "tree": "dd5a7e5c53e70b1b0d770a4c9872b0393ccb74d6dc767df85bdb90956da1e225"
+      },
+      "strict_alignment_nt": 621,
+      "temporal": {
+        "dated_unique_isolates": 25,
+        "midpoint_sensitivity": {
+          "dated_unique_isolates": 25,
+          "permutation_p": 0.21782178217821782,
+          "permutations": 100,
+          "positive_slope": false,
+          "r_squared": 0.06259305409372971,
+          "rate_estimate": null,
+          "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+          "status": "diagnostic_only"
+        },
+        "permutation_p": 0.25742574257425743,
+        "permutations": 100,
+        "positive_slope": false,
+        "r_squared": 0.06259305409373656,
+        "rate_estimate": null,
+        "reason": "Root-to-tip correlation is descriptive, phylogenetically non-independent, and sensitive to sampling/root. A rate or dated origin requires a separate calibrated clock analysis; neither is reported.",
+        "status": "diagnostic_only"
+      }
+    }
+  ]
+}

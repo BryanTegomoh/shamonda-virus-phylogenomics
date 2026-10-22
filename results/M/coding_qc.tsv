@@ -1,0 +1,41 @@
+accession	status	reason	length	location	strand	codon_start	product
+AB698475.1	backbone		4209	[3:4215](+)	1	1	M polyprotein
+AB698476.1	backbone		4209	[3:4215](+)	1	1	M polyprotein
+AB698477.1	backbone		4209	[3:4215](+)	1	1	M polyprotein
+HE795091.1	backbone		4209	[10:4222](+)	1	1	M polyprotein
+LC198188.1	backbone		4209	[3:4215](+)	1	1	polyprotein
+LC198189.1	backbone		4209	[3:4215](+)	1	1	polyprotein
+LC198190.1	backbone		4209	[3:4215](+)	1	1	polyprotein
+LC741388.1	backbone		4209	[17:4229](+)	1	1	M polyprotein
+LC811396.1	backbone		4209	[17:4229](+)	1	1	envelopment polyprotein
+NC_001926.1	backbone		4299	[56:4358](+)	1	1	M polyprotein
+NC_009895.1	backbone		4203	[22:4228](+)	1	1	M polyprotein
+NC_018459.1	backbone		4212	[19:4234](+)	1	1	M polyprotein
+NC_018466.1	backbone		4209	[6:4218](+)	1	1	M polyprotein
+NC_018467.1	backbone		4209	[17:4229](+)	1	1	M polyprotein
+NC_018478.1	backbone		4227	[13:4243](+)	1	1	M polyprotein
+NC_043551.1	backbone		4200	[22:4225](+)	1	1	M polyprotein
+NC_043555.1	backbone		4200	[31:4234](+)	1	1	M polyprotein
+NC_043584.1	backbone		4209	[23:4235](+)	1	1	M polyprotein
+NC_043697.1	backbone		4212	[23:4238](+)	1	1	polyprotein
+OR249960.1	partial		420	[<0:>421](+)	1	2	polyprotein
+OZ502472.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[15:4224];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ516532.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[17:4226];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ516535.1	backbone		4197	inferred_from=NC_018467.1;oriented_0based_halfopen=[1:4198];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541432.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[3:4212];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541449.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[4:4213];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541452.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[3:4212];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541461.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[5:4214];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541465.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[5:4214];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541468.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[0:4209];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541473.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[3:4212];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541482.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[3:4212];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541492.1	backbone		4209	inferred_from=NC_018467.1;oriented_0based_halfopen=[6:4215];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+PQ593040.1	partial		342	inferred_from=NC_018467.1;oriented_0based_halfopen=[2:344];strand=-1	-1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+PQ593041.1	partial		399	inferred_from=NC_018467.1;oriented_0based_halfopen=[6:405];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+PZ797892.1	backbone		4209	[15:4227](+)	1	1	M polyprotein
+PZ831159.1	backbone		4209	[15:4227](+)	1	1	M polyprotein
+PZ831160.1	backbone		4209	[15:4227](+)	1	1	M polyprotein
+PZ831161.1	backbone		4209	[15:4227](+)	1	1	M polyprotein
+PZ831162.1	backbone		4209	[15:4227](+)	1	1	M polyprotein
+PZ860853.1	backbone		4209	[15:4227](+)	1	1	M polyprotein

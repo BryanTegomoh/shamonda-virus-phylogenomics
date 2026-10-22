@@ -1,0 +1,45 @@
+accession	status	reason	length	location	strand	codon_start	product
+AB183278.1	backbone		699	[13:715](+)	1	1	nucleocapsid protein
+AB183279.1	backbone		699	[13:715](+)	1	1	nucleocapsid protein
+AB183280.1	backbone		699	[13:715](+)	1	1	nucleocapsid protein
+AB183281.1	backbone		699	[13:715](+)	1	1	nucleocapsid protein
+AB183282.1	backbone		699	[13:715](+)	1	1	nucleocapsid protein
+AB183283.1	backbone		699	[13:715](+)	1	1	nucleocapsid protein
+AB698470.1	backbone		699	[13:715](+)	1	1	nucleocapsid protein
+AF362404.1	backbone		699	[0:702](+)	1	1	nucleocapsid protein
+HE795092.1	backbone		699	[14:716](+)	1	1	nucleocapsid protein
+LC198185.1	backbone		699	[13:715](+)	1	1	nucleocapsid
+LC198186.1	backbone		699	[13:715](+)	1	1	nucleocapsid
+LC198187.1	backbone		699	[13:715](+)	1	1	nucleocapsid
+LC741389.1	backbone		699	[31:733](+)	1	1	nucleocapsid protein
+LC811395.1	backbone		699	[31:733](+)	1	1	nucleocapsid protein
+MH999471.1	backbone		699	[0:702](+)	1	1	nucleocapsid protein
+NC_001927.1	backbone		699	[85:787](+)	1	1	N protein
+NC_009896.1	backbone		699	[33:735](+)	1	1	nucleocapsid
+NC_018460.1	backbone		699	[25:727](+)	1	1	nucleocapsid protein
+NC_018462.1	backbone		699	[43:745](+)	1	1	nucleocapsid protein
+NC_018464.1	backbone		699	[30:732](+)	1	1	nucleocapsid protein
+NC_018477.1	backbone		699	[24:726](+)	1	1	nucleocapsid protein
+NC_043549.1	backbone		699	[34:736](+)	1	1	nucleocapsid protein
+NC_043557.1	backbone		699	[30:732](+)	1	1	nucleocapsid protein
+NC_043582.1	backbone		699	[31:733](+)	1	1	nucleocapsid protein
+NC_043698.1	backbone		699	[34:736](+)	1	1	nucleocapsid
+OR249959.1	backbone		666	[5:>671](+)	1	1	nucleocapsid protein
+OZ502473.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[25:724];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ516533.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[31:730];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ516536.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[31:730];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541433.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[24:723];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541450.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[22:721];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541453.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[24:723];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541462.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[22:721];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541466.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[23:722];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541469.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[22:721];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541474.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[24:723];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541483.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[24:723];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541493.1	backbone		699	inferred_from=NC_018464.1;oriented_0based_halfopen=[22:721];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+PZ797893.1	backbone		657	[<0:660](+)	1	1	nucleocapsid protein
+PZ831163.1	backbone		699	[25:727](+)	1	1	nucleocapsid protein
+PZ831164.1	backbone		699	[25:727](+)	1	1	nucleocapsid protein
+PZ831165.1	backbone		699	[25:727](+)	1	1	nucleocapsid protein
+PZ831166.1	backbone		699	[25:727](+)	1	1	nucleocapsid protein
+PZ860854.1	backbone		699	[25:727](+)	1	1	nucleocapsid protein

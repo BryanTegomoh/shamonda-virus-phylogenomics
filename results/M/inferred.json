@@ -1,0 +1,22 @@
+{
+  "prepared_sha256": "aa4c9c778483f4240d83970f6b3631522d8273650c9de2a20d37577c32df72b7",
+  "segment": "M",
+  "settings": {
+    "bootstrap": 1000,
+    "maximum_ambiguity_fraction": 0.05,
+    "minimum_cds_fraction": 0.9,
+    "minimum_partial_overlap_nt": 150,
+    "primary_maximum_codon_missing_fraction": 0.5,
+    "seed": 159150,
+    "sensitivity_maximum_codon_missing_fraction": 0.0,
+    "shalrt": 1000,
+    "temporal_permutations": 100,
+    "threads": 2,
+    "tools": {
+      "augur": "augur",
+      "iqtree": "iqtree",
+      "mafft": "mafft",
+      "nextclade": "nextclade"
+    }
+  }
+}

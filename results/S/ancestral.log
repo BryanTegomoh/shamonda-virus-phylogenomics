@@ -1,0 +1,14 @@
+Validating schema of '/Users/bryan/Projects/shamonda-virus-phylogenomics/results/S/ancestral.json'...
+
+Inferred ancestral sequence states using TreeTime:
+	Sagulenko et al. TreeTime: Maximum-likelihood phylodynamic analysis
+	Virus Evolution, vol 4, https://academic.oup.com/ve/article/4/1/vex042/4794731
+
+augur ancestral is using TreeTime version 0.11.5
+
+0.00	WARNING: TreeTime has detected branches that are longer than 4. TreeTime
+    	requires trees where branch length is in units of average number of
+    	nucleotide or protein substitutions per site. Use on trees with longer
+    	branches is not recommended for ancestral sequence reconstruction.
+ancestral mutations written to /Users/bryan/Projects/shamonda-virus-phylogenomics/results/S/ancestral.json
+ancestral sequences FASTA written to /Users/bryan/Projects/shamonda-virus-phylogenomics/results/S/ancestral.fasta

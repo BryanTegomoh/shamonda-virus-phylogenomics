@@ -1,0 +1,20 @@
+{
+  "L": {
+    "mutation_replay": "passed",
+    "schema": "passed",
+    "snapshot": "matched",
+    "tips": 31
+  },
+  "M": {
+    "mutation_replay": "passed",
+    "schema": "passed",
+    "snapshot": "matched",
+    "tips": 37
+  },
+  "S": {
+    "mutation_replay": "passed",
+    "schema": "passed",
+    "snapshot": "matched",
+    "tips": 44
+  }
+}

@@ -1,0 +1,41 @@
+accession	status	reason	length	location	strand	codon_start	product
+AB698483.1	partial		543	[13:>556](+)	1	1	RNA-dependent RNA polymerase
+AB698484.1	partial		543	[13:>556](+)	1	1	RNA-dependent RNA polymerase
+AB698485.1	partial		543	[13:>556](+)	1	1	RNA-dependent RNA polymerase
+HE795090.1	backbone		6759	[19:6781](+)	1	1	RNA-dependent RNA polymerase
+LC198191.1	partial		543	[13:>556](+)	1	1	RNA-dependent RNA polymerase
+LC198192.1	partial		543	[13:>556](+)	1	1	RNA-dependent RNA polymerase
+LC198193.1	partial		543	[13:>556](+)	1	1	RNA-dependent RNA polymerase
+LC741387.1	backbone		6762	[27:6792](+)	1	1	RNA-dependent RNA polymerase
+LC811397.1	backbone		6762	[27:6792](+)	1	1	RNA-dependent RNA polymerase
+NC_001925.1	backbone		6714	[50:6767](+)	1	1	hypothetical protein
+NC_009894.1	backbone		6753	[30:6786](+)	1	1	RNA-dependent RNA polymerase
+NC_018461.1	backbone		6762	[18:6783](+)	1	1	RNA-dependent RNA polymerase
+NC_018463.1	backbone		6762	[19:6784](+)	1	1	RNA-dependent RNA polymerase
+NC_018465.1	backbone		6756	[95:6854](+)	1	1	RNA-dependent RNA polymerase
+NC_018476.1	backbone		6759	[21:6783](+)	1	1	RNA-dependent RNA polymerase
+NC_043550.1	backbone		6756	[25:6784](+)	1	1	RNA-dependent RNA polymerase
+NC_043556.1	backbone		6759	[22:6784](+)	1	1	RNA-dependent RNA polymerase
+NC_043583.1	backbone		6762	[27:6792](+)	1	1	RNA-dependent RNA polymerase
+NC_043699.1	backbone		6759	[31:6793](+)	1	1	RNA-dependent RNA polymerase
+OP976210.1	partial		543	[0:>543](+)	1	1	RNA-dependent RNA polymerase
+OR249961.1	partial		921	[<0:>923](+)	1	3	RNA-dependent RNA polymerase
+OZ502471.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[18:6780];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ516531.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[27:6789];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ516534.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[27:6789];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541431.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6777];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541448.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6777];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541451.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6777];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541460.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6777];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541464.1	backbone		6759	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6774];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541467.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6777];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541472.1	backbone		6759	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6774];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541481.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6777];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+OZ541491.1	backbone		6762	inferred_from=NC_018463.1;oriented_0based_halfopen=[15:6777];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+PQ593039.1	partial		528	inferred_from=NC_018463.1;oriented_0based_halfopen=[6:534];strand=1	1	1	reference-guided primary-CDS homolog (not a submitted annotation)
+PZ797891.1	backbone		6762	[7:6772](+)	1	1	RNA-dependent RNA polymerase
+PZ831155.1	backbone		6762	[18:6783](+)	1	1	RNA-dependent RNA polymerase
+PZ831156.1	backbone		6762	[18:6783](+)	1	1	RNA-dependent RNA polymerase
+PZ831157.1	backbone		6762	[18:6783](+)	1	1	RNA-dependent RNA polymerase
+PZ831158.1	backbone		6762	[18:6783](+)	1	1	RNA-dependent RNA polymerase
+PZ860852.1	backbone		6582	[18:>6600](+)	1	1	RNA-dependent RNA polymerase

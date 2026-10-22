@@ -10,7 +10,7 @@ description = "Reproducible, segment-specific Shamonda virus genomic epidemiolog
 dependencies = ["biopython==1.86", "numpy==2.3.5", "scipy==1.16.3", "matplotlib==3.10.8"]
 
 [project.optional-dependencies]
-dev = ["pytest==9.0.2", "mypy==1.19.1", "ruff==0.14.10", "types-requests==2.32.4.20250913"]
+dev = ["pytest==9.0.2", "mypy==1.19.1", "ruff==0.14.10"]
 
 [tool.setuptools.packages.find]
 include = ["shav*"]
@@ -18,6 +18,9 @@ include = ["shav*"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
+# Biopython exposes partially annotated APIs. Keep our interfaces strict while
+# permitting calls into this external library's unannotated implementations.
+untyped_calls_exclude = ["Bio"]
 
 [[tool.mypy.overrides]]
 module = ["Bio.*", "scipy.*", "matplotlib.*"]
