@@ -1,0 +1,15 @@
+.venv/
+.runtime/
+.cache/
+.superpowers/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.snakemake/
+private/
+case-inputs/
+case-results/
+*.egg-info/
+.DS_Store
+
