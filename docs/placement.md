@@ -9,6 +9,9 @@ A single segment may use its sample name. Metadata and FASTA must match exactly.
 Output defaults to a fresh ignored `case-results/` directory. Do not upload or
 commit case data. `python -m shav.place` also accepts `--output` and `--rebuild`.
 Existing output directories are rejected to prevent accidental overwrites.
+Within the repository, explicit output paths must be gitignored. External local
+paths are accepted. The CLI has no public-output override. The validation driver
+uses an internal exception restricted to exact known public CDS fixtures.
 
 The reference datasets represent primary CDS coordinates: N (S), M polyprotein,
 and RdRp (L). Whole deposited segments, coding sequences, and reverse complements

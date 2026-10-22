@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/nextstrain/nextclade/refs/heads/release/packages/nextclade-schemas/output-json.schema.json",
   "schemaVersion": "3.0.0",
   "nextcladeAlgoVersion": "3.25.1",
-  "createdAt": "2026-10-22T21:21:52.859528+00:00",
+  "createdAt": "2026-10-22T21:27:33.451101+00:00",
   "cladeNodeAttrKeys": [],
   "phenotypeAttrKeys": [],
   "refNodes": {},
@@ -493,11 +493,11 @@
                     "truncation": "none",
                     "exceptions": [],
                     "attributes": {
-                      "ID": [
-                        "CDS-0-N"
-                      ],
                       "Name": [
                         "N"
+                      ],
+                      "ID": [
+                        "CDS-0-N"
                       ],
                       "seq_index": [
                         "0"
@@ -519,10 +519,10 @@
                 "proteins": [],
                 "exceptions": [],
                 "attributes": {
-                  "ID": [
+                  "Name": [
                     "N"
                   ],
-                  "Name": [
+                  "ID": [
                     "N"
                   ],
                   "seq_index": [

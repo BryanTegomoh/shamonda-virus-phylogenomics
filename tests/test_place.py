@@ -56,3 +56,18 @@ def test_reports_all_mapping_errors(tmp_path: Path) -> None:
     assert 'Metadata requires' in error
     assert 'Missing or reused' in error
     assert 'without matching' in error
+
+
+def test_repository_output_requires_ignored_destination() -> None:
+    from shav.common import ROOT
+    from shav.place import private_output
+    with pytest.raises(ValueError, match='gitignored'):
+        private_output(ROOT / 'results' / 'unsafe-case-output')
+    private_output(ROOT / 'case-results' / 'private-output-test')
+    with pytest.raises(ValueError, match='exact known public CDS'):
+        private_output(ROOT / 'results/placement-validation/fake', 'unknown', 'S', 'ACGT')
+
+
+def test_missing_input_retains_failure_report(tmp_path: Path) -> None:
+    assert not execute(tmp_path / 'missing.fa', tmp_path / 'missing.tsv', tmp_path / 'out')
+    assert read_json(tmp_path / 'out/report.json')['status'] == 'failed'

@@ -1,0 +1,32 @@
+[
+  {
+    "full_tip_count": 44,
+    "heldout_accession": "PZ860854.1",
+    "metrics": "S/metrics.json",
+    "placement_full_nearest_overlap": false,
+    "placement_status": "rebuilt_ambiguous",
+    "segment": "S",
+    "tie_compatible_broad_relationship": true,
+    "training_tip_count": 43
+  },
+  {
+    "full_tip_count": 37,
+    "heldout_accession": "PZ860853.1",
+    "metrics": "M/metrics.json",
+    "placement_full_nearest_overlap": true,
+    "placement_status": "compared",
+    "segment": "M",
+    "tie_compatible_broad_relationship": true,
+    "training_tip_count": 36
+  },
+  {
+    "full_tip_count": 31,
+    "heldout_accession": "PZ860852.1",
+    "metrics": "L/metrics.json",
+    "placement_full_nearest_overlap": false,
+    "placement_status": "rebuilt_ambiguous",
+    "segment": "L",
+    "tie_compatible_broad_relationship": true,
+    "training_tip_count": 30
+  }
+]

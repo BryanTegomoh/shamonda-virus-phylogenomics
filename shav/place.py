@@ -14,6 +14,23 @@ from shav.common import ROOT, SEGMENTS, Row, read_fasta, read_json, read_tsv, ru
 from shav.phylogeny import CodingSequence, backtranslate, build_tree, distance, infer_unannotated_cds, mask_codons
 
 
+def private_output(path: Path, public_accession: str | None = None, segment: str = '', sequence: str = '') -> None:
+    """Reject tracked/public repository destinations, except verified public fixtures."""
+    resolved = path.resolve()
+    if not resolved.is_relative_to(ROOT.resolve()):
+        return
+    if public_accession is not None:
+        public = read_fasta(ROOT / 'results' / segment / 'cds.fasta')
+        if public.get(public_accession) != sequence:
+            raise ValueError('Public validation escape requires an exact known public CDS')
+        if not resolved.is_relative_to((ROOT / 'results/placement-validation').resolve()):
+            raise ValueError('Public fixtures must remain in results/placement-validation')
+        return
+    checked = subprocess.run(['git', 'check-ignore', '--quiet', str(resolved)], cwd=ROOT, check=False)
+    if checked.returncode != 0:
+        raise ValueError('Case output inside the repository must be gitignored; use case-results/')
+
+
 def inputs(sequences: Path, metadata: Path) -> list[tuple[Row, str, str]]:
     fasta = read_fasta(sequences)
     rows = read_tsv(metadata)
@@ -66,7 +83,8 @@ def rebuild(segment: str, query: CodingSequence, directory: Path, root: Path = R
 
 
 def place_one(row: Row, identifier: str, sequence: str, directory: Path,
-              root: Path = ROOT, force_rebuild: bool = False) -> dict[str, Any]:
+              root: Path = ROOT, force_rebuild: bool = False, public_accession: str | None = None) -> dict[str, Any]:
+    private_output(directory, public_accession, row['segment'], sequence)
     segment = row['segment']
     directory.mkdir(parents=True, exist_ok=True)
     if set(sequence) - set('ACGTRYSWKMBDHVN'):
@@ -124,13 +142,15 @@ def place_one(row: Row, identifier: str, sequence: str, directory: Path,
 
 def execute(sequences: Path, metadata: Path, output: Path, root: Path = ROOT,
             force_rebuild: bool = False) -> bool:
+    private_output(output)
     if output.exists():
         raise ValueError(f'Output already exists: {output}; choose a fresh directory')
     output.mkdir(parents=True)
     report: dict[str, Any] = {'status': 'failed', 'results': [], 'errors': [], 'missing_segments': {},
                              'privacy': 'Local case output. Do not commit or upload.',
-                             'inputs_sha256': {'sequences': sha256(sequences), 'metadata': sha256(metadata)}}
+                             'inputs_sha256': {}}
     try:
+        report['inputs_sha256'] = {'sequences': sha256(sequences), 'metadata': sha256(metadata)}
         records = inputs(sequences, metadata)
         samples = {r['sample'] for r, _, _ in records}
         report['missing_segments'] = {sample: sorted(set(SEGMENTS) - {r['segment'] for r, _, _ in records if r['sample'] == sample}) for sample in sorted(samples)}

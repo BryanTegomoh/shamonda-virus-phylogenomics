@@ -17,3 +17,19 @@ relationship to the independently inferred full tree. Overlap of nearest sets is
 a descriptive broad relationship check, not a validated exact-node accuracy rate.
 Ties and poor resolution remain explicit. The script's query rebuilds are full
 protein realignment, codon backtranslation and nucleotide inference.
+
+Observed held-out checks (one isolate per segment):
+
+| Segment | Held out | Training/full tips | Closest callable-distance ties | Attachment-nearest agrees with full-tree nearest |
+|---|---|---|---|---|
+| S | PZ860854.1 | 43/44 | 7 | No |
+| M | PZ860853.1 | 36/37 | 1 | Yes |
+| L | PZ860852.1 | 30/31 | 4 | No |
+
+Every excluded explicit-isolate alias is absent from the rebuilt training tree.
+For S and L, both the attachment-nearest and full-tree nearest are members of the
+same callable-distance tie set. This supports a broad tied relationship, not an
+exact placement claim. Both queries triggered and completed full coding rebuilds
+and retained null definitive assignments. M has a unique nearest public sequence,
+OZ502472.1, with agreement in these two trees; one example is not an accuracy
+estimate. None of these experiments measures clinical performance.

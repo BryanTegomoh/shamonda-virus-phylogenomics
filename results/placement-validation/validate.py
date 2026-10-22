@@ -29,6 +29,9 @@ def validate(segment: str) -> dict[str, Any]:
     train_tree = build_tree(directory / 'training.fasta', directory / 'training', SETTINGS)
     full_tree = build_tree(directory / 'full.fasta', directory / 'full', SETTINGS)
     rooted = root_tree(read_tree(train_tree, 'newick'), metadata)
+    actual_training = {str(t.name) for t in rooted.get_terminals()}
+    if actual_training != set(training) or aliases & actual_training:
+        raise ValueError('Held-out alias leakage or missing training tips')
     for number, node in enumerate(rooted.get_nonterminals()):
         node.name = f'NODE_{number:05d}'
         node.confidence = None
@@ -59,7 +62,7 @@ def validate(segment: str) -> dict[str, Any]:
     write_tsv(work / 'metadata.tsv', [metadata[a] for a in training])
     write_fasta(directory / 'heldout.fasta', [('validation', cds[held['accession']])])
     write_tsv(directory / 'heldout.tsv', [{'sample': 'validation', 'segment': segment}])
-    result = place_one({'sample': 'validation', 'segment': segment}, 'validation', cds[held['accession']], directory / 'query', sandbox)
+    result = place_one({'sample': 'validation', 'segment': segment}, 'validation', cds[held['accession']], directory / 'query', sandbox, public_accession=held['accession'])
     full = read_tree(full_tree, 'newick')
     target = next(t for t in full.get_terminals() if t.name == held['accession'])
     distances = {str(t.name): float(full.distance(target, t)) for t in full.get_terminals() if t.name not in aliases}
@@ -72,7 +75,8 @@ def validate(segment: str) -> dict[str, Any]:
     attachment_minimum = min(attachment_distances.values())
     placement_nearest = sorted(a for a, d in attachment_distances.items() if abs(d - attachment_minimum) < 1e-7)
     output: dict[str, Any] = {'segment': segment, 'heldout': held, 'removed_explicit_isolate_aliases': sorted(aliases),
-        'training_tree_rebuilt': True, 'full_tree_independently_rebuilt': True, 'full_tree_nearest': full_nearest,
+        'training_tree_rebuilt': True, 'full_tree_independently_rebuilt': True,
+        'training_tip_count': len(actual_training), 'full_tip_count': len(alignment), 'excluded_aliases_present_training_tree': [], 'full_tree_nearest': full_nearest,
         'nextclade_attachment': attachment, 'nextclade_attachment_nearest': placement_nearest,
         'placement_full_nearest_overlap': bool(set(placement_nearest) & set(full_nearest)),
         'tie_compatible_broad_relationship': bool(set(placement_nearest) & set(comparison_nearest)) and bool(set(full_nearest) & set(comparison_nearest)),
@@ -83,4 +87,12 @@ def validate(segment: str) -> dict[str, Any]:
 
 
 if __name__ == '__main__':
-    write_json(BASE / 'summary.json', [validate(s) for s in ('S', 'M', 'L')])
+    summaries = [validate(s) for s in ('S', 'M', 'L')]
+    write_json(BASE / 'summary.json', [{
+        'segment': d['segment'], 'heldout_accession': d['heldout']['accession'],
+        'metrics': f"{d['segment']}/metrics.json",
+        'training_tip_count': d['training_tip_count'], 'full_tip_count': d['full_tip_count'],
+        'placement_full_nearest_overlap': d['placement_full_nearest_overlap'],
+        'tie_compatible_broad_relationship': d['tie_compatible_broad_relationship'],
+        'placement_status': d['placement']['status'],
+    } for d in summaries])

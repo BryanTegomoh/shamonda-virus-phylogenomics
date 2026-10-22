@@ -8,6 +8,8 @@
     "PZ831165.1",
     "PZ831166.1"
   ],
+  "excluded_aliases_present_training_tree": [],
+  "full_tip_count": 44,
   "full_tree_independently_rebuilt": true,
   "full_tree_nearest": [
     "PZ831165.1"
@@ -2284,5 +2286,6 @@
   ],
   "segment": "S",
   "tie_compatible_broad_relationship": true,
+  "training_tip_count": 43,
   "training_tree_rebuilt": true
 }
