@@ -1,9 +1,7 @@
 # Baseline verification, 2026-10-22
 
-The implementation through `0b187f4` passed independent specification and code
-review after correcting rerooted support assignment, interactive divergence units,
-specimen metadata, placement-tree integrity and refresh-dependent conclusions.
-No Critical or Important findings remained in the scoped final review.
+The following checks were run on implementation `0b187f4`. Tool versions are
+recorded in [runtime.json](runtime.json).
 
 Executed acceptance checks:
 

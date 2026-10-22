@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this repository for the workflow and analyses, and credit the original sequence sources separately."
+type: software
+title: Shamonda virus phylogenomics
+authors:
+  - family-names: Tegomoh
+    given-names: Bryan
+repository-code: "https://github.com/BryanTegomoh/shamonda-virus-phylogenomics"
+version: 0.1.0
