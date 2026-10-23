@@ -37,10 +37,23 @@ the context-inclusive maximum-likelihood analysis. Branch lengths are substituti
 per nucleotide site. Dots mark conservative support annotations meeting both
 SH-aLRT ≥80 and ultrafast bootstrap ≥95; their provenance is documented in the report.
 
-| L: polymerase | M: polyprotein | S: nucleocapsid N |
-|:---:|:---:|:---:|
-| [![L segment phylogeny](figures/tree_L_SHAV.png)](figures/tree_L_SHAV.png) | [![M segment phylogeny](figures/tree_M_SHAV.png)](figures/tree_M_SHAV.png) | [![S segment phylogeny](figures/tree_S_SHAV.png)](figures/tree_S_SHAV.png) |
-| [Full context PDF](figures/tree_L.pdf) | [Full context PDF](figures/tree_M.pdf) | [Full context PDF](figures/tree_S.pdf) |
+### L: polymerase
+
+[![L segment phylogeny](figures/tree_L_SHAV.png)](figures/tree_L_SHAV.png)
+
+[Full context PDF](figures/tree_L.pdf)
+
+### M: polyprotein
+
+[![M segment phylogeny](figures/tree_M_SHAV.png)](figures/tree_M_SHAV.png)
+
+[Full context PDF](figures/tree_M.pdf)
+
+### S: nucleocapsid N
+
+[![S segment phylogeny](figures/tree_S_SHAV.png)](figures/tree_S_SHAV.png)
+
+[Full context PDF](figures/tree_S.pdf)
 
 S describes the N coding region, not the entire overlapping N/NSs sequence.
 Segments are analyzed independently. No concatenated tree is used.
