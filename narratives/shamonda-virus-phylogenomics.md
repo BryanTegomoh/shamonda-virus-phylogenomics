@@ -3,11 +3,11 @@ title: "Shamonda virus: what the public genomes show"
 authors: "Bryan Tegomoh"
 authorLinks: "https://github.com/BryanTegomoh/shamonda-virus-phylogenomics"
 date: "2026-10-23"
-dataset: "https://nextstrain.org/fetch/raw.githubusercontent.com/BryanTegomoh/shamonda-virus-phylogenomics/main/auspice/shamonda_L.json?c=country&f_group=SHAV&treeZoom=selected"
+dataset: "https://nextstrain.org/community/BryanTegomoh/shamonda-virus-phylogenomics@main/L?c=country&f_group=SHAV&treeZoom=selected"
 abstract: "Public-data snapshot: 22 October 2026. Independent L, M and S coding-region trees show two European genetic backgrounds, with different levels of support across segments. No identifiable human-case sequence was found in this snapshot. These are research comparisons, not transmission chains or predictions of disease severity."
 ---
 
-# [L: two European genetic backgrounds](https://nextstrain.org/fetch/raw.githubusercontent.com/BryanTegomoh/shamonda-virus-phylogenomics/main/auspice/shamonda_L.json?c=country&f_group=SHAV&treeZoom=selected)
+# [L: two European genetic backgrounds](https://nextstrain.org/community/BryanTegomoh/shamonda-virus-phylogenomics@main/L?c=country&f_group=SHAV&treeZoom=selected)
 
 **Read the colors:** each color represents a deposited country. Each tip is a
 segment sequence, not necessarily an independent animal or complete genome.
@@ -22,7 +22,7 @@ route or arrival date. A sampled relative is not necessarily an ancestor.
 The horizontal axis counts inferred nucleotide changes. It is not a timeline.
 Visualization: [Nextstrain/Auspice](https://nextstrain.org/).
 
-# [M: support for EU2 is weaker](https://nextstrain.org/fetch/raw.githubusercontent.com/BryanTegomoh/shamonda-virus-phylogenomics/main/auspice/shamonda_M.json?c=country&f_group=SHAV&treeZoom=selected)
+# [M: support for EU2 is weaker](https://nextstrain.org/community/BryanTegomoh/shamonda-virus-phylogenomics@main/M?c=country&f_group=SHAV&treeZoom=selected)
 
 **Compare the same countries across segments.** European sequences do not form
 one Europe-exclusive cluster in M either.
@@ -37,7 +37,7 @@ demonstrate reassortment, greater virulence or more efficient transmission.
 The horizontal axis counts inferred nucleotide changes. It is not a timeline.
 Visualization: [Nextstrain/Auspice](https://nextstrain.org/).
 
-# [S: the human-case link remains unresolved](https://nextstrain.org/fetch/raw.githubusercontent.com/BryanTegomoh/shamonda-virus-phylogenomics/main/auspice/shamonda_S.json?c=country&f_group=SHAV&treeZoom=selected)
+# [S: the human-case link remains unresolved](https://nextstrain.org/community/BryanTegomoh/shamonda-virus-phylogenomics@main/S?c=country&f_group=SHAV&treeZoom=selected)
 
 **This view covers the N coding region**, not the entire S segment or its
 overlapping NSs gene.

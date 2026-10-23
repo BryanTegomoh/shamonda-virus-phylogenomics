@@ -25,8 +25,7 @@ performance, transmission chains, phenotype prediction or exact placement accura
 
 ## Public interactive views
 
-The README's Nextstrain links use the documented public-URL sharing service to
-load the committed GitHub JSON files. All three rendered in the public viewer:
+The initial public-URL links loaded the committed GitHub JSON files. All three rendered in the public viewer:
 21 of 31 tips for L, 27 of 37 for M and 34 of 44 for S with the SHAV filter active.
 The views were colored by country and zoomed to the selected tips.
 
@@ -35,3 +34,9 @@ change preserves the complete tree objects and reference sequences; the matching
 placement datasets and recorded export checksums were updated together.
 `make validate` passed after this change: 70 tests, strict typing, dataset schemas
 and snapshot integrity checks.
+
+The README now links to Nextstrain Community and a guided narrative. Community
+publication copies follow the repository naming convention described in
+[the dataset notes](../auspice/README.md). The three publication jobs completed;
+validation checks each copy against its canonical export. The guided L, M and S
+views rendered with the segment-specific interpretation alongside the tree.

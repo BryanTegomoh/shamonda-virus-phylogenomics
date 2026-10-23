@@ -1,9 +1,16 @@
 """Run all segment analyses. Execute from the project root with make build."""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(workflow.basedir).parent))
+from shav.common import COMMUNITY_PREFIX
+
 SEGMENTS = ["L", "M", "S"]
 
 rule all:
     input:
         expand("auspice/shamonda_{segment}.json", segment=SEGMENTS),
+        expand("auspice/" + COMMUNITY_PREFIX + "_{segment}.json", segment=SEGMENTS),
         expand("results/{segment}/analysis.json", segment=SEGMENTS),
 
 rule prepare:
@@ -38,3 +45,11 @@ rule export:
     threads: 1
     shell:
         "python -m shav.phylogeny export --segment {wildcards.segment}"
+
+rule community:
+    input:
+        "auspice/shamonda_{segment}.json",
+    output:
+        "auspice/" + COMMUNITY_PREFIX + "_{segment}.json",
+    shell:
+        "cp {input:q} {output:q}"

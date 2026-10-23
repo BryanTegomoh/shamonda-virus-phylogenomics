@@ -1,5 +1,6 @@
 {
   "L": {
+    "community_export": "byte-identical to validated display tree",
     "interactive_divergence": "inferred nucleotide event counts verified",
     "mutation_replay": "passed",
     "placement_tree": "byte-identical and schema-validated",
@@ -8,6 +9,7 @@
     "tips": 31
   },
   "M": {
+    "community_export": "byte-identical to validated display tree",
     "interactive_divergence": "inferred nucleotide event counts verified",
     "mutation_replay": "passed",
     "placement_tree": "byte-identical and schema-validated",
@@ -16,6 +18,7 @@
     "tips": 37
   },
   "S": {
+    "community_export": "byte-identical to validated display tree",
     "interactive_divergence": "inferred nucleotide event counts verified",
     "mutation_replay": "passed",
     "placement_tree": "byte-identical and schema-validated",

@@ -11,6 +11,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SEGMENTS = ("L", "M", "S")
+COMMUNITY_PREFIX = "shamonda-virus-phylogenomics"
 Row = dict[str, str]
 
 

@@ -7,7 +7,7 @@ from typing import Any
 
 from Bio.Phylo._io import read as read_tree
 
-from shav.common import ROOT, SEGMENTS, read_fasta, read_json, read_tsv, run, sha256, write_json
+from shav.common import COMMUNITY_PREFIX, ROOT, SEGMENTS, read_fasta, read_json, read_tsv, run, sha256, write_json
 from shav.ingest import run as verify_snapshot
 
 
@@ -73,6 +73,8 @@ def main() -> None:
         if tips != metadata or tips != set(aligned):
             raise ValueError(f"Tree/alignment/metadata identifiers differ: {segment}")
         data = placement_tree_agreement(ROOT / "auspice" / f"shamonda_{segment}.json", ROOT / "nextclade" / segment / "tree.json")
+        if sha256(ROOT / "auspice" / f"{COMMUNITY_PREFIX}_{segment}.json") != sha256(ROOT / "auspice" / f"shamonda_{segment}.json"):
+            raise ValueError(f"Community export differs from validated display tree: {segment}")
         reference = next(iter(read_fasta(ROOT / "nextclade" / segment / "reference.fasta").values()))
         if data.get("root_sequence", {}).get("nuc") != reference:
             raise ValueError(f"Dataset reference differs from tree reference: {segment}")
@@ -88,7 +90,7 @@ def main() -> None:
                            ("auspice", ROOT / "auspice" / f"shamonda_{segment}.json")]:
             if analysis["sha256"][name] != sha256(path):
                 raise ValueError(f"Output checksum differs: {segment}/{name}")
-        receipts[segment] = {"tips": len(tips), "schema": "passed", "mutation_replay": "passed", "snapshot": "matched", "placement_tree": "byte-identical and schema-validated", "interactive_divergence": "inferred nucleotide event counts verified"}
+        receipts[segment] = {"tips": len(tips), "schema": "passed", "mutation_replay": "passed", "snapshot": "matched", "placement_tree": "byte-identical and schema-validated", "community_export": "byte-identical to validated display tree", "interactive_divergence": "inferred nucleotide event counts verified"}
     write_json(ROOT / "reports" / "integrity-validation.json", receipts)
     print("Snapshot, three schemas, mutation replay, source/output hashes and private-file exclusions passed")
 

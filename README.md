@@ -37,7 +37,7 @@ the context-inclusive maximum-likelihood analysis. Branch lengths are substituti
 per nucleotide site. Dots mark conservative support annotations meeting both
 SH-aLRT ≥80 and ultrafast bootstrap ≥95; their provenance is documented in the report.
 
-Explore on Nextstrain: [Guided interpretation](https://nextstrain.org/community/narratives/BryanTegomoh/shamonda-virus-phylogenomics@main) · [L](https://nextstrain.org/fetch/raw.githubusercontent.com/BryanTegomoh/shamonda-virus-phylogenomics/main/auspice/shamonda_L.json?c=country&f_group=SHAV&treeZoom=selected) · [M](https://nextstrain.org/fetch/raw.githubusercontent.com/BryanTegomoh/shamonda-virus-phylogenomics/main/auspice/shamonda_M.json?c=country&f_group=SHAV&treeZoom=selected) · [S](https://nextstrain.org/fetch/raw.githubusercontent.com/BryanTegomoh/shamonda-virus-phylogenomics/main/auspice/shamonda_S.json?c=country&f_group=SHAV&treeZoom=selected).
+Explore on Nextstrain: [Guided interpretation](https://nextstrain.org/community/narratives/BryanTegomoh/shamonda-virus-phylogenomics@main) · [L](https://nextstrain.org/community/BryanTegomoh/shamonda-virus-phylogenomics@main/L?c=country&f_group=SHAV&treeZoom=selected) · [M](https://nextstrain.org/community/BryanTegomoh/shamonda-virus-phylogenomics@main/M?c=country&f_group=SHAV&treeZoom=selected) · [S](https://nextstrain.org/community/BryanTegomoh/shamonda-virus-phylogenomics@main/S?c=country&f_group=SHAV&treeZoom=selected).
 These public views load the committed GitHub datasets, initially filtered to SHAV
 and colored by country. Clear the Virus filter to include related-virus context.
 
