@@ -145,6 +145,12 @@ Accession corrections, metadata improvements and reproducible bug reports are
 welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the required checks and commit
 conventions. [CITATION.cff](CITATION.cff) provides the repository citation.
 Credit the original sequence authors and retain accession versions when reusing
-the data. Third-party records remain subject to their source terms.
+the data.
 
 The repository layout follows [Nextstrain's pathogen repository guide](https://github.com/nextstrain/pathogen-repo-guide).
+
+## License
+
+Original code, project-authored documentation and figures are available under the
+[MIT License](LICENSE). Deposited sequence records, source metadata and other
+third-party material retain their source terms and attribution requirements.
