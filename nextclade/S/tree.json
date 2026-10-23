@@ -27,7 +27,7 @@
         "type": "categorical"
       }
     ],
-    "description": "Independent S segment analysis using its primary CDS. Branches show genetic divergence, not time. Public sampling is sparse and uneven. Genetic clustering does not establish transmission, virulence, or source attribution. Full methods, sequence acknowledgments and support tables are in the private repository. Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, between distinct A/C/G/T states, including reversions, from a zero reconstructed root. Ambiguous-state transitions remain in replay but are excluded from divergence. Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.",
+    "description": "Independent S segment analysis using its primary CDS. Branches show genetic divergence, not time. Public sampling is sparse and uneven. Genetic clustering does not establish transmission, virulence, or source attribution. Full methods, sequence acknowledgments and support tables are in the [public repository](https://github.com/BryanTegomoh/shamonda-virus-phylogenomics). Interactive divergence counts inferred nucleotide state changes in reference-CDS coordinates, between distinct A/C/G/T states, including reversions, from a zero reconstructed root. Ambiguous-state transitions remain in replay but are excluded from divergence. Root-to-reference differences are excluded from divergence. ML substitutions/site remain in Newick and static figures.",
     "display_defaults": {
       "color_by": "group",
       "distance_measure": "div"

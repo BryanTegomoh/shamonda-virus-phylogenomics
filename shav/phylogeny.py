@@ -563,7 +563,8 @@ def export(segment: str) -> None:
         gene: {"start": 1, "end": len(reference), "strand": "+", "type": "CDS"}}
     data["meta"]["description"] = (f"Independent {segment} segment analysis using its primary CDS. Branches show genetic divergence, not time. "
         "Public sampling is sparse and uneven. Genetic clustering does not establish transmission, virulence, or source attribution. "
-        "Full methods, sequence acknowledgments and support tables are in the private repository.")
+        "Full methods, sequence acknowledgments and support tables are in the "
+        "[public repository](https://github.com/BryanTegomoh/shamonda-virus-phylogenomics).")
     mutation_count_divergence(data)
     write_json(output, data)
     write_fasta(dataset / "reference.fasta", [(ref, reference)])

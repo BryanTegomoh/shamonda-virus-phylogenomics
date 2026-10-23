@@ -22,3 +22,16 @@ split supports under both roots and unchanged inference trees. The
 [held-out experiment](../results/placement-validation/README.md) records the actual
 placement outcomes and their limited scope. These checks do not establish clinical
 performance, transmission chains, phenotype prediction or exact placement accuracy.
+
+## Public interactive views
+
+The README's Nextstrain links use the documented public-URL sharing service to
+load the committed GitHub JSON files. All three rendered in the public viewer:
+21 of 31 tips for L, 27 of 37 for M and 34 of 44 for S with the SHAV filter active.
+The views were colored by country and zoomed to the selected tips.
+
+The dataset descriptions now link to the public repository. This metadata-only
+change preserves the complete tree objects and reference sequences; the matching
+placement datasets and recorded export checksums were updated together.
+`make validate` passed after this change: 70 tests, strict typing, dataset schemas
+and snapshot integrity checks.
